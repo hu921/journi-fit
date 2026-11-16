@@ -4,6 +4,8 @@ import SwiftData
 struct RootTabView: View {
     @Environment(RoutineImporter.self) private var importer
     @Environment(\.modelContext) private var context
+    @Query(filter: #Predicate<Workout> { $0.endedAt == nil }, sort: \Workout.startedAt)
+    private var activeWorkouts: [Workout]
 
     var body: some View {
         @Bindable var importer = importer
@@ -18,6 +20,9 @@ struct RootTabView: View {
                 .tabItem { Label("Goals", systemImage: "target") }
             MoreView()
                 .tabItem { Label("More", systemImage: "ellipsis.circle") }
+        }
+        .fullScreenCover(item: Binding(get: { activeWorkouts.first }, set: { _ in })) { workout in
+            ActiveWorkoutView(workout: workout)
         }
         .sheet(item: $importer.pending) { shared in
             ImportRoutineView(shared: shared) {

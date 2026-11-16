@@ -10,6 +10,12 @@ struct RoutineEditorView: View {
     var body: some View {
         List {
             Section {
+                StartRoutineButton(routine: routine)
+                    .listRowInsets(EdgeInsets())
+                    .listRowBackground(Color.clear)
+            }
+
+            Section {
                 TextField("Routine name", text: $routine.name)
                 TextField("Notes", text: $routine.notes, axis: .vertical)
             }
