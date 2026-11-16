@@ -8,10 +8,8 @@ struct RoutineListView: View {
     @Query(filter: #Predicate<Workout> { $0.endedAt != nil }, sort: \Workout.startedAt, order: .reverse)
     private var finished: [Workout]
     @State private var showNew = false
-    @State private var showFileImport = false
     @State private var newName = ""
     @State private var toDelete: Routine?
-    @Environment(RoutineImporter.self) private var importer
 
     var body: some View {
         NavigationStack {
@@ -43,15 +41,6 @@ struct RoutineListView: View {
             .navigationDestination(for: Routine.self) { RoutineEditorView(routine: $0) }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) { ProfileButton() }
-                ToolbarItem(placement: .topBarTrailing) {
-                    Menu {
-                        Button("Import routine file", systemImage: "square.and.arrow.down") {
-                            showFileImport = true
-                        }
-                    } label: {
-                        Label("More", systemImage: "ellipsis")
-                    }
-                }
             }
             // Easy-to-reach add button, bottom right above the tab bar.
             .overlay(alignment: .bottomTrailing) {
@@ -82,9 +71,6 @@ struct RoutineListView: View {
                     if let toDelete { context.delete(toDelete) }
                     toDelete = nil
                 }
-            }
-            .fileImporter(isPresented: $showFileImport, allowedContentTypes: [.journiFitRoutine]) { result in
-                if case .success(let url) = result { importer.handle(url: url) }
             }
         }
     }

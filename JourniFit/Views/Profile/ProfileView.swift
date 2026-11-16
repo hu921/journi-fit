@@ -68,7 +68,16 @@ private struct ProfileSheet: View {
 private struct ProfileForm: View {
     @Bindable var profile: UserProfile
     @State private var photoItem: PhotosPickerItem?
-    @State private var editBirthday = false
+    /// Which wheel is open. Only one at a time; closed by default.
+    @State private var openWheel: Wheel?
+    @FocusState private var typing: Bool
+
+    enum Wheel { case birthday, height }
+
+    private func toggle(_ wheel: Wheel) {
+        typing = false
+        withAnimation { openWheel = openWheel == wheel ? nil : wheel }
+    }
 
     var body: some View {
         Form {
@@ -91,8 +100,10 @@ private struct ProfileForm: View {
 
             Section("Name") {
                 TextField("First name", text: $profile.firstName)
+                    .focused($typing)
                     .textContentType(.givenName)
                 TextField("Last name", text: $profile.lastName)
+                    .focused($typing)
                     .textContentType(.familyName)
             }
 
@@ -101,7 +112,7 @@ private struct ProfileForm: View {
                     if profile.birthday == nil {
                         profile.birthday = Calendar.current.date(byAdding: .year, value: -30, to: .now)
                     }
-                    withAnimation { editBirthday.toggle() }
+                    toggle(.birthday)
                 } label: {
                     HStack {
                         Text(profile.birthday?.formatted(date: .long, time: .omitted) ?? "Add birthday")
@@ -112,7 +123,7 @@ private struct ProfileForm: View {
                         }
                     }
                 }
-                if editBirthday {
+                if openWheel == .birthday {
                     DatePicker("Birthday",
                                selection: Binding(get: { profile.birthday ?? .now },
                                                   set: { profile.birthday = $0 }),
@@ -134,6 +145,7 @@ private struct ProfileForm: View {
                     TextField("0", value: $profile.displayWeight,
                               format: .number.precision(.fractionLength(0...1)))
                         .keyboardType(.decimalPad)
+                        .focused($typing)
                     Text(profile.weightUnit == .lb ? "lbs" : "kg").foregroundStyle(Theme.muted)
                 }
             }
@@ -148,9 +160,20 @@ private struct ProfileForm: View {
                     HStack {
                         TextField("0", value: $profile.heightCm, format: .number.precision(.fractionLength(0)))
                             .keyboardType(.numberPad)
+                            .focused($typing)
                         Text("cm").foregroundStyle(Theme.muted)
                     }
                 } else {
+                    Button { toggle(.height) } label: {
+                        HStack {
+                            Text(profile.heightCm > 0 ? profile.heightText : "Add height")
+                                .foregroundStyle(Theme.text)
+                            Spacer()
+                            Image(systemName: openWheel == .height ? "chevron.up" : "chevron.down")
+                                .font(.caption).foregroundStyle(Theme.muted)
+                        }
+                    }
+                    if openWheel == .height {
                     HStack(spacing: 0) {
                         Picker("Feet", selection: $profile.feet) {
                             ForEach(3...8, id: \.self) { Text("\($0) ft").tag($0) }
@@ -161,9 +184,16 @@ private struct ProfileForm: View {
                     }
                     .pickerStyle(.wheel)
                     .frame(height: 120)
+                    .onAppear { if profile.heightCm == 0 { profile.feet = 5; profile.inches = 6 } }
+                    }
                 }
             }
         }
+        // Typing in any field closes an open wheel.
+        .onChange(of: typing) { _, isTyping in
+            if isTyping { withAnimation { openWheel = nil } }
+        }
+        .scrollDismissesKeyboard(.interactively)
         .onChange(of: photoItem) { _, item in
             Task { profile.photo = try? await item?.loadTransferable(type: Data.self) }
         }

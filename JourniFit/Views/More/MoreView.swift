@@ -13,6 +13,9 @@ struct MoreView: View {
                 NavigationLink { DietNotesView() } label: {
                     Label("Diet notes", systemImage: "fork.knife")
                 }
+                NavigationLink { SettingsView() } label: {
+                    Label("Settings", systemImage: "gearshape")
+                }
                 NavigationLink { AboutView() } label: {
                     Label("About", systemImage: "info.circle")
                 }
