@@ -12,8 +12,8 @@ struct RootTabView: View {
         TabView {
             RoutineListView()
                 .tabItem { Label("Routines", systemImage: "list.bullet.clipboard") }
-            MachineFinderView()
-                .tabItem { Label("Finder", systemImage: "magnifyingglass") }
+            WorkoutHistoryView()
+                .tabItem { Label("History", systemImage: "calendar") }
             MyGymView()
                 .tabItem { Label("My Gym", systemImage: "dumbbell") }
             GoalListView()

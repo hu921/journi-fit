@@ -2,6 +2,15 @@ import SwiftUI
 
 /// Search the bundled exercise database by machine, muscle, or equipment.
 struct MachineFinderView: View {
+    var body: some View {
+        NavigationStack {
+            MachineFinderContent()
+        }
+    }
+}
+
+/// Finder screen without its own NavigationStack, so it can be pushed from More.
+struct MachineFinderContent: View {
     @State private var search = ""
     @State private var muscle: String?
     @State private var equipment: String?
@@ -14,7 +23,6 @@ struct MachineFinderView: View {
     }
 
     var body: some View {
-        NavigationStack {
             List {
                 Section {
                     Toggle("Machines only", isOn: $machinesOnly)
@@ -35,9 +43,8 @@ struct MachineFinderView: View {
                 }
             }
             .searchable(text: $search, prompt: "Machine, exercise, or muscle")
-            .navigationTitle("Machine Finder")
+            .navigationTitle("Finder")
             .navigationDestination(for: Exercise.self) { ExerciseDetailView(exercise: $0) }
-        }
     }
 }
 
