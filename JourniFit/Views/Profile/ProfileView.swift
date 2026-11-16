@@ -35,7 +35,7 @@ struct ProfileButton: View {
 
     var body: some View {
         Button { show = true } label: {
-            ProfileAvatar(profile: profiles.first)
+            ProfileAvatar(profile: profiles.first, size: 40)
         }
         .accessibilityLabel("Profile")
         .sheet(isPresented: $show) { ProfileSheet() }

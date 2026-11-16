@@ -13,7 +13,25 @@ struct RoutineListView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
+            VStack(alignment: .leading, spacing: 0) {
+                // App title and profile icon on one line.
+                HStack(alignment: .center) {
+                    Text(AppInfo.name)
+                        .font(.largeTitle.bold())
+                        .foregroundStyle(Theme.text)
+                    Spacer()
+                    ProfileButton()
+                }
+                .padding(.horizontal)
+                .padding(.top, 8)
+
+                Text("Routines")
+                    .font(.title3.bold())
+                    .foregroundStyle(Theme.muted)
+                    .padding(.horizontal)
+                    .padding(.top, 4)
+
+                Group {
                 if routines.isEmpty {
                     ContentUnavailableView("No routines yet",
                                            systemImage: "list.bullet.clipboard",
@@ -35,13 +53,13 @@ struct RoutineListView: View {
                         .padding(.bottom, 72) // room for the New Routine button
                     }
                 }
+                }
+                .frame(maxHeight: .infinity)
             }
             .background(Theme.background)
             .navigationTitle("Routines")
+            .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: Routine.self) { RoutineEditorView(routine: $0) }
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) { ProfileButton() }
-            }
             // Easy-to-reach add button, bottom right above the tab bar.
             .overlay(alignment: .bottomTrailing) {
                 Button { showNew = true } label: {
