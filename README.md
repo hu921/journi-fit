@@ -7,7 +7,7 @@ App Store name: **journipod Fit: Workout**.
 
 No server. Data stays on the phone, with iCloud backup.
 
-- **Routines**: build routines with sets, reps, and rest.
+- **Routines**: each exercise has a list of sets (weight and reps), add or remove sets, and a rest timer.
 - **Machine Finder**: search by machine, muscle, or equipment. How-to steps for each exercise.
 - **My Gym**: save your gym's machines with your own settings.
 - **Goals**: goal tracks (strength, weight loss, muscle, endurance) with progress logs.
@@ -32,7 +32,7 @@ The main color is #E87A4A, the journi Diary color. The rest are neutral supporti
 `JourniFit/Resources/exercises.json` comes from
 [Free Exercise DB](https://github.com/yuhonas/free-exercise-db) (public domain, Unlicense).
 Rebuild it with `scripts/build_exercises.py`.
-Photos are not bundled yet. The app shows an icon until they are.
+Photos (start and end position) are bundled in `JourniFit/Resources/ExercisePhotos`, resized to 480px wide.
 
 ## Later
 

@@ -13,10 +13,17 @@ struct ExerciseDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                ExerciseImage(exercise: exercise)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 220)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                // Start and end position photos
+                TabView {
+                    ForEach(0..<max(exercise.images.count, 1), id: \.self) { i in
+                        ExerciseImage(exercise: exercise, index: i)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .clipped()
+                    }
+                }
+                .tabViewStyle(.page)
+                .frame(height: 240)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
 
                 if let machine = exercise.machine {
                     Label(machine, systemImage: "dumbbell.fill").font(.headline)

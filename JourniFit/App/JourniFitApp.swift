@@ -17,6 +17,7 @@ struct JourniFitApp: App {
         .modelContainer(for: [
             Routine.self,
             RoutineExercise.self,
+            RoutineSet.self,
             GymMachine.self,
             Goal.self,
             GoalEntry.self,

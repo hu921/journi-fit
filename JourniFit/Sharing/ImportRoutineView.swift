@@ -15,7 +15,7 @@ struct ImportRoutineView: View {
                     ForEach(Array(shared.items.enumerated()), id: \.offset) { _, item in
                         VStack(alignment: .leading) {
                             Text(ExerciseLibrary.shared.exercise(id: item.exerciseID)?.name ?? "Unknown exercise")
-                            Text("\(item.sets) sets × \(item.reps) reps · rest \(item.restSeconds)s")
+                            Text("\(item.sets.count) sets · rest \(item.restSeconds)s")
                                 .font(.caption).foregroundStyle(Theme.muted)
                         }
                     }

@@ -5,12 +5,18 @@ Usage:
   curl -L -o /tmp/ex.json https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json
   python3 scripts/build_exercises.py /tmp/ex.json JourniFit/Resources/exercises.json
 
-Photos are not bundled yet. The app shows a placeholder icon until they are.
+Photos: pass a photos folder as a third argument. Each exercise lists the photos
+named <id>_0.jpg and <id>_1.jpg that exist there (start and end position).
+To fetch and shrink them:
+  url=https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises/<id>/0.jpg
+  convert in.jpg -resize 480x -strip -quality 65 JourniFit/Resources/ExercisePhotos/<id>_0.jpg
 """
+import os
 import json
 import sys
 
 src, dst = sys.argv[1], sys.argv[2]
+photos = sys.argv[3] if len(sys.argv) > 3 else None
 out = []
 for x in json.load(open(src)):
     equipment = x.get("equipment") or "none"
@@ -28,7 +34,8 @@ for x in json.load(open(src)):
         "machine": machine,
         "level": x.get("level", "beginner"),
         "instructions": x.get("instructions", []),
-        "images": [],
+        "images": [f"{x['id']}_{i}" for i in range(2)
+                   if photos and os.path.exists(os.path.join(photos, f"{x['id']}_{i}.jpg"))],
     })
 out.sort(key=lambda e: e["name"])
 json.dump(out, open(dst, "w"), indent=1, ensure_ascii=False)

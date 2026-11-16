@@ -60,12 +60,14 @@ struct ExerciseRow: View {
     }
 }
 
-/// Shows the first bundled photo, or a placeholder icon.
+/// Shows a bundled photo (index 0 = start position), or a placeholder icon.
 struct ExerciseImage: View {
     let exercise: Exercise
+    var index = 0
 
     var body: some View {
-        if let name = exercise.images.first, let image = UIImage(named: name) {
+        if exercise.images.indices.contains(index),
+           let image = ExercisePhoto.load(exercise.images[index]) {
             Image(uiImage: image).resizable().scaledToFill()
         } else {
             ZStack {
@@ -74,5 +76,19 @@ struct ExerciseImage: View {
                     .foregroundStyle(Theme.primary)
             }
         }
+    }
+}
+
+enum ExercisePhoto {
+    private static let cache = NSCache<NSString, UIImage>()
+
+    /// Photos ship in the app as <exerciseID>_<n>.jpg.
+    static func load(_ name: String) -> UIImage? {
+        if let hit = cache.object(forKey: name as NSString) { return hit }
+        let url = Bundle.main.url(forResource: name, withExtension: "jpg")
+            ?? Bundle.main.url(forResource: name, withExtension: "jpg", subdirectory: "ExercisePhotos")
+        guard let url, let image = UIImage(contentsOfFile: url.path) else { return nil }
+        cache.setObject(image, forKey: name as NSString)
+        return image
     }
 }

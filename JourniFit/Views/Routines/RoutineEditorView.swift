@@ -1,7 +1,7 @@
 import SwiftUI
 import SwiftData
 
-/// Routine builder: add exercises, set sets, reps, and rest.
+/// Routine builder: each exercise has its own list of sets and a rest time.
 struct RoutineEditorView: View {
     @Environment(\.modelContext) private var context
     @Bindable var routine: Routine
@@ -14,13 +14,17 @@ struct RoutineEditorView: View {
                 TextField("Notes", text: $routine.notes, axis: .vertical)
             }
 
-            Section("Exercises") {
-                ForEach(routine.sortedItems) { item in
-                    RoutineItemRow(item: item)
-                }
-                .onDelete(perform: delete)
-                .onMove(perform: move)
+            ForEach(routine.sortedItems) { item in
+                ExerciseSetsSection(
+                    item: item,
+                    canMoveUp: item.order > 0,
+                    canMoveDown: item.order < routine.sortedItems.count - 1,
+                    onMove: { move(item, by: $0) },
+                    onRemove: { remove(item) }
+                )
+            }
 
+            Section {
                 Button { showPicker = true } label: {
                     Label("Add exercise", systemImage: "plus.circle.fill")
                 }
@@ -30,45 +34,140 @@ struct RoutineEditorView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) { ShareRoutineMenu(routine: routine) }
-            ToolbarItem(placement: .topBarTrailing) { EditButton() }
         }
         .sheet(isPresented: $showPicker) {
             ExercisePickerView { exercise in
-                let item = RoutineExercise(exerciseID: exercise.id, order: (routine.items?.count ?? 0))
+                let item = RoutineExercise(exerciseID: exercise.id, order: routine.items?.count ?? 0)
                 item.routine = routine
                 context.insert(item)
+                // Start with 3 sets.
+                for i in 0..<3 {
+                    let set = RoutineSet(order: i)
+                    set.routineExercise = item
+                    context.insert(set)
+                }
             }
         }
     }
 
-    private func delete(_ offsets: IndexSet) {
-        let items = routine.sortedItems
-        offsets.map { items[$0] }.forEach(context.delete)
-        renumber()
-    }
-
-    private func move(_ from: IndexSet, _ to: Int) {
+    private func move(_ item: RoutineExercise, by offset: Int) {
         var items = routine.sortedItems
-        items.move(fromOffsets: from, toOffset: to)
-        for (i, item) in items.enumerated() { item.order = i }
+        guard let from = items.firstIndex(of: item) else { return }
+        let to = from + offset
+        guard items.indices.contains(to) else { return }
+        items.swapAt(from, to)
+        for (i, it) in items.enumerated() { it.order = i }
     }
 
-    private func renumber() {
-        for (i, item) in routine.sortedItems.enumerated() { item.order = i }
+    private func remove(_ item: RoutineExercise) {
+        context.delete(item)
+        let rest = routine.sortedItems.filter { $0 != item }
+        for (i, it) in rest.enumerated() { it.order = i }
     }
 }
 
-private struct RoutineItemRow: View {
+private struct ExerciseSetsSection: View {
+    @Environment(\.modelContext) private var context
     @Bindable var item: RoutineExercise
+    let canMoveUp: Bool
+    let canMoveDown: Bool
+    let onMove: (Int) -> Void
+    let onRemove: () -> Void
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(item.exercise?.name ?? "Unknown exercise").font(.headline)
-            Stepper("Sets: \(item.sets)", value: $item.sets, in: 1...20)
-            Stepper("Reps: \(item.reps)", value: $item.reps, in: 1...100)
-            Stepper("Rest: \(item.restSeconds)s", value: $item.restSeconds, in: 0...600, step: 15)
+        Section {
+            // Rest time for this exercise
+            Picker(selection: $item.restSeconds) {
+                ForEach(Array(stride(from: 0, through: 300, by: 15)), id: \.self) { s in
+                    Text(s == 0 ? "Off" : Self.format(s)).tag(s)
+                }
+            } label: {
+                Label("Rest", systemImage: "timer").foregroundStyle(Theme.primary)
+            }
+
+            // Column titles
+            HStack {
+                Text("SET").frame(width: 36, alignment: .leading)
+                Text("WEIGHT").frame(maxWidth: .infinity)
+                Text("REPS").frame(maxWidth: .infinity)
+            }
+            .font(.caption.bold())
+            .foregroundStyle(Theme.muted)
+
+            ForEach(Array(item.sortedSets.enumerated()), id: \.element.id) { index, set in
+                SetRow(number: index + 1, set: set)
+            }
+            .onDelete(perform: deleteSets)
+
+            Button { addSet() } label: {
+                Label("Add set", systemImage: "plus")
+            }
+        } header: {
+            HStack(spacing: 10) {
+                if let exercise = item.exercise {
+                    ExerciseImage(exercise: exercise)
+                        .frame(width: 36, height: 36)
+                        .clipShape(Circle())
+                }
+                Text(item.exercise?.name ?? "Unknown exercise")
+                    .font(.headline)
+                    .foregroundStyle(Theme.text)
+                    .textCase(nil)
+                Spacer()
+                Menu {
+                    Button("Move up", systemImage: "arrow.up") { onMove(-1) }.disabled(!canMoveUp)
+                    Button("Move down", systemImage: "arrow.down") { onMove(1) }.disabled(!canMoveDown)
+                    Button("Remove exercise", systemImage: "trash", role: .destructive, action: onRemove)
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                }
+            }
         }
-        .padding(.vertical, 4)
+    }
+
+    /// New set copies the last set's weight and reps.
+    private func addSet() {
+        let last = item.sortedSets.last
+        let set = RoutineSet(order: (item.sets?.count ?? 0),
+                             weight: last?.weight ?? 0,
+                             reps: last?.reps ?? 10)
+        set.routineExercise = item
+        context.insert(set)
+    }
+
+    private func deleteSets(_ offsets: IndexSet) {
+        let sets = item.sortedSets
+        offsets.map { sets[$0] }.forEach(context.delete)
+        for (i, s) in item.sortedSets.filter({ !offsets.map { sets[$0] }.contains($0) }).enumerated() {
+            s.order = i
+        }
+    }
+
+    static func format(_ seconds: Int) -> String {
+        let m = seconds / 60, s = seconds % 60
+        if m == 0 { return "\(s)s" }
+        return s == 0 ? "\(m)min" : "\(m)min \(s)s"
+    }
+}
+
+private struct SetRow: View {
+    let number: Int
+    @Bindable var set: RoutineSet
+
+    var body: some View {
+        HStack {
+            Text("\(number)")
+                .font(.body.bold())
+                .frame(width: 36, alignment: .leading)
+            TextField("0", value: $set.weight, format: .number)
+                .keyboardType(.decimalPad)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
+            TextField("0", value: $set.reps, format: .number)
+                .keyboardType(.numberPad)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
+        }
     }
 }
 

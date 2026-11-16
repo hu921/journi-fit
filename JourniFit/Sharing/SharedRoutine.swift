@@ -11,14 +11,18 @@ extension UTType {
 /// The portable form of a routine. Used for both share links and files.
 /// No server: the whole routine travels inside the link or file.
 struct SharedRoutine: Codable, Identifiable, Transferable {
-    struct Item: Codable {
-        var exerciseID: String
-        var sets: Int
+    struct SetItem: Codable {
+        var weight: Double
         var reps: Int
-        var restSeconds: Int
     }
 
-    var formatVersion = 1
+    struct Item: Codable {
+        var exerciseID: String
+        var restSeconds: Int
+        var sets: [SetItem]
+    }
+
+    var formatVersion = 2
     var name: String
     var notes: String
     var items: [Item]
@@ -29,7 +33,9 @@ struct SharedRoutine: Codable, Identifiable, Transferable {
         name = routine.name
         notes = routine.notes
         items = routine.sortedItems.map {
-            Item(exerciseID: $0.exerciseID, sets: $0.sets, reps: $0.reps, restSeconds: $0.restSeconds)
+            Item(exerciseID: $0.exerciseID,
+                 restSeconds: $0.restSeconds,
+                 sets: $0.sortedSets.map { SetItem(weight: $0.weight, reps: $0.reps) })
         }
     }
 
@@ -79,9 +85,14 @@ struct SharedRoutine: Codable, Identifiable, Transferable {
         for (index, item) in items.enumerated()
         where ExerciseLibrary.shared.exercise(id: item.exerciseID) != nil {
             let re = RoutineExercise(exerciseID: item.exerciseID, order: index,
-                                     sets: item.sets, reps: item.reps, restSeconds: item.restSeconds)
+                                     restSeconds: item.restSeconds)
             re.routine = routine
             context.insert(re)
+            for (setIndex, s) in item.sets.enumerated() {
+                let set = RoutineSet(order: setIndex, weight: s.weight, reps: s.reps)
+                set.routineExercise = re
+                context.insert(set)
+            }
         }
     }
 }

@@ -22,25 +22,41 @@ final class Routine {
     }
 }
 
+/// One exercise in a routine. Holds its own list of sets.
 @Model
 final class RoutineExercise {
     var exerciseID: String = ""
     var order: Int = 0
-    var sets: Int = 3
-    var reps: Int = 10
     /// Rest between sets, in seconds.
     var restSeconds: Int = 90
-    var weight: Double = 0
     var routine: Routine?
+    @Relationship(deleteRule: .cascade, inverse: \RoutineSet.routineExercise)
+    var sets: [RoutineSet]? = []
 
-    init(exerciseID: String, order: Int, sets: Int = 3, reps: Int = 10, restSeconds: Int = 90, weight: Double = 0) {
+    init(exerciseID: String, order: Int, restSeconds: Int = 90) {
         self.exerciseID = exerciseID
         self.order = order
-        self.sets = sets
-        self.reps = reps
         self.restSeconds = restSeconds
-        self.weight = weight
     }
 
     var exercise: Exercise? { ExerciseLibrary.shared.exercise(id: exerciseID) }
+
+    var sortedSets: [RoutineSet] {
+        (sets ?? []).sorted { $0.order < $1.order }
+    }
+}
+
+/// One set: target weight and reps.
+@Model
+final class RoutineSet {
+    var order: Int = 0
+    var weight: Double = 0
+    var reps: Int = 10
+    var routineExercise: RoutineExercise?
+
+    init(order: Int, weight: Double = 0, reps: Int = 10) {
+        self.order = order
+        self.weight = weight
+        self.reps = reps
+    }
 }
