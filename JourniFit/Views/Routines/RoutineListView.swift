@@ -19,7 +19,7 @@ struct RoutineListView: View {
                 if routines.isEmpty {
                     ContentUnavailableView("No routines yet",
                                            systemImage: "list.bullet.clipboard",
-                                           description: Text("Tap + to build your first routine."))
+                                           description: Text("Tap New Routine to build your first one."))
                 } else {
                     ScrollView {
                         LazyVStack(spacing: 16) {
@@ -34,6 +34,7 @@ struct RoutineListView: View {
                             }
                         }
                         .padding()
+                        .padding(.bottom, 72) // room for the New Routine button
                     }
                 }
             }
@@ -41,14 +42,29 @@ struct RoutineListView: View {
             .navigationTitle("Routines")
             .navigationDestination(for: Routine.self) { RoutineEditorView(routine: $0) }
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button { showFileImport = true } label: {
-                        Label("Import", systemImage: "square.and.arrow.down")
+                ToolbarItem(placement: .topBarLeading) { ProfileButton() }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        Button("Import routine file", systemImage: "square.and.arrow.down") {
+                            showFileImport = true
+                        }
+                    } label: {
+                        Label("More", systemImage: "ellipsis")
                     }
                 }
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button { showNew = true } label: { Label("New routine", systemImage: "plus") }
+            }
+            // Easy-to-reach add button, bottom right above the tab bar.
+            .overlay(alignment: .bottomTrailing) {
+                Button { showNew = true } label: {
+                    Label("New Routine", systemImage: "plus")
+                        .font(.headline)
+                        .padding(.horizontal, 18)
+                        .padding(.vertical, 14)
+                        .foregroundStyle(.white)
+                        .background(Theme.primary, in: Capsule())
+                        .shadow(color: Theme.primary.opacity(0.35), radius: 8, y: 4)
                 }
+                .padding()
             }
             .alert("New routine", isPresented: $showNew) {
                 TextField("Name", text: $newName)

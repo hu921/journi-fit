@@ -15,6 +15,7 @@ struct JourniFitApp: App {
         // Data stays on device. With the iCloud capability on, SwiftData
         // syncs this store to the user's private iCloud database (backup).
         .modelContainer(for: [
+            UserProfile.self,
             Routine.self,
             RoutineExercise.self,
             RoutineSet.self,
