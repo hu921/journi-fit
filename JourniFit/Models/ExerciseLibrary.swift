@@ -29,17 +29,18 @@ final class ExerciseLibrary {
     }
 
     /// Search by exercise name, machine name, muscle, or equipment.
+    /// Every word must match, in any order ("bench press barbell" finds "Barbell Bench Press").
     func search(text: String, muscle: String?, equipment: String?, machinesOnly: Bool) -> [Exercise] {
-        let query = text.trimmingCharacters(in: .whitespaces).lowercased()
+        let words = text.lowercased().split(whereSeparator: { $0.isWhitespace || $0 == "-" }).map(String.init)
         return exercises.filter { ex in
             if machinesOnly && ex.machine == nil { return false }
             if let muscle, !ex.allMuscles.contains(muscle) { return false }
             if let equipment, ex.equipment != equipment { return false }
-            guard !query.isEmpty else { return true }
+            guard !words.isEmpty else { return true }
             let haystack = ([ex.name, ex.equipment, ex.machine ?? ""] + ex.allMuscles)
                 .joined(separator: " ")
                 .lowercased()
-            return haystack.contains(query)
+            return words.allSatisfy { haystack.contains($0) }
         }
     }
 }
