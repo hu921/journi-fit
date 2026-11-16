@@ -48,6 +48,8 @@ struct ExerciseDetailView: View {
                         Text(step)
                     }
                 }
+
+                SimilarExercisesSection(exercise: exercise, myMachines: myMachines)
             }
             .padding()
         }
@@ -99,6 +101,41 @@ private struct InfoRow: View {
             Text(title).foregroundStyle(Theme.muted)
             Spacer()
             Text(value.map(\.capitalized).joined(separator: ", "))
+        }
+    }
+}
+
+/// Substitutes: exercises for the same muscle. Ones in My Gym come first.
+private struct SimilarExercisesSection: View {
+    let exercise: Exercise
+    let myMachines: [GymMachine]
+
+    private var items: [Exercise] {
+        let mine = Set(myMachines.map(\.exerciseID))
+        return ExerciseLibrary.shared.similar(to: exercise, limit: 12)
+            .sorted { (mine.contains($0.id) ? 1 : 0) > (mine.contains($1.id) ? 1 : 0) }
+            .prefix(6).map { $0 }
+    }
+
+    var body: some View {
+        if !items.isEmpty {
+            Text("Similar exercises").font(.title3.bold()).padding(.top, 8)
+            Text("Use one of these if this machine is busy or missing.")
+                .font(.footnote).foregroundStyle(Theme.muted)
+            ForEach(items) { ex in
+                NavigationLink {
+                    ExerciseDetailView(exercise: ex)
+                } label: {
+                    HStack {
+                        ExerciseRow(exercise: ex)
+                        Spacer()
+                        if myMachines.contains(where: { $0.exerciseID == ex.id }) {
+                            Text("In My Gym").font(.caption2.bold()).foregroundStyle(Theme.success)
+                        }
+                    }
+                }
+                .buttonStyle(.plain)
+            }
         }
     }
 }

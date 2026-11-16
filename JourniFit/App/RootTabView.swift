@@ -27,7 +27,12 @@ struct RootTabView: View {
                 importer.pending = nil
             }
         }
-        .alert("Could not open routine", isPresented: $importer.showError) {
+        .sheet(item: $importer.pendingGym) { gym in
+            ImportGymView(gym: gym) {
+                importer.pendingGym = nil
+            }
+        }
+        .alert("Could not open this file or link", isPresented: $importer.showError) {
             Button("OK", role: .cancel) {}
         }
     }

@@ -27,6 +27,16 @@
 				<string>com.journipod.journifit.routine</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>journi Fit Gym</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.journipod.journifit.gym</string>
+			</array>
+		</dict>
 	</array>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<false/>
@@ -46,6 +56,23 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>journifit</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.journipod.journifit.gym</string>
+			<key>UTTypeDescription</key>
+			<string>journi Fit Gym</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.json</string>
+			</array>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>journigym</string>
 				</array>
 			</dict>
 		</dict>

@@ -43,4 +43,23 @@ final class ExerciseLibrary {
             return words.allSatisfy { haystack.contains($0) }
         }
     }
+
+    /// Exercises that work the same main muscle. Used as substitutes.
+    /// Same equipment type and machines ranked first.
+    func similar(to exercise: Exercise, limit: Int = 8) -> [Exercise] {
+        let target = Set(exercise.primaryMuscles)
+        return exercises
+            .filter { $0.id != exercise.id && !target.isDisjoint(with: $0.primaryMuscles) }
+            .sorted { score($0, exercise) > score($1, exercise) }
+            .prefix(limit)
+            .map { $0 }
+    }
+
+    private func score(_ candidate: Exercise, _ base: Exercise) -> Int {
+        var s = 0
+        if candidate.primaryMuscles == base.primaryMuscles { s += 4 }
+        if candidate.equipment == base.equipment { s += 2 }
+        if candidate.machine != nil { s += 1 }
+        return s
+    }
 }

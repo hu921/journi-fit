@@ -97,14 +97,17 @@ struct SharedRoutine: Codable, Identifiable, Transferable {
     }
 }
 
-/// Receives links and files opened from outside the app.
+/// Receives routine and gym links and files opened from outside the app.
 @Observable
 final class RoutineImporter {
     var pending: SharedRoutine?
+    var pendingGym: SharedGym?
     var showError = false
 
     func handle(url: URL) {
-        if let shared = SharedRoutine(link: url) ?? SharedRoutine(fileURL: url) {
+        if let gym = SharedGym(link: url) ?? SharedGym(fileURL: url) {
+            pendingGym = gym
+        } else if let shared = SharedRoutine(link: url) ?? SharedRoutine(fileURL: url) {
             pending = shared
         } else {
             showError = true

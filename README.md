@@ -8,8 +8,8 @@ App Store name: **journipod Fit: Workout**.
 No server. Data stays on the phone, with iCloud backup.
 
 - **Routines**: each exercise has a list of sets (weight and reps), add or remove sets, and a rest timer.
-- **Machine Finder**: search by machine, muscle, or equipment. How-to steps for each exercise.
-- **My Gym**: save your gym's machines with your own settings.
+- **Machine Finder**: search by machine, muscle, or equipment. How-to steps, photos, "Add to routine", and similar exercises as substitutes.
+- **My Gym**: name your gym and location. Save machines with your own settings and photo. Add custom machines the database lacks. Share the machine list with other members by link or `.journigym` file.
 - **Goals**: goal tracks (strength, weight loss, muscle, endurance) with progress logs.
 - **Diet notes**: optional, plain text.
 - **Share**: send a routine as a link (`journifit://`) or a `.journifit` file.

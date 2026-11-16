@@ -18,6 +18,7 @@ struct JourniFitApp: App {
             Routine.self,
             RoutineExercise.self,
             RoutineSet.self,
+            GymProfile.self,
             GymMachine.self,
             Goal.self,
             GoalEntry.self,
