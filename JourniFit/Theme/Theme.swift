@@ -1,9 +1,10 @@
 import SwiftUI
 
 /// All app colors live here.
-/// PLACEHOLDER: replace these hex values with the journi Diary palette.
+/// primary: journi Diary main color (#E87A4A).
+/// Other colors are placeholders until the rest of the palette is known.
 enum Theme {
-    static let primary    = Color(hex: 0x6C8EBF) // main brand color
+    static let primary    = Color(hex: 0xE87A4A) // journi Diary main color
     static let secondary  = Color(hex: 0xF2B880) // accents, highlights
     static let background = Color(hex: 0xFAF7F2) // screen background
     static let surface    = Color(hex: 0xFFFFFF) // cards
