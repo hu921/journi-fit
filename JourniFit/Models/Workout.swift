@@ -46,8 +46,15 @@ final class Workout {
                                      restSeconds: item.restSeconds)
             we.workout = workout
             context.insert(we)
-            for s in item.sortedSets {
-                let ws = WorkoutSet(order: s.order, weight: s.weight, reps: s.reps)
+            // Baseline: last time's weight and reps for this exercise, set by set.
+            let last = LastPerformance.sets(for: item.exerciseID, in: context) ?? []
+            for (i, s) in item.sortedSets.enumerated() {
+                let prev: LastPerformance.SetValues? = i < last.count ? Optional(last[i]) : last.last
+                let ws = WorkoutSet(order: s.order,
+                                    weight: prev?.weight ?? s.weight,
+                                    reps: prev?.reps ?? s.reps)
+                ws.previousWeight = prev?.weight
+                ws.previousReps = prev?.reps
                 ws.workoutExercise = we
                 context.insert(ws)
             }
@@ -84,12 +91,41 @@ final class WorkoutSet {
     var weight: Double = 0
     var reps: Int = 0
     var done: Bool = false
+    /// Last time's values for this set, shown as a reference.
+    var previousWeight: Double?
+    var previousReps: Int?
     var workoutExercise: WorkoutExercise?
 
     init(order: Int, weight: Double, reps: Int) {
         self.order = order
         self.weight = weight
         self.reps = reps
+    }
+}
+
+/// The most recent weight and reps a user did for an exercise.
+enum LastPerformance {
+    typealias SetValues = (weight: Double, reps: Int)
+
+    /// Completed sets from the latest finished workout that included this exercise.
+    static func sets(for exerciseID: String, in context: ModelContext) -> [SetValues]? {
+        let descriptor = FetchDescriptor<Workout>(
+            predicate: #Predicate { $0.endedAt != nil },
+            sortBy: [SortDescriptor(\.startedAt, order: .reverse)])
+        guard let workouts = try? context.fetch(descriptor) else { return nil }
+        for workout in workouts {
+            for item in workout.sortedExercises where item.exerciseID == exerciseID {
+                let done = item.sortedSets.filter(\.done)
+                if !done.isEmpty { return done.map { ($0.weight, $0.reps) } }
+            }
+        }
+        return nil
+    }
+
+    /// "135 × 8, 135 × 8, 125 × 10"
+    static func summary(for exerciseID: String, in context: ModelContext) -> String? {
+        guard let sets = sets(for: exerciseID, in: context) else { return nil }
+        return sets.map { "\($0.weight.formatted()) × \($0.reps)" }.joined(separator: ", ")
     }
 }
 

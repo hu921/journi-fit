@@ -64,13 +64,17 @@ struct AddToRoutineView: View {
 }
 
 extension Routine {
-    /// Adds an exercise at the end with 3 starting sets.
+    /// Adds an exercise at the end. Uses last time's sets (weight and reps)
+    /// as the starting point; otherwise 3 empty sets.
     func addExercise(_ exerciseID: String, in context: ModelContext) {
         let item = RoutineExercise(exerciseID: exerciseID, order: items?.count ?? 0)
         item.routine = self
         context.insert(item)
-        for i in 0..<3 {
-            let set = RoutineSet(order: i)
+        let last = LastPerformance.sets(for: exerciseID, in: context)
+        let blank: LastPerformance.SetValues = (weight: 0, reps: 10)
+        let values: [LastPerformance.SetValues] = last ?? Array(repeating: blank, count: 3)
+        for (i, v) in values.enumerated() {
+            let set = RoutineSet(order: i, weight: v.weight, reps: v.reps)
             set.routineExercise = item
             context.insert(set)
         }

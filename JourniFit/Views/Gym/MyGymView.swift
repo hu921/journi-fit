@@ -5,6 +5,13 @@ import PhotosUI
 /// The user's gym: its machines, with personal settings.
 /// Members can share a gym's machine list by file or link.
 struct MyGymView: View {
+    var body: some View {
+        NavigationStack { MyGymContent() }
+    }
+}
+
+/// My Gym screen without its own NavigationStack, so it can be pushed from More.
+struct MyGymContent: View {
     @Environment(\.modelContext) private var context
     @Environment(RoutineImporter.self) private var importer
     @Query(sort: \GymProfile.createdAt) private var profiles: [GymProfile]
@@ -16,7 +23,6 @@ struct MyGymView: View {
     private var profile: GymProfile? { profiles.first }
 
     var body: some View {
-        NavigationStack {
             List {
                 Section {
                     Button { showEditGym = true } label: {
@@ -79,7 +85,6 @@ struct MyGymView: View {
             .fileImporter(isPresented: $showImport, allowedContentTypes: [.journiFitGym]) { result in
                 if case .success(let url) = result { importer.handle(url: url) }
             }
-        }
     }
 }
 
@@ -189,6 +194,7 @@ private struct CustomMachineView: View {
                 }
             }
             .navigationTitle("Custom machine")
+            .keyboardDoneButton()
             .navigationBarTitleDisplayMode(.inline)
             .onChange(of: photoItem) { _, item in
                 Task { photo = try? await item?.loadTransferable(type: Data.self) }
@@ -270,6 +276,7 @@ private struct GymMachineEditor: View {
             }
         }
         .navigationTitle(machine.displayName)
+        .keyboardDoneButton()
         .navigationBarTitleDisplayMode(.inline)
         .onChange(of: photoItem) { _, item in
             Task { machine.photo = try? await item?.loadTransferable(type: Data.self) }

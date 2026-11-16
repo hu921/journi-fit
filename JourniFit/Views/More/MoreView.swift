@@ -4,11 +4,8 @@ struct MoreView: View {
     var body: some View {
         NavigationStack {
             List {
-                NavigationLink { GoalListContent() } label: {
-                    Label("Goals", systemImage: "target")
-                }
-                NavigationLink { MachineFinderContent() } label: {
-                    Label("Exercise & machine finder", systemImage: "magnifyingglass")
+                NavigationLink { MyGymContent() } label: {
+                    Label("My Gym", systemImage: "dumbbell")
                 }
                 NavigationLink { DietNotesView() } label: {
                     Label("Diet notes", systemImage: "fork.knife")

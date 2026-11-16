@@ -42,6 +42,25 @@ struct ProfileButton: View {
     }
 }
 
+/// Profile as a tab. Creates the profile on first open.
+struct ProfileTab: View {
+    @Environment(\.modelContext) private var context
+    @Query private var profiles: [UserProfile]
+
+    var body: some View {
+        NavigationStack {
+            Group {
+                if let profile = profiles.first {
+                    ProfileForm(profile: profile)
+                } else {
+                    ProgressView().onAppear { context.insert(UserProfile()) }
+                }
+            }
+            .navigationTitle("Profile")
+        }
+    }
+}
+
 private struct ProfileSheet: View {
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) private var dismiss
@@ -194,6 +213,7 @@ private struct ProfileForm: View {
             if isTyping { withAnimation { openWheel = nil } }
         }
         .scrollDismissesKeyboard(.interactively)
+        .keyboardDoneButton()
         .onChange(of: photoItem) { _, item in
             Task { profile.photo = try? await item?.loadTransferable(type: Data.self) }
         }

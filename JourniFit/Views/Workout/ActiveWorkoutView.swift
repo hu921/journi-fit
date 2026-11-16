@@ -44,6 +44,7 @@ struct ActiveWorkoutView: View {
                 }
             }
             .navigationTitle(workout.routineName.isEmpty ? "Workout" : workout.routineName)
+            .keyboardDoneButton()
             .navigationBarTitleDisplayMode(.inline)
             .safeAreaInset(edge: .bottom) {
                 if let restEndsAt {
@@ -71,9 +72,14 @@ struct ActiveWorkoutView: View {
                                              order: workout.exercises?.count ?? 0, restSeconds: 90)
                     we.workout = workout
                     context.insert(we)
-                    let ws = WorkoutSet(order: 0, weight: 0, reps: 10)
-                    ws.workoutExercise = we
-                    context.insert(ws)
+                    let last = LastPerformance.sets(for: exercise.id, in: context)
+                    let blank: [LastPerformance.SetValues] = [(weight: 0, reps: 10)]
+                    for (i, v) in (last ?? blank).enumerated() {
+                        let ws = WorkoutSet(order: i, weight: v.weight, reps: v.reps)
+                        if last != nil { ws.previousWeight = v.weight; ws.previousReps = v.reps }
+                        ws.workoutExercise = we
+                        context.insert(ws)
+                    }
                 }
             }
         }
@@ -100,7 +106,8 @@ private struct WorkoutExerciseSection: View {
     var body: some View {
         Section {
             HStack {
-                Text("SET").frame(width: 36, alignment: .leading)
+                Text("SET").frame(width: 32, alignment: .leading)
+                Text("LAST").frame(width: 70)
                 Text("WEIGHT").frame(maxWidth: .infinity)
                 Text("REPS").frame(maxWidth: .infinity)
                 Image(systemName: "checkmark").frame(width: 36)
@@ -150,7 +157,19 @@ private struct WorkoutSetRow: View {
 
     var body: some View {
         HStack {
-            Text("\(number)").font(.body.bold()).frame(width: 36, alignment: .leading)
+            Text("\(number)").font(.body.bold()).frame(width: 32, alignment: .leading)
+            Group {
+                if let w = set.previousWeight, let r = set.previousReps {
+                    Text("\(w.formatted()) × \(r)")
+                } else {
+                    Text("–")
+                }
+            }
+            .font(.caption)
+            .foregroundStyle(Theme.muted)
+            .lineLimit(1)
+            .minimumScaleFactor(0.7)
+            .frame(width: 70)
             TextField("0", value: $set.weight, format: .number)
                 .keyboardType(.decimalPad)
                 .multilineTextAlignment(.center)

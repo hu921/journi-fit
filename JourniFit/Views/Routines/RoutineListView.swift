@@ -20,7 +20,6 @@ struct RoutineListView: View {
                         .font(.largeTitle.bold())
                         .foregroundStyle(Theme.text)
                     Spacer()
-                    ProfileButton()
                 }
                 .padding(.horizontal)
                 .padding(.top, 8)

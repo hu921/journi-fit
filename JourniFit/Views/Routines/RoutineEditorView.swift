@@ -37,6 +37,7 @@ struct RoutineEditorView: View {
             }
         }
         .navigationTitle(routine.name.isEmpty ? "Routine" : routine.name)
+        .keyboardDoneButton()
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) { ShareRoutineMenu(routine: routine) }
@@ -74,6 +75,11 @@ private struct ExerciseSetsSection: View {
 
     var body: some View {
         Section {
+            if let last = LastPerformance.summary(for: item.exerciseID, in: context) {
+                Label("Last time: \(last)", systemImage: "clock.arrow.circlepath")
+                    .font(.caption)
+                    .foregroundStyle(Theme.muted)
+            }
             // Rest time for this exercise
             Picker(selection: $item.restSeconds) {
                 ForEach(Array(stride(from: 0, through: 300, by: 15)), id: \.self) { s in

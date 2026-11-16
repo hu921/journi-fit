@@ -14,13 +14,14 @@ struct RootTabView: View {
                 .tabItem { Label("Routines", systemImage: "list.bullet.clipboard") }
             WorkoutHistoryView()
                 .tabItem { Label("History", systemImage: "calendar") }
-            MyGymView()
-                .tabItem { Label("My Gym", systemImage: "dumbbell") }
+            ProfileTab()
+                .tabItem { Label("Profile", systemImage: "person.crop.circle") }
             StreakView()
                 .tabItem { Label("Streak", systemImage: "flame") }
             MoreView()
                 .tabItem { Label("More", systemImage: "ellipsis.circle") }
         }
+        .dismissKeyboardOnTap()
         .fullScreenCover(item: Binding(get: { activeWorkouts.first }, set: { _ in })) { workout in
             ActiveWorkoutView(workout: workout)
         }
