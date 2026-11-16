@@ -13,7 +13,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A20000000000000000000001 /* JourniFit */ = {isa = PBXFileSystemSynchronizedRootGroup; path = JourniFit; sourceTree = "<group>"; };
+		A20000000000000000000001 /* JourniFit */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = JourniFit;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +187,7 @@
 				CODE_SIGN_ENTITLEMENTS = Config/JourniFit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JRUQYNVARF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Config/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "journi Fit";
@@ -216,7 +220,7 @@
 				CODE_SIGN_ENTITLEMENTS = Config/JourniFit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JRUQYNVARF;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Config/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "journi Fit";
