@@ -25,7 +25,7 @@ iCloud backup needs the container `iCloud.com.journipod.journifit` in your Apple
 ## Colors
 
 All colors are in `JourniFit/Theme/Theme.swift`.
-The main color is #E87A4A from journi Diary. The rest are placeholders.
+The main color is #E87A4A, the journi Diary color. The rest are neutral supporting colors.
 
 ## Exercise data
 
