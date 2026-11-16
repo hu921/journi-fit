@@ -17,6 +17,16 @@ final class KeyboardDismisser: NSObject, UIGestureRecognizerDelegate {
         tap.delegate = self
         window.addGestureRecognizer(tap)
         self.window = window
+
+        // Number fields: select the current value when editing starts,
+        // so typing replaces it (0 or last weight) instead of adding to it.
+        NotificationCenter.default.addObserver(
+            forName: UITextField.textDidBeginEditingNotification, object: nil, queue: .main
+        ) { note in
+            guard let field = note.object as? UITextField,
+                  [.decimalPad, .numberPad].contains(field.keyboardType) else { return }
+            DispatchQueue.main.async { field.selectAll(nil) }
+        }
     }
 
     @objc private func tapped() {

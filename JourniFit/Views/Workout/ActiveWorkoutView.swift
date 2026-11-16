@@ -102,9 +102,16 @@ private struct WorkoutExerciseSection: View {
     @Environment(\.modelContext) private var context
     @Bindable var item: WorkoutExercise
     let onSetDone: (Int) -> Void
+    @State private var collapsed = false
+    @State private var showReplace = false
 
     var body: some View {
         Section {
+            if collapsed {
+                let done = item.sortedSets.filter(\.done).count
+                Text("\(done) of \(item.sortedSets.count) sets done")
+                    .font(.subheadline).foregroundStyle(Theme.muted)
+            } else {
             HStack {
                 Text("SET").frame(width: 32, alignment: .leading)
                 Text("LAST").frame(width: 70)
@@ -134,17 +141,58 @@ private struct WorkoutExerciseSection: View {
             } label: {
                 Label("Add set", systemImage: "plus")
             }
+            }
         } header: {
             HStack(spacing: 10) {
-                if let exercise = item.exercise {
-                    ExerciseImage(exercise: exercise)
-                        .frame(width: 36, height: 36)
-                        .clipShape(Circle())
+                // Tap the title to collapse or expand this exercise.
+                Button {
+                    withAnimation { collapsed.toggle() }
+                } label: {
+                    HStack(spacing: 10) {
+                        if let exercise = item.exercise {
+                            ExerciseImage(exercise: exercise)
+                                .frame(width: 36, height: 36)
+                                .clipShape(Circle())
+                        }
+                        Text(item.exercise?.name ?? "Exercise")
+                            .font(.headline)
+                            .foregroundStyle(Theme.text)
+                            .textCase(nil)
+                            .multilineTextAlignment(.leading)
+                        Image(systemName: collapsed ? "chevron.down" : "chevron.up")
+                            .font(.caption.bold())
+                            .foregroundStyle(Theme.muted)
+                    }
                 }
-                Text(item.exercise?.name ?? "Exercise")
-                    .font(.headline)
-                    .foregroundStyle(Theme.text)
-                    .textCase(nil)
+                .buttonStyle(.plain)
+                Spacer()
+                Menu {
+                    Button("Replace exercise", systemImage: "arrow.triangle.2.circlepath") { showReplace = true }
+                    Button("Remove exercise", systemImage: "trash", role: .destructive) {
+                        context.delete(item)
+                    }
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                }
+            }
+            .sheet(isPresented: $showReplace) {
+                ExercisePickerView { exercise in replace(with: exercise.id) }
+            }
+        }
+    }
+
+    /// Swap in another exercise mid-workout. Keeps the sets; fills weight
+    /// and reps from last time for the new exercise when there is history.
+    private func replace(with exerciseID: String) {
+        item.exerciseID = exerciseID
+        let last = LastPerformance.sets(for: exerciseID, in: context)
+        for (i, set) in item.sortedSets.enumerated() {
+            let v: LastPerformance.SetValues? = last.map { i < $0.count ? $0[i] : $0[$0.count - 1] }
+            set.previousWeight = v?.weight
+            set.previousReps = v?.reps
+            if let v, !set.done {
+                set.weight = v.weight
+                set.reps = v.reps
             }
         }
     }
