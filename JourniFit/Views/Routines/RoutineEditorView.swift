@@ -37,15 +37,7 @@ struct RoutineEditorView: View {
         }
         .sheet(isPresented: $showPicker) {
             ExercisePickerView { exercise in
-                let item = RoutineExercise(exerciseID: exercise.id, order: routine.items?.count ?? 0)
-                item.routine = routine
-                context.insert(item)
-                // Start with 3 sets.
-                for i in 0..<3 {
-                    let set = RoutineSet(order: i)
-                    set.routineExercise = item
-                    context.insert(set)
-                }
+                routine.addExercise(exercise.id, in: context)
             }
         }
     }

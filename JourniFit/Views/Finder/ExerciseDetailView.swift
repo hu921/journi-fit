@@ -5,6 +5,8 @@ struct ExerciseDetailView: View {
     @Environment(\.modelContext) private var context
     @Query private var myMachines: [GymMachine]
     let exercise: Exercise
+    @State private var showAddToRoutine = false
+    @State private var addedTo: String?
 
     private var isInMyGym: Bool {
         myMachines.contains { $0.exerciseID == exercise.id }
@@ -52,16 +54,38 @@ struct ExerciseDetailView: View {
         .background(Theme.background)
         .navigationTitle(exercise.name)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+        .safeAreaInset(edge: .bottom) {
+            HStack(spacing: 12) {
+                Button {
+                    showAddToRoutine = true
+                } label: {
+                    Label("Add to routine", systemImage: "plus.circle.fill")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+
                 Button {
                     if !isInMyGym { context.insert(GymMachine(exerciseID: exercise.id)) }
                 } label: {
-                    Label(isInMyGym ? "In My Gym" : "Add to My Gym",
-                          systemImage: isInMyGym ? "checkmark.circle.fill" : "plus.circle")
+                    Label(isInMyGym ? "In My Gym" : "My Gym",
+                          systemImage: isInMyGym ? "checkmark.circle.fill" : "dumbbell")
+                        .frame(maxWidth: .infinity)
                 }
+                .buttonStyle(.bordered)
                 .disabled(isInMyGym)
             }
+            .controlSize(.large)
+            .padding()
+            .background(.bar)
+        }
+        .sheet(isPresented: $showAddToRoutine) {
+            AddToRoutineView(exercise: exercise) { routine in
+                addedTo = routine.name
+            }
+        }
+        .alert("Added to \(addedTo ?? "")", isPresented: Binding(
+            get: { addedTo != nil }, set: { if !$0 { addedTo = nil } })) {
+            Button("OK", role: .cancel) {}
         }
     }
 }
