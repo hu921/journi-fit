@@ -2,13 +2,13 @@ import SwiftUI
 import SwiftData
 
 /// Workout history as a month calendar. Days with a workout are marked.
-/// Tap a day to see its workouts.
+/// Tap a marked day to open that day's workout list.
 struct WorkoutHistoryView: View {
     @Environment(\.modelContext) private var context
     @Query(filter: #Predicate<Workout> { $0.endedAt != nil }, sort: \Workout.startedAt, order: .reverse)
     private var workouts: [Workout]
     @State private var month = Calendar.current.dateInterval(of: .month, for: .now)!.start
-    @State private var selectedDay = Calendar.current.startOfDay(for: .now)
+    @State private var openDay: Date?
 
     private let calendar = Calendar.current
 
@@ -20,14 +20,14 @@ struct WorkoutHistoryView: View {
         workouts.filter { calendar.isDate($0.startedAt, equalTo: month, toGranularity: .month) }
     }
 
-    private var dayWorkouts: [Workout] { byDay[selectedDay] ?? [] }
-
     var body: some View {
         NavigationStack {
             List {
                 Section {
                     MonthHeader(month: $month)
-                    MonthGrid(month: month, marked: Set(byDay.keys), selected: $selectedDay)
+                    MonthGrid(month: month, marked: Set(byDay.keys)) { day in
+                        if byDay[day] != nil { openDay = day }
+                    }
                         .padding(.vertical, 4)
                 }
 
@@ -40,24 +40,11 @@ struct WorkoutHistoryView: View {
                     }
                 }
 
-                Section(selectedDay.formatted(date: .complete, time: .omitted)) {
-                    if dayWorkouts.isEmpty {
-                        Text("No workout").foregroundStyle(Theme.muted)
-                    }
-                    ForEach(dayWorkouts) { w in
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(w.routineName.isEmpty ? "Workout" : w.routineName).font(.headline)
-                            Text("\(w.startedAt.formatted(date: .omitted, time: .shortened)) · \(w.duration.clockString) · \(w.completedSets) sets")
-                                .font(.caption).foregroundStyle(Theme.muted)
-                        }
-                    }
-                    .onDelete { offsets in
-                        let list = dayWorkouts
-                        offsets.map { list[$0] }.forEach(context.delete)
-                    }
-                }
             }
             .navigationTitle("History")
+            .navigationDestination(item: $openDay) { day in
+                DayWorkoutsView(day: day)
+            }
         }
     }
 }
@@ -84,7 +71,7 @@ private struct MonthHeader: View {
 private struct MonthGrid: View {
     let month: Date
     let marked: Set<Date>
-    @Binding var selected: Date
+    let onTap: (Date) -> Void
 
     private let calendar = Calendar.current
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 4), count: 7)
@@ -114,9 +101,8 @@ private struct MonthGrid: View {
                 if let day {
                     DayCell(day: day,
                             hasWorkout: marked.contains(day),
-                            isSelected: calendar.isDate(day, inSameDayAs: selected),
                             isToday: calendar.isDateInToday(day))
-                        .onTapGesture { selected = day }
+                        .onTapGesture { onTap(day) }
                 } else {
                     Color.clear.frame(height: 40)
                 }
@@ -128,28 +114,25 @@ private struct MonthGrid: View {
 private struct DayCell: View {
     let day: Date
     let hasWorkout: Bool
-    let isSelected: Bool
     let isToday: Bool
 
     var body: some View {
         VStack(spacing: 3) {
             Text("\(Calendar.current.component(.day, from: day))")
                 .font(.callout.weight(isToday ? .bold : .regular))
-                .foregroundStyle(isSelected ? .white : (hasWorkout ? Theme.primary : Theme.text))
+                .foregroundStyle(hasWorkout ? .white : (isToday ? Theme.primary : Theme.text))
                 .frame(width: 32, height: 32)
                 .background {
-                    if isSelected {
+                    if hasWorkout {
                         Circle().fill(Theme.primary)
-                    } else if hasWorkout {
-                        Circle().fill(Theme.primary.opacity(0.15))
+                    } else if isToday {
+                        Circle().stroke(Theme.primary, lineWidth: 1.5)
                     }
                 }
-            Circle()
-                .fill(hasWorkout ? Theme.primary : .clear)
-                .frame(width: 5, height: 5)
         }
         .frame(height: 40)
         .contentShape(Rectangle())
+        .accessibilityAddTraits(hasWorkout ? .isButton : [])
     }
 }
 
