@@ -16,8 +16,8 @@ struct RootTabView: View {
                 .tabItem { Label("History", systemImage: "calendar") }
             MyGymView()
                 .tabItem { Label("My Gym", systemImage: "dumbbell") }
-            GoalListView()
-                .tabItem { Label("Goals", systemImage: "target") }
+            StreakView()
+                .tabItem { Label("Streak", systemImage: "flame") }
             MoreView()
                 .tabItem { Label("More", systemImage: "ellipsis.circle") }
         }

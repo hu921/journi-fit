@@ -2,34 +2,39 @@ import SwiftUI
 import SwiftData
 
 struct GoalListView: View {
+    var body: some View {
+        NavigationStack { GoalListContent() }
+    }
+}
+
+/// Goals screen without its own NavigationStack, so it can be pushed from More.
+struct GoalListContent: View {
     @Environment(\.modelContext) private var context
     @Query(sort: \Goal.createdAt, order: .reverse) private var goals: [Goal]
     @State private var showNew = false
 
     var body: some View {
-        NavigationStack {
-            Group {
-                if goals.isEmpty {
-                    ContentUnavailableView("No goals yet",
-                                           systemImage: "target",
-                                           description: Text("Pick a goal track to start."))
-                } else {
-                    List {
-                        ForEach(goals) { goal in
-                            NavigationLink { GoalDetailView(goal: goal) } label: { GoalRow(goal: goal) }
-                        }
-                        .onDelete { offsets in
-                            offsets.map { goals[$0] }.forEach(context.delete)
-                        }
+        Group {
+            if goals.isEmpty {
+                ContentUnavailableView("No goals yet",
+                                       systemImage: "target",
+                                       description: Text("Pick a goal track to start."))
+            } else {
+                List {
+                    ForEach(goals) { goal in
+                        NavigationLink { GoalDetailView(goal: goal) } label: { GoalRow(goal: goal) }
+                    }
+                    .onDelete { offsets in
+                        offsets.map { goals[$0] }.forEach(context.delete)
                     }
                 }
             }
-            .navigationTitle("Goals")
-            .toolbar {
-                Button { showNew = true } label: { Label("New goal", systemImage: "plus") }
-            }
-            .sheet(isPresented: $showNew) { NewGoalView() }
         }
+        .navigationTitle("Goals")
+        .toolbar {
+            Button { showNew = true } label: { Label("New goal", systemImage: "plus") }
+        }
+        .sheet(isPresented: $showNew) { NewGoalView() }
     }
 }
 
