@@ -5,7 +5,7 @@ import Charts
 /// Streak page in three parts:
 /// 1. Week streak and this week's progress, side by side.
 /// 2. A Sunday–Saturday chart of hours or volume. Swipe or tap < > to change week.
-/// 3. Breakthroughs: exercises that beat last time, newest first, all time.
+/// 3. Breakthroughs: exercises that beat their all-time best, newest first.
 struct StreakView: View {
     @Query(filter: #Predicate<Workout> { $0.endedAt != nil }, sort: \Workout.startedAt)
     private var workouts: [Workout]
@@ -278,8 +278,9 @@ private struct WeekChartCard: View {
 
 // MARK: - Part 3
 
-/// An exercise that beat last time: more weight with the same or more reps,
-/// or more reps at the same weight. Compares the top set of each workout.
+/// An exercise that beat its all-time best: more weight with the same or more reps,
+/// or more reps at the same weight. Compares the top set of each workout
+/// with the best top set from all earlier workouts.
 struct Breakthrough: Identifiable {
     let exerciseID: String
     let date: Date
@@ -297,21 +298,25 @@ struct Breakthrough: Identifiable {
 
     /// Breakthroughs in the interval, one per exercise (the latest).
     static func list(in week: DateInterval, workouts: [Workout]) -> [Breakthrough] {
-        var last: [String: (weight: Double, reps: Int)] = [:] // running "last time"
+        var best: [String: (weight: Double, reps: Int)] = [:] // all-time best so far
         var found: [String: Breakthrough] = [:]
         for w in workouts.sorted(by: { $0.startedAt < $1.startedAt }) {
             guard w.startedAt < week.end else { break }
             for item in w.sortedExercises {
                 guard let top = topSet(item) else { continue }
-                if week.contains(w.startedAt), let prev = last[item.exerciseID] {
-                    let heavier = top.weight > prev.weight && top.reps >= prev.reps
-                    let moreReps = top.weight == prev.weight && top.reps > prev.reps
-                    if heavier || moreReps {
+                guard let prev = best[item.exerciseID] else {
+                    best[item.exerciseID] = top // first time: sets the record
+                    continue
+                }
+                let heavier = top.weight > prev.weight && top.reps >= prev.reps
+                let moreReps = top.weight == prev.weight && top.reps > prev.reps
+                if heavier || moreReps {
+                    best[item.exerciseID] = top
+                    if week.contains(w.startedAt) {
                         found[item.exerciseID] = Breakthrough(exerciseID: item.exerciseID, date: w.startedAt,
                                                               before: prev, after: top)
                     }
                 }
-                last[item.exerciseID] = top
             }
         }
         return found.values.sorted { $0.date > $1.date }
@@ -336,7 +341,7 @@ private struct BreakthroughsCard: View {
                 }
 
                 if items.isEmpty {
-                    Text("No breakthroughs yet. Add a little weight or one more rep to beat last time.")
+                    Text("No breakthroughs yet. Add a little weight or one more rep to beat your best.")
                         .font(.subheadline)
                         .foregroundStyle(Theme.muted)
                 } else {
