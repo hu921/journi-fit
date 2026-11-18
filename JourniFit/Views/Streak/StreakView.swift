@@ -348,18 +348,19 @@ private struct BreakthroughsCard: View {
                     ForEach(items) { b in
                         let ex = ExerciseLibrary.shared.exercise(id: b.exerciseID)
                         HStack(spacing: 12) {
-                            if let ex {
-                                ExerciseImage(exercise: ex).frame(width: 40, height: 40).clipShape(Circle())
-                            }
+                            Image(systemName: "crown.fill")
+                                .font(.title3)
+                                .foregroundStyle(Theme.primary)
+                                .frame(width: 28)
                             VStack(alignment: .leading, spacing: 3) {
                                 Text(ex?.name ?? "Exercise").font(.subheadline.bold()).foregroundStyle(Theme.text)
-                                Text("\(w(b.before.weight)) × \(b.before.reps)  →  \(w(b.after.weight)) × \(b.after.reps)")
-                                    .font(.caption).foregroundStyle(Theme.muted)
+                                Text("\(w(b.after.weight)) × \(b.after.reps) \(b.after.reps == 1 ? "rep" : "reps")")
+                                    .font(.headline).foregroundStyle(Theme.text)
                                 Text(b.date.formatted(.dateTime.weekday(.wide).month(.abbreviated).day()))
                                     .font(.caption2).foregroundStyle(Theme.muted)
                             }
                             Spacer()
-                            Text(badge(b))
+                            Text(change(b))
                                 .font(.caption.bold())
                                 .padding(.horizontal, 8)
                                 .padding(.vertical, 4)
@@ -372,11 +373,12 @@ private struct BreakthroughsCard: View {
         }
     }
 
-    private func badge(_ b: Breakthrough) -> String {
+    /// Only the value that went up: "65 → 70 lbs" or "5 → 6 reps".
+    private func change(_ b: Breakthrough) -> String {
         if b.after.weight > b.before.weight {
-            return "+\((b.after.weight - b.before.weight).formatted()) \(unit)"
+            return "\(b.before.weight.formatted()) → \(w(b.after.weight))"
         }
-        let r = b.after.reps - b.before.reps
-        return "+\(r) \(r == 1 ? "rep" : "reps")"
+        return "\(b.before.reps) → \(b.after.reps) reps"
     }
+}
 }
