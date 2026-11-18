@@ -34,7 +34,7 @@ struct RoutineListView: View {
                 if routines.isEmpty {
                     ContentUnavailableView("No routines yet",
                                            systemImage: "list.bullet.clipboard",
-                                           description: Text("Tap New Routine to build your first one."))
+                                           description: Text("Tap + to build your first one."))
                 } else {
                     ScrollView {
                         LazyVStack(spacing: 16) {
@@ -62,14 +62,14 @@ struct RoutineListView: View {
             // Easy-to-reach add button, bottom right above the tab bar.
             .overlay(alignment: .bottomTrailing) {
                 Button { showNew = true } label: {
-                    Label("New Routine", systemImage: "plus")
-                        .font(.headline)
-                        .padding(.horizontal, 18)
-                        .padding(.vertical, 14)
+                    Image(systemName: "plus")
+                        .font(.title2.bold())
+                        .frame(width: 56, height: 56)
                         .foregroundStyle(.white)
-                        .background(Theme.primary, in: Capsule())
+                        .background(Theme.primary, in: Circle())
                         .shadow(color: Theme.primary.opacity(0.35), radius: 8, y: 4)
                 }
+                .accessibilityLabel("New Routine")
                 .padding()
             }
             .sheet(isPresented: $showNew) {

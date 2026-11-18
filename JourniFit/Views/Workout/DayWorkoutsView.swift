@@ -66,6 +66,12 @@ struct WorkoutDetailView: View {
                 }
             }
 
+            if !editing && !MuscleMapView.scores(for: workout).isEmpty {
+                Section("Muscles worked") {
+                    MuscleMapView(workout: workout)
+                }
+            }
+
             ForEach(workout.sortedExercises) { item in
                 Section {
                     if editing {
