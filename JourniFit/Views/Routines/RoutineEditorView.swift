@@ -6,26 +6,27 @@ struct RoutineEditorView: View {
     @Environment(\.modelContext) private var context
     @Bindable var routine: Routine
     @State private var showPicker = false
+    @State private var showReorder = false
 
     var body: some View {
         List {
+            Section {
+                TextField("Routine name", text: $routine.name)
+                    .font(.title3.bold())
+                TextField("Notes", text: $routine.notes, axis: .vertical)
+            }
+
             Section {
                 StartRoutineButton(routine: routine)
                     .listRowInsets(EdgeInsets())
                     .listRowBackground(Color.clear)
             }
 
-            Section {
-                TextField("Routine name", text: $routine.name)
-                TextField("Notes", text: $routine.notes, axis: .vertical)
-            }
-
             ForEach(routine.sortedItems) { item in
                 ExerciseSetsSection(
                     item: item,
-                    canMoveUp: item.order > 0,
-                    canMoveDown: item.order < routine.sortedItems.count - 1,
-                    onMove: { move(item, by: $0) },
+                    canReorder: routine.sortedItems.count > 1,
+                    onReorder: { showReorder = true },
                     onRemove: { remove(item) }
                 )
             }
@@ -33,6 +34,11 @@ struct RoutineEditorView: View {
             Section {
                 Button { showPicker = true } label: {
                     Label("Add exercise", systemImage: "plus.circle.fill")
+                }
+                if routine.sortedItems.count > 1 {
+                    Button { showReorder = true } label: {
+                        Label("Change order", systemImage: "arrow.up.arrow.down")
+                    }
                 }
             }
         }
@@ -47,15 +53,9 @@ struct RoutineEditorView: View {
                 routine.addExercise(exercise.id, in: context)
             }
         }
-    }
-
-    private func move(_ item: RoutineExercise, by offset: Int) {
-        var items = routine.sortedItems
-        guard let from = items.firstIndex(of: item) else { return }
-        let to = from + offset
-        guard items.indices.contains(to) else { return }
-        items.swapAt(from, to)
-        for (i, it) in items.enumerated() { it.order = i }
+        .sheet(isPresented: $showReorder) {
+            ReorderExercisesSheet(routine: routine)
+        }
     }
 
     private func remove(_ item: RoutineExercise) {
@@ -68,9 +68,8 @@ struct RoutineEditorView: View {
 private struct ExerciseSetsSection: View {
     @Environment(\.modelContext) private var context
     @Bindable var item: RoutineExercise
-    let canMoveUp: Bool
-    let canMoveDown: Bool
-    let onMove: (Int) -> Void
+    let canReorder: Bool
+    let onReorder: () -> Void
     let onRemove: () -> Void
     @State private var collapsed = false
     @State private var showReplace = false
@@ -132,8 +131,8 @@ private struct ExerciseSetsSection: View {
                 Spacer()
                 Menu {
                     Button("Replace exercise", systemImage: "arrow.triangle.2.circlepath") { showReplace = true }
-                    Button("Move up", systemImage: "arrow.up") { onMove(-1) }.disabled(!canMoveUp)
-                    Button("Move down", systemImage: "arrow.down") { onMove(1) }.disabled(!canMoveDown)
+                    Button("Change order", systemImage: "arrow.up.arrow.down", action: onReorder)
+                        .disabled(!canReorder)
                     Button("Remove exercise", systemImage: "trash", role: .destructive, action: onRemove)
                 } label: {
                     Image(systemName: "ellipsis.circle")
@@ -218,5 +217,61 @@ private struct ShareRoutineMenu: View {
         } label: {
             Label("Share", systemImage: "square.and.arrow.up")
         }
+    }
+}
+
+/// Drag exercises into a new order. Each row is compact so the whole routine fits.
+private struct ReorderExercisesSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    let routine: Routine
+    @State private var items: [RoutineExercise] = []
+
+    var body: some View {
+        NavigationStack {
+            List {
+                Section {
+                    ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
+                        HStack(spacing: 12) {
+                            Text("\(index + 1)")
+                                .font(.caption.bold())
+                                .foregroundStyle(.white)
+                                .frame(width: 24, height: 24)
+                                .background(Theme.primary, in: Circle())
+                            if let exercise = item.exercise {
+                                ExerciseImage(exercise: exercise)
+                                    .frame(width: 36, height: 36)
+                                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                            }
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(item.exercise?.name ?? "Unknown exercise")
+                                    .font(.body)
+                                    .foregroundStyle(Theme.text)
+                                let count = item.sortedSets.count
+                                Text("\(count) \(count == 1 ? "set" : "sets")")
+                                    .font(.caption)
+                                    .foregroundStyle(Theme.muted)
+                            }
+                        }
+                    }
+                    .onMove { from, to in items.move(fromOffsets: from, toOffset: to) }
+                } footer: {
+                    Text("Hold the handle on the right and drag to change the order.")
+                }
+            }
+            .environment(\.editMode, .constant(.active))
+            .navigationTitle("Change order")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") {
+                        for (i, item) in items.enumerated() { item.order = i }
+                        dismiss()
+                    }
+                    .bold()
+                }
+            }
+        }
+        .onAppear { items = routine.sortedItems }
     }
 }
