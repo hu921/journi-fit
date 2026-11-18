@@ -8,11 +8,11 @@ struct RoutineListView: View {
     @Query(filter: #Predicate<Workout> { $0.endedAt != nil }, sort: \Workout.startedAt, order: .reverse)
     private var finished: [Workout]
     @State private var showNew = false
-    @State private var newName = ""
+    @State private var path: [Routine] = []
     @State private var toDelete: Routine?
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             VStack(alignment: .leading, spacing: 0) {
                 // App title and profile icon on one line.
                 HStack(alignment: .center) {
@@ -72,13 +72,11 @@ struct RoutineListView: View {
                 }
                 .padding()
             }
-            .alert("New routine", isPresented: $showNew) {
-                TextField("Name", text: $newName)
-                Button("Cancel", role: .cancel) { newName = "" }
-                Button("Create") {
-                    let trimmed = newName.trimmingCharacters(in: .whitespaces)
-                    context.insert(Routine(name: trimmed.isEmpty ? "New routine" : trimmed))
-                    newName = ""
+            .sheet(isPresented: $showNew) {
+                NewRoutineSheet { name in
+                    let routine = Routine(name: name)
+                    context.insert(routine)
+                    path.append(routine) // open it so exercises can be added right away
                 }
             }
             .confirmationDialog("Delete \(toDelete?.name ?? "routine")?",
@@ -90,6 +88,63 @@ struct RoutineListView: View {
                 }
             }
         }
+    }
+}
+
+/// Name a new routine. One tap on Create saves, even with the keyboard open.
+/// (A system alert needed two taps: the first only closed the keyboard.)
+private struct NewRoutineSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @State private var name = ""
+    @FocusState private var focused: Bool
+    let onCreate: (String) -> Void
+
+    var body: some View {
+        VStack(spacing: 16) {
+            Text("New routine")
+                .font(.headline)
+                .foregroundStyle(Theme.text)
+
+            TextField("Routine name, e.g. Push Day", text: $name)
+                .focused($focused)
+                .submitLabel(.done)
+                .onSubmit(create)
+                .padding(12)
+                .background(Theme.surface, in: RoundedRectangle(cornerRadius: 12))
+                .overlay(RoundedRectangle(cornerRadius: 12).stroke(Theme.muted.opacity(0.3)))
+
+            HStack(spacing: 12) {
+                Button { dismiss() } label: {
+                    Text("Cancel")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .foregroundStyle(Theme.text)
+                        .background(Theme.muted.opacity(0.15), in: Capsule())
+                }
+                Button(action: create) {
+                    Text("Create")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 14)
+                        .foregroundStyle(.white)
+                        .background(Theme.primary, in: Capsule())
+                }
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(20)
+        .frame(maxHeight: .infinity, alignment: .top)
+        .background(Theme.background)
+        .presentationDetents([.height(220)])
+        .presentationDragIndicator(.visible)
+        .onAppear { focused = true }
+    }
+
+    private func create() {
+        let trimmed = name.trimmingCharacters(in: .whitespaces)
+        onCreate(trimmed.isEmpty ? "New routine" : trimmed)
+        dismiss()
     }
 }
 
