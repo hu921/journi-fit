@@ -86,13 +86,7 @@ private struct ExerciseSetsSection: View {
                     .foregroundStyle(Theme.muted)
             }
             // Rest time for this exercise
-            Picker(selection: $item.restSeconds) {
-                ForEach(Array(stride(from: 0, through: 300, by: 15)), id: \.self) { s in
-                    Text(s == 0 ? "Off" : Self.format(s)).tag(s)
-                }
-            } label: {
-                Label("Rest", systemImage: "timer").foregroundStyle(Theme.primary)
-            }
+            RestPicker(seconds: $item.restSeconds)
 
             // Column titles
             HStack {
@@ -187,11 +181,6 @@ private struct ExerciseSetsSection: View {
         }
     }
 
-    static func format(_ seconds: Int) -> String {
-        let m = seconds / 60, s = seconds % 60
-        if m == 0 { return "\(s)s" }
-        return s == 0 ? "\(m)min" : "\(m)min \(s)s"
-    }
 }
 
 private struct SetRow: View {

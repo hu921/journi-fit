@@ -143,3 +143,37 @@ extension TimeInterval {
         return t >= 60 ? "\(t / 60)h \(t % 60)m" : "\(t)m"
     }
 }
+
+// MARK: - Updating the routine after a workout
+
+extension Workout {
+    /// The routine this workout was started from, if it still exists.
+    func sourceRoutine(in context: ModelContext) -> Routine? {
+        guard let created = routineCreatedAt else { return nil }
+        let descriptor = FetchDescriptor<Routine>(predicate: #Predicate { $0.createdAt == created })
+        return try? context.fetch(descriptor).first
+    }
+
+    /// True when exercises were added, removed, replaced or reordered, or the
+    /// number of sets or the rest time changed. Weight and reps alone do not count.
+    func changedPlan(comparedTo routine: Routine) -> Bool {
+        let mine = sortedExercises.map { "\($0.exerciseID)|\($0.sortedSets.count)|\($0.restSeconds)" }
+        let theirs = routine.sortedItems.map { "\($0.exerciseID)|\($0.sortedSets.count)|\($0.restSeconds)" }
+        return mine != theirs
+    }
+
+    /// Makes the routine match this workout: exercises, order, sets (weight and reps), rest.
+    func updateRoutine(_ routine: Routine, in context: ModelContext) {
+        for item in routine.items ?? [] { context.delete(item) }
+        for (i, we) in sortedExercises.enumerated() {
+            let item = RoutineExercise(exerciseID: we.exerciseID, order: i, restSeconds: we.restSeconds)
+            item.routine = routine
+            context.insert(item)
+            for (j, ws) in we.sortedSets.enumerated() {
+                let set = RoutineSet(order: j, weight: ws.weight, reps: ws.reps)
+                set.routineExercise = item
+                context.insert(set)
+            }
+        }
+    }
+}

@@ -34,27 +34,69 @@ struct DayWorkoutsView: View {
 }
 
 /// A finished workout: time, totals, and each exercise's sets.
+/// Tap Edit to fix mistakes: start and end time, weight, reps, done, or remove a set.
 struct WorkoutDetailView: View {
-    let workout: Workout
+    @Environment(\.modelContext) private var context
+    @Bindable var workout: Workout
+    @State private var editing = false
+
+    private var endedAt: Binding<Date> {
+        Binding(get: { workout.endedAt ?? workout.startedAt },
+                set: { workout.endedAt = max($0, workout.startedAt) })
+    }
 
     var body: some View {
         List {
             Section {
-                LabeledContent("Started", value: workout.startedAt.formatted(date: .omitted, time: .shortened))
+                if editing {
+                    DatePicker("Started", selection: $workout.startedAt)
+                    DatePicker("Finished", selection: endedAt, in: workout.startedAt...)
+                } else {
+                    LabeledContent("Started", value: workout.startedAt.formatted(date: .omitted, time: .shortened))
+                    if let end = workout.endedAt {
+                        LabeledContent("Finished", value: end.formatted(date: .omitted, time: .shortened))
+                    }
+                }
                 LabeledContent("Total time", value: workout.duration.clockString)
                 LabeledContent("Sets done", value: "\(workout.completedSets)")
                 LabeledContent("Volume", value: workout.volume.formatted(.number.precision(.fractionLength(0))))
+            } footer: {
+                if editing {
+                    Text("Forgot to tap Finish? Change Finished to when you really stopped.")
+                }
             }
+
             ForEach(workout.sortedExercises) { item in
                 Section {
-                    ForEach(Array(item.sortedSets.enumerated()), id: \.element.id) { i, set in
+                    if editing {
                         HStack {
-                            Text("\(i + 1)").bold().frame(width: 30, alignment: .leading)
-                            Text("\(set.weight.formatted()) × \(set.reps)")
-                            Spacer()
-                            Image(systemName: set.done ? "checkmark.circle.fill" : "circle")
-                                .foregroundStyle(set.done ? Theme.success : Theme.muted)
+                            Text("SET").frame(width: 30, alignment: .leading)
+                            Text("WEIGHT").frame(maxWidth: .infinity)
+                            Text("REPS").frame(maxWidth: .infinity)
+                            Image(systemName: "checkmark").frame(width: 36)
                         }
+                        .font(.caption.bold())
+                        .foregroundStyle(Theme.muted)
+                    }
+                    ForEach(Array(item.sortedSets.enumerated()), id: \.element.id) { i, set in
+                        Group {
+                        if editing {
+                            EditableSetRow(number: i + 1, set: set)
+                        } else {
+                            HStack {
+                                Text("\(i + 1)").bold().frame(width: 30, alignment: .leading)
+                                Text("\(set.weight.formatted()) × \(set.reps)")
+                                Spacer()
+                                Image(systemName: set.done ? "checkmark.circle.fill" : "circle")
+                                    .foregroundStyle(set.done ? Theme.success : Theme.muted)
+                            }
+                        }
+                        }
+                        .deleteDisabled(!editing)
+                    }
+                    .onDelete { offsets in
+                        let sets = item.sortedSets
+                        offsets.map { sets[$0] }.forEach(context.delete)
                     }
                 } header: {
                     HStack(spacing: 10) {
@@ -69,5 +111,40 @@ struct WorkoutDetailView: View {
         }
         .navigationTitle(workout.routineName.isEmpty ? "Workout" : workout.routineName)
         .navigationBarTitleDisplayMode(.inline)
+        .keyboardDoneButton()
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(editing ? "Done" : "Edit") {
+                    withAnimation { editing.toggle() }
+                }
+                .bold(editing)
+            }
+        }
+    }
+}
+
+private struct EditableSetRow: View {
+    let number: Int
+    @Bindable var set: WorkoutSet
+
+    var body: some View {
+        HStack {
+            Text("\(number)").bold().frame(width: 30, alignment: .leading)
+            TextField("0", value: $set.weight, format: .number)
+                .keyboardType(.decimalPad)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
+            TextField("0", value: $set.reps, format: .number)
+                .keyboardType(.numberPad)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
+            Button { set.done.toggle() } label: {
+                Image(systemName: set.done ? "checkmark.circle.fill" : "circle")
+                    .font(.title3)
+                    .foregroundStyle(set.done ? Theme.success : Theme.muted)
+            }
+            .buttonStyle(.plain)
+            .frame(width: 36)
+        }
     }
 }

@@ -7,6 +7,7 @@ struct ActiveWorkoutView: View {
     @Bindable var workout: Workout
     @State private var restEndsAt: Date?
     @State private var showFinish = false
+    @State private var showUpdateRoutine = false
     @State private var showDiscard = false
     @State private var showPicker = false
 
@@ -53,7 +54,15 @@ struct ActiveWorkoutView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Finish") { showFinish = true }
+                    Button("Finish") {
+                        // Exercises changed? Ask whether to update the routine.
+                        if let routine = workout.sourceRoutine(in: context),
+                           workout.changedPlan(comparedTo: routine) {
+                            showUpdateRoutine = true
+                        } else {
+                            showFinish = true
+                        }
+                    }
                         .bold()
                 }
             }
@@ -62,6 +71,19 @@ struct ActiveWorkoutView: View {
                 Button("Keep going", role: .cancel) {}
             } message: {
                 Text("Total time \(workout.duration.clockString). \(workout.completedSets) sets done.")
+            }
+            .confirmationDialog("Update \(workout.routineName.isEmpty ? "routine" : workout.routineName)?",
+                                isPresented: $showUpdateRoutine, titleVisibility: .visible) {
+                Button("Update routine") {
+                    if let routine = workout.sourceRoutine(in: context) {
+                        workout.updateRoutine(routine, in: context)
+                    }
+                    workout.endedAt = .now
+                }
+                Button("Keep original routine") { workout.endedAt = .now }
+                Button("Keep going", role: .cancel) {}
+            } message: {
+                Text("You changed exercises, sets or rest in this workout. Save these changes to the routine for next time?")
             }
             .confirmationDialog("Discard this workout?", isPresented: $showDiscard, titleVisibility: .visible) {
                 Button("Discard", role: .destructive) { context.delete(workout) }
@@ -112,6 +134,8 @@ private struct WorkoutExerciseSection: View {
                 Text("\(done) of \(item.sortedSets.count) sets done")
                     .font(.subheadline).foregroundStyle(Theme.muted)
             } else {
+            RestPicker(seconds: $item.restSeconds)
+
             HStack {
                 Text("SET").frame(width: 32, alignment: .leading)
                 Text("LAST").frame(width: 70)
