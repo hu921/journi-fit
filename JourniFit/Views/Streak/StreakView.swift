@@ -381,4 +381,3 @@ private struct BreakthroughsCard: View {
         return "\(b.before.reps) → \(b.after.reps) reps"
     }
 }
-}
