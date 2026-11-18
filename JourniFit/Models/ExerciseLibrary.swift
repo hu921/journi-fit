@@ -12,7 +12,7 @@ final class ExerciseLibrary {
         if let url = bundle.url(forResource: "exercises", withExtension: "json"),
            let data = try? Data(contentsOf: url),
            let list = try? JSONDecoder().decode([Exercise].self, from: data) {
-            loaded = list.sorted { $0.name < $1.name }
+            loaded = list.sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
         }
         exercises = loaded
         byID = Dictionary(loaded.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
@@ -25,23 +25,34 @@ final class ExerciseLibrary {
     }
 
     var equipment: [String] {
-        Array(Set(exercises.map(\.equipment))).sorted()
+        Array(Set(exercises.map(\.equipment)))
+            .sorted { Exercise.label(forEquipment: $0) < Exercise.label(forEquipment: $1) }
     }
 
-    /// Search by exercise name, machine name, muscle, or equipment.
-    /// Every word must match, in any order ("bench press barbell" finds "Barbell Bench Press").
-    func search(text: String, muscle: String?, equipment: String?, machinesOnly: Bool) -> [Exercise] {
-        let words = text.lowercased().split(whereSeparator: { $0.isWhitespace || $0 == "-" }).map(String.init)
+    /// Search by exercise name (new or original), machine name, muscle, or equipment.
+    /// Every word must match, in any order ("bench press barbell" finds "Bench Press (Barbell)").
+    /// Empty muscle or equipment sets mean "any".
+    func search(text: String, muscles: Set<String> = [], equipment: Set<String> = [],
+                machinesOnly: Bool = false) -> [Exercise] {
+        let words = Self.words(text)
         return exercises.filter { ex in
             if machinesOnly && ex.machine == nil { return false }
-            if let muscle, !ex.allMuscles.contains(muscle) { return false }
-            if let equipment, ex.equipment != equipment { return false }
+            if !muscles.isEmpty && muscles.isDisjoint(with: ex.primaryMuscles) { return false }
+            if !equipment.isEmpty && !equipment.contains(ex.equipment) { return false }
             guard !words.isEmpty else { return true }
-            let haystack = ([ex.name, ex.equipment, ex.machine ?? ""] + ex.allMuscles)
+            let haystack = ([ex.name, ex.originalName ?? "", ex.equipment, ex.equipmentLabel,
+                             ex.machine ?? ""] + ex.allMuscles)
                 .joined(separator: " ")
                 .lowercased()
             return words.allSatisfy { haystack.contains($0) }
         }
+    }
+
+    /// Splits search text into lowercase words. "(" and "," are ignored so pasted names still match.
+    static func words(_ text: String) -> [String] {
+        text.lowercased()
+            .split(whereSeparator: { $0.isWhitespace || "-(),".contains($0) })
+            .map(String.init)
     }
 
     /// Exercises that work the same main muscle. Used as substitutes.

@@ -4,6 +4,7 @@
 Usage:
   curl -L -o /tmp/ex.json https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json
   python3 scripts/build_exercises.py /tmp/ex.json JourniFit/Resources/exercises.json
+  python3 scripts/exercise_names.py apply   # display names + popular list
 
 Photos: pass a photos folder as a third argument. Each exercise lists the photos
 named <id>_0.jpg and <id>_1.jpg that exist there (start and end position).

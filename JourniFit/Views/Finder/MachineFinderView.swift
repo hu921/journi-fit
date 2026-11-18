@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 /// Search the bundled exercise database by machine, muscle, or equipment.
 struct MachineFinderView: View {
@@ -11,40 +12,31 @@ struct MachineFinderView: View {
 
 /// Finder screen without its own NavigationStack, so it can be pushed from More.
 struct MachineFinderContent: View {
+    @Query private var done: [WorkoutExercise]
     @State private var search = ""
-    @State private var muscle: String?
-    @State private var equipment: String?
-    @State private var machinesOnly = true
+    @AppStorage("finder.machinesOnly") private var machinesOnly = true
+    private var filters = ExerciseFilterStorage("finder")
 
-    private let library = ExerciseLibrary.shared
-
-    private var results: [Exercise] {
-        library.search(text: search, muscle: muscle, equipment: equipment, machinesOnly: machinesOnly)
+    private var sections: [ExerciseSection] {
+        let results = ExerciseLibrary.shared.search(
+            text: search, muscles: filters.muscles.wrappedValue,
+            equipment: filters.equipment.wrappedValue, machinesOnly: machinesOnly)
+        return ExerciseSections.make(results, sort: filters.sort.wrappedValue,
+                                     usage: ExerciseUsage.counts(done))
     }
 
     var body: some View {
-            List {
-                Section {
-                    Toggle("Machines only", isOn: $machinesOnly)
-                    Picker("Muscle", selection: $muscle) {
-                        Text("Any").tag(String?.none)
-                        ForEach(library.muscles, id: \.self) { Text($0.capitalized).tag(String?.some($0)) }
-                    }
-                    Picker("Equipment", selection: $equipment) {
-                        Text("Any").tag(String?.none)
-                        ForEach(library.equipment, id: \.self) { Text($0.capitalized).tag(String?.some($0)) }
-                    }
-                }
-
-                Section("\(results.count) results") {
-                    ForEach(results) { exercise in
-                        NavigationLink(value: exercise) { ExerciseRow(exercise: exercise) }
-                    }
-                }
-            }
-            .searchable(text: $search, prompt: "Machine, exercise, or muscle")
-            .navigationTitle("Finder")
-            .navigationDestination(for: Exercise.self) { ExerciseDetailView(exercise: $0) }
+        ExerciseSectionsList(sections: sections,
+                             header: AnyView(Toggle("Machines only", isOn: $machinesOnly))) { exercise in
+            NavigationLink(value: exercise) { ExerciseRow(exercise: exercise) }
+        }
+        .safeAreaInset(edge: .top, spacing: 0) {
+            ExerciseFilterBar(sort: filters.sort, muscles: filters.muscles, equipment: filters.equipment)
+                .background(.bar)
+        }
+        .searchable(text: $search, prompt: "Machine, exercise, or muscle")
+        .navigationTitle("Finder")
+        .navigationDestination(for: Exercise.self) { ExerciseDetailView(exercise: $0) }
     }
 }
 
@@ -58,7 +50,7 @@ struct ExerciseRow: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8))
             VStack(alignment: .leading, spacing: 2) {
                 Text(exercise.name).font(.body)
-                Text(exercise.machine ?? exercise.equipment.capitalized)
+                Text(exercise.machine ?? exercise.equipmentLabel)
                     .font(.caption).foregroundStyle(Theme.muted)
                 Text(exercise.primaryMuscles.map(\.capitalized).joined(separator: ", "))
                     .font(.caption2).foregroundStyle(Theme.primary)

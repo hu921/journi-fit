@@ -35,7 +35,7 @@ struct ExerciseDetailView: View {
                 if !exercise.secondaryMuscles.isEmpty {
                     InfoRow(title: "Also works", value: exercise.secondaryMuscles)
                 }
-                InfoRow(title: "Equipment", value: [exercise.equipment])
+                InfoRow(title: "Equipment", value: [exercise.equipmentLabel], capitalize: false)
                 InfoRow(title: "Level", value: [exercise.level])
 
                 Text("How to").font(.title3.bold())
@@ -95,12 +95,13 @@ struct ExerciseDetailView: View {
 private struct InfoRow: View {
     let title: String
     let value: [String]
+    var capitalize = true
 
     var body: some View {
         HStack {
             Text(title).foregroundStyle(Theme.muted)
             Spacer()
-            Text(value.map(\.capitalized).joined(separator: ", "))
+            Text((capitalize ? value.map(\.capitalized) : value).joined(separator: ", "))
         }
     }
 }
