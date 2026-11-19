@@ -16,12 +16,6 @@ struct RoutineEditorView: View {
                 TextField("Notes", text: $routine.notes, axis: .vertical)
             }
 
-            Section {
-                StartRoutineButton(routine: routine)
-                    .listRowInsets(EdgeInsets())
-                    .listRowBackground(Color.clear)
-            }
-
             ForEach(routine.sortedItems) { item in
                 ExerciseSetsSection(
                     item: item,
@@ -40,6 +34,15 @@ struct RoutineEditorView: View {
                         Label("Change order", systemImage: "arrow.up.arrow.down")
                     }
                 }
+            }
+        }
+        // Start Routine sits at the bottom, and only once the routine has exercises.
+        .safeAreaInset(edge: .bottom) {
+            if !routine.sortedItems.isEmpty {
+                StartRoutineButton(routine: routine)
+                    .padding(.horizontal)
+                    .padding(.vertical, 8)
+                    .background(.bar)
             }
         }
         .navigationTitle(routine.name.isEmpty ? "Routine" : routine.name)
