@@ -4,40 +4,19 @@ import SwiftData
 /// Settings. Version 1 holds import only; more options come later.
 struct SettingsView: View {
     @Environment(RoutineImporter.self) private var importer
-    @State private var showRoutineImport = false
-    @State private var showGymImport = false
+    @State private var showImport = false
     @Environment(\.modelContext) private var context
     @State private var confirm: CleanUp?
     @State private var done: String?
-    @State private var showHevyImport = false
 
     var body: some View {
         List {
             Section {
-                Button { showRoutineImport = true } label: {
-                    Label("Import routine file", systemImage: "square.and.arrow.down")
-                }
-                Button { showGymImport = true } label: {
-                    Label("Import gym file", systemImage: "dumbbell")
-                }
-            } header: {
-                Text("Import")
-            } footer: {
-                Text("Open a .journifit routine or .journigym gym file someone shared with you.")
-            }
-
-            Section {
-                Button { showHevyImport = true } label: {
-                    Label("Import from Hevy", systemImage: "arrow.down.doc")
-                }
-                .fileImporter(isPresented: $showHevyImport, allowedContentTypes: [.commaSeparatedText, .plainText],
-                              allowsMultipleSelection: true) { result in
-                    if case .success(let urls) = result {
-                        done = HevyImporter.importFiles(urls, into: context).message
-                    }
+                Button { showImport = true } label: {
+                    Label("Import", systemImage: "square.and.arrow.down")
                 }
             } footer: {
-                Text("In Hevy, go to Settings > Export & Import Data and export your workouts. Pick workout_data.csv, and measurement_data.csv too for your latest body weight. You can pick both at once.")
+                Text("Import a journi Fit routine or gym file, or workout history exported from another app (CSV). You can pick several files at once.")
             }
 
             // TEMPORARY: for testing only. Remove before the official App Store submit.
@@ -70,11 +49,17 @@ struct SettingsView: View {
             Text(done ?? "")
         }
         .navigationTitle("Settings")
-        .fileImporter(isPresented: $showRoutineImport, allowedContentTypes: [.journiFitRoutine]) { result in
-            if case .success(let url) = result { importer.handle(url: url) }
-        }
-        .fileImporter(isPresented: $showGymImport, allowedContentTypes: [.journiFitGym]) { result in
-            if case .success(let url) = result { importer.handle(url: url) }
+        .fileImporter(isPresented: $showImport,
+                      allowedContentTypes: [.journiFitRoutine, .journiFitGym, .commaSeparatedText, .plainText],
+                      allowsMultipleSelection: true) { result in
+            guard case .success(let urls) = result else { return }
+            // journi Fit share files open in their own preview; CSV files import workout history.
+            let shareFiles = urls.filter { ["journifit", "journigym"].contains($0.pathExtension.lowercased()) }
+            let csvFiles = urls.filter { !shareFiles.contains($0) }
+            if let first = shareFiles.first { importer.handle(url: first) }
+            if !csvFiles.isEmpty {
+                done = WorkoutImporter.importFiles(csvFiles, into: context).message
+            }
         }
     }
 

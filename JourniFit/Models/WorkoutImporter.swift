@@ -1,19 +1,21 @@
 import Foundation
 import SwiftData
 
-/// Imports a Hevy CSV export (Settings > Import from Hevy).
+/// Imports workout history exported from another app as CSV (Settings > Import).
+/// The format is detected from the CSV header. Supported today: Hevy.
+/// To add another app, detect its header in importFiles and map its columns.
 ///
-/// workout_data.csv: one row per set. We keep the workout title, start and end time,
+/// Hevy workout_data.csv: one row per set. We keep the workout title, start and end time,
 /// exercise, and each set's weight and reps (warm-up sets included).
 /// Timed or distance sets (Warm Up, Plank, Treadmill) keep their time and distance.
 /// Skipped: notes, RPE and supersets.
 ///
-/// measurement_data.csv: only the latest body weight goes into Profile.
+/// Hevy measurement_data.csv: only the latest body weight goes into Profile.
 ///
 /// Exercise names are matched to our library: Resources/hevy_names.json first
 /// (built by scripts/hevy_names.py), then the same name ignoring case and punctuation.
 /// Exercises we can't match are skipped and listed in the result.
-enum HevyImporter {
+enum WorkoutImporter {
     struct Result {
         var workouts = 0
         var sets = 0
@@ -32,7 +34,7 @@ enum HevyImporter {
             if !unmatched.isEmpty {
                 lines.append("Not found, skipped: " + unmatched.sorted().joined(separator: ", ") + ".")
             }
-            if unknownFile { lines.append("A file was not a Hevy export and was skipped.") }
+            if unknownFile { lines.append("A file's format isn't supported yet and was skipped.") }
             return lines.isEmpty ? "Nothing to import." : lines.joined(separator: "\n")
         }
     }
