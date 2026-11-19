@@ -9,6 +9,7 @@ struct SettingsView: View {
     @Environment(\.modelContext) private var context
     @State private var confirm: CleanUp?
     @State private var done: String?
+    @State private var showHevyImport = false
 
     var body: some View {
         List {
@@ -23,6 +24,20 @@ struct SettingsView: View {
                 Text("Import")
             } footer: {
                 Text("Open a .journifit routine or .journigym gym file someone shared with you.")
+            }
+
+            Section {
+                Button { showHevyImport = true } label: {
+                    Label("Import from Hevy", systemImage: "arrow.down.doc")
+                }
+                .fileImporter(isPresented: $showHevyImport, allowedContentTypes: [.commaSeparatedText, .plainText],
+                              allowsMultipleSelection: true) { result in
+                    if case .success(let urls) = result {
+                        done = HevyImporter.importFiles(urls, into: context).message
+                    }
+                }
+            } footer: {
+                Text("In Hevy, go to Settings > Export & Import Data and export your workouts. Pick workout_data.csv, and measurement_data.csv too for your latest body weight. You can pick both at once.")
             }
 
             // TEMPORARY: for testing only. Remove before the official App Store submit.
@@ -49,8 +64,10 @@ struct SettingsView: View {
         } message: {
             Text("This cannot be undone.")
         }
-        .alert(done ?? "", isPresented: Binding(get: { done != nil }, set: { if !$0 { done = nil } })) {
+        .alert("Done", isPresented: Binding(get: { done != nil }, set: { if !$0 { done = nil } })) {
             Button("OK") {}
+        } message: {
+            Text(done ?? "")
         }
         .navigationTitle("Settings")
         .fileImporter(isPresented: $showRoutineImport, allowedContentTypes: [.journiFitRoutine]) { result in

@@ -9,11 +9,15 @@ final class ExerciseLibrary {
 
     init(bundle: Bundle = .main) {
         var loaded: [Exercise] = []
-        if let url = bundle.url(forResource: "exercises", withExtension: "json"),
-           let data = try? Data(contentsOf: url),
-           let list = try? JSONDecoder().decode([Exercise].self, from: data) {
-            loaded = list.sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+        // exercises.json: Free Exercise DB. extra_exercises.json: ones it lacks (scripts/hevy_names.py).
+        for file in ["exercises", "extra_exercises"] {
+            if let url = bundle.url(forResource: file, withExtension: "json"),
+               let data = try? Data(contentsOf: url),
+               let list = try? JSONDecoder().decode([Exercise].self, from: data) {
+                loaded += list
+            }
         }
+        loaded.sort { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
         exercises = loaded
         byID = Dictionary(loaded.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
     }
