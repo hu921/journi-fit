@@ -5,7 +5,8 @@ import SwiftData
 ///
 /// workout_data.csv: one row per set. We keep the workout title, start and end time,
 /// exercise, and each set's weight and reps (warm-up sets included).
-/// Skipped: notes, RPE, supersets, and sets with no reps (time or distance only).
+/// Timed or distance sets (Warm Up, Plank, Treadmill) keep their time and distance.
+/// Skipped: notes, RPE and supersets.
 ///
 /// measurement_data.csv: only the latest body weight goes into Profile.
 ///
@@ -67,6 +68,11 @@ enum HevyImporter {
         guard let cTitle = col("title"), let cStart = col("start_time"), let cEnd = col("end_time"),
               let cExercise = col("exercise_title"), let cReps = col("reps") else { return }
         let cWeightLbs = col("weight_lbs"), cWeightKg = col("weight_kg")
+        let cSeconds = col("duration_seconds"), cMiles = col("distance_miles"), cKm = col("distance_km")
+        func number(_ row: [String], _ c: Int?) -> Double? {
+            guard let c, c < row.count, let v = Double(row[c]), v > 0 else { return nil }
+            return v
+        }
 
         // Weights are stored in the unit chosen in Profile.
         let profileKg = ((try? context.fetch(FetchDescriptor<UserProfile>()))?.first?.weightUnit == .kg)
@@ -95,9 +101,12 @@ enum HevyImporter {
             workout.startedAt = start
             workout.endedAt = parseDate(first[cEnd]) ?? start
             var exerciseOrder: [String] = []
-            var setsByExercise: [String: [(Double, Int)]] = [:]
+            var setsByExercise: [String: [(weight: Double, reps: Int, seconds: Int?, miles: Double?)]] = [:]
             for row in rows {
-                guard let reps = Int(row[cReps]), reps > 0 else { continue } // time or distance only
+                let reps = Int(row[cReps]) ?? 0
+                let seconds = number(row, cSeconds).map { Int($0) }
+                let miles = number(row, cMiles) ?? number(row, cKm).map { $0 / 1.60934 }
+                guard reps > 0 || seconds != nil || miles != nil else { continue } // empty row
                 let name = row[cExercise]
                 guard let id = exerciseID(for: name) else {
                     result.unmatched.insert(name)
@@ -111,7 +120,7 @@ enum HevyImporter {
                 }
                 weight = (weight * 10).rounded() / 10
                 if setsByExercise[id] == nil { exerciseOrder.append(id) }
-                setsByExercise[id, default: []].append((weight, reps))
+                setsByExercise[id, default: []].append((weight, reps, seconds, miles))
             }
             guard !exerciseOrder.isEmpty else { continue }
             context.insert(workout)
@@ -120,7 +129,9 @@ enum HevyImporter {
                 we.workout = workout
                 context.insert(we)
                 for (j, s) in (setsByExercise[id] ?? []).enumerated() {
-                    let ws = WorkoutSet(order: j, weight: s.0, reps: s.1)
+                    let ws = WorkoutSet(order: j, weight: s.weight, reps: s.reps)
+                    ws.durationSeconds = s.seconds
+                    ws.distanceMiles = s.miles
                     ws.done = true
                     ws.workoutExercise = we
                     context.insert(ws)

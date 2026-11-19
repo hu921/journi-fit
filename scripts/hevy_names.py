@@ -82,6 +82,7 @@ ALIASES = {
     "Stick Single Arm ISO Chest Press": "jf_stick_single_arm_iso_chest_press",
     "box squat (Dumbbell)": "jf_box_squat_dumbbell",
     "kettlebell clean squat and press": "jf_clean_squat_press_kettlebell",
+    "Warm Up": "jf_warm_up",
 }
 
 def ex(id, name, primary, secondary, equipment, machine=None, level="beginner"):
@@ -108,6 +109,7 @@ EXTRA = [
     ex("jf_stick_lateral_drivers", "Lateral Drivers (Stick)", ["abdominals"], ["shoulders"], "other"),
     ex("jf_stick_single_arm_iso_chest_press", "Single-Arm ISO Chest Press (Stick)", ["chest"], ["triceps", "shoulders"], "other"),
     ex("jf_box_squat_dumbbell", "Box Squat (Dumbbell)", ["quadriceps"], ["glutes", "hamstrings"], "dumbbell"),
+    ex("jf_warm_up", "Warm Up", [], [], "body only"),
     ex("jf_clean_squat_press_kettlebell", "Clean, Squat and Press (Kettlebell)", ["shoulders"], ["quadriceps", "glutes", "triceps"], "kettlebells", None, "intermediate"),
 ]
 

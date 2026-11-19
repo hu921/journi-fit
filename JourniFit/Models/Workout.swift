@@ -94,7 +94,22 @@ final class WorkoutSet {
     /// Last time's values for this set, shown as a reference.
     var previousWeight: Double?
     var previousReps: Int?
+    /// Timed or distance sets (e.g. Warm Up, Plank, Treadmill), from a Hevy import.
+    var durationSeconds: Int?
+    var distanceMiles: Double?
     var workoutExercise: WorkoutExercise?
+
+    /// "135 × 8", or "6:37" / "1.2 mi · 20:00" for timed sets.
+    var summary: String {
+        if reps == 0, durationSeconds != nil || distanceMiles != nil {
+            var parts: [String] = []
+            if let d = distanceMiles, d > 0 { parts.append("\(d.formatted(.number.precision(.fractionLength(0...2)))) mi") }
+            if let t = durationSeconds, t > 0 { parts.append(TimeInterval(t).clockString) }
+            if weight > 0 { parts.insert("\(weight.formatted())", at: 0) }
+            return parts.joined(separator: " · ")
+        }
+        return "\(weight.formatted()) × \(reps)"
+    }
 
     init(order: Int, weight: Double, reps: Int) {
         self.order = order

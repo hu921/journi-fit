@@ -324,6 +324,19 @@
   "popularRank": null
  },
  {
+  "id": "jf_warm_up",
+  "name": "Warm Up",
+  "originalName": null,
+  "primaryMuscles": [],
+  "secondaryMuscles": [],
+  "equipment": "body only",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
   "id": "jf_clean_squat_press_kettlebell",
   "name": "Clean, Squat and Press (Kettlebell)",
   "originalName": null,

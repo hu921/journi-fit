@@ -91,7 +91,7 @@ struct WorkoutDetailView: View {
                         } else {
                             HStack {
                                 Text("\(i + 1)").bold().frame(width: 30, alignment: .leading)
-                                Text("\(set.weight.formatted()) × \(set.reps)")
+                                Text(set.summary)
                                 Spacer()
                                 Image(systemName: set.done ? "checkmark.circle.fill" : "circle")
                                     .foregroundStyle(set.done ? Theme.success : Theme.muted)
