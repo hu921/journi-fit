@@ -7,7 +7,7 @@ enum AppInfo {
     static let urlScheme = "journifit"
     static let tagline = "Build routines. Lift. Beat your best."
 
-    // Links for About. nil = not ready yet; the row shows "Coming soon".
+    // Links for About. nil = not ready yet; the row shows the name only.
     // TODO: fill in before the App Store submit.
     static let supportEmail: String? = nil          // e.g. "support@journipod.com"
     static let privacyPolicyURL: URL? = nil         // required by App Store Connect

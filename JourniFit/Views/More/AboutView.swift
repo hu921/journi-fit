@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// About: app info, privacy, support, more from journipod, credits.
-/// Links still missing in AppInfo show as "Coming soon".
+/// Links still missing in AppInfo show the name only, as a placeholder.
 struct AboutView: View {
     var body: some View {
         List {
@@ -60,7 +60,7 @@ struct AboutView: View {
     }
 }
 
-/// A row that opens a link, or shows "Coming soon" while the link is not set.
+/// A row that opens a link, or shows just the name while the link is not set.
 private struct LinkRow: View {
     let title: String
     let systemImage: String
@@ -76,11 +76,7 @@ private struct LinkRow: View {
                 }
             }
         } else {
-            HStack {
-                Label(title, systemImage: systemImage).foregroundStyle(Theme.muted)
-                Spacer()
-                Text("Coming soon").font(.caption).foregroundStyle(Theme.muted)
-            }
+            Label(title, systemImage: systemImage).foregroundStyle(Theme.text)
         }
     }
 }
