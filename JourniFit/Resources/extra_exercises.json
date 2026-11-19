@@ -1,0 +1,358 @@
+[
+ {
+  "id": "jf_3d_lunge",
+  "name": "3D Lunge",
+  "originalName": null,
+  "primaryMuscles": [
+   "quadriceps"
+  ],
+  "secondaryMuscles": [
+   "glutes",
+   "adductors",
+   "hamstrings"
+  ],
+  "equipment": "body only",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_speed_row_band",
+  "name": "Speed Row (Band)",
+  "originalName": null,
+  "primaryMuscles": [
+   "middle back"
+  ],
+  "secondaryMuscles": [
+   "lats",
+   "biceps"
+  ],
+  "equipment": "bands",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_chest_dip_assisted",
+  "name": "Chest Dip (Assisted)",
+  "originalName": null,
+  "primaryMuscles": [
+   "chest"
+  ],
+  "secondaryMuscles": [
+   "triceps",
+   "shoulders"
+  ],
+  "equipment": "machine",
+  "machine": "Assisted dip machine",
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_chest_fly_machine",
+  "name": "Chest Fly (Machine)",
+  "originalName": null,
+  "primaryMuscles": [
+   "chest"
+  ],
+  "secondaryMuscles": [
+   "shoulders"
+  ],
+  "equipment": "machine",
+  "machine": "Pec deck machine",
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_dead_hang",
+  "name": "Dead Hang",
+  "originalName": null,
+  "primaryMuscles": [
+   "forearms"
+  ],
+  "secondaryMuscles": [
+   "lats",
+   "shoulders"
+  ],
+  "equipment": "body only",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_deadlift_dumbbell",
+  "name": "Deadlift (Dumbbell)",
+  "originalName": null,
+  "primaryMuscles": [
+   "hamstrings"
+  ],
+  "secondaryMuscles": [
+   "glutes",
+   "lower back",
+   "forearms"
+  ],
+  "equipment": "dumbbell",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_dunphy_squat",
+  "name": "Dunphy Squat",
+  "originalName": null,
+  "primaryMuscles": [
+   "quadriceps"
+  ],
+  "secondaryMuscles": [
+   "glutes",
+   "hamstrings"
+  ],
+  "equipment": "body only",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_hip_thrust_machine",
+  "name": "Hip Thrust (Machine)",
+  "originalName": null,
+  "primaryMuscles": [
+   "glutes"
+  ],
+  "secondaryMuscles": [
+   "hamstrings"
+  ],
+  "equipment": "machine",
+  "machine": "Hip thrust machine",
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_jumping_jack",
+  "name": "Jumping Jack",
+  "originalName": null,
+  "primaryMuscles": [
+   "quadriceps"
+  ],
+  "secondaryMuscles": [
+   "calves",
+   "shoulders"
+  ],
+  "equipment": "body only",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_rotational_row_kettlebell",
+  "name": "Rotational Row (Kettlebell)",
+  "originalName": null,
+  "primaryMuscles": [
+   "middle back"
+  ],
+  "secondaryMuscles": [
+   "lats",
+   "abdominals",
+   "biceps"
+  ],
+  "equipment": "kettlebells",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_pause_squat_barbell",
+  "name": "Pause Squat (Barbell)",
+  "originalName": null,
+  "primaryMuscles": [
+   "quadriceps"
+  ],
+  "secondaryMuscles": [
+   "glutes",
+   "hamstrings",
+   "lower back"
+  ],
+  "equipment": "barbell",
+  "machine": null,
+  "level": "intermediate",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_seated_row_machine",
+  "name": "Seated Row (Machine)",
+  "originalName": null,
+  "primaryMuscles": [
+   "middle back"
+  ],
+  "secondaryMuscles": [
+   "lats",
+   "biceps"
+  ],
+  "equipment": "machine",
+  "machine": "Seated row machine",
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_single_arm_landmine_press",
+  "name": "Single-Arm Landmine Press (Barbell)",
+  "originalName": null,
+  "primaryMuscles": [
+   "shoulders"
+  ],
+  "secondaryMuscles": [
+   "chest",
+   "triceps"
+  ],
+  "equipment": "barbell",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_single_leg_rdl_dumbbell",
+  "name": "Single-Leg Romanian Deadlift (Dumbbell)",
+  "originalName": null,
+  "primaryMuscles": [
+   "hamstrings"
+  ],
+  "secondaryMuscles": [
+   "glutes",
+   "lower back"
+  ],
+  "equipment": "dumbbell",
+  "machine": null,
+  "level": "intermediate",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_stick_iso_drivers",
+  "name": "ISO Drivers (Stick)",
+  "originalName": null,
+  "primaryMuscles": [
+   "abdominals"
+  ],
+  "secondaryMuscles": [
+   "shoulders"
+  ],
+  "equipment": "other",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_stick_lateral_drivers",
+  "name": "Lateral Drivers (Stick)",
+  "originalName": null,
+  "primaryMuscles": [
+   "abdominals"
+  ],
+  "secondaryMuscles": [
+   "shoulders"
+  ],
+  "equipment": "other",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_stick_single_arm_iso_chest_press",
+  "name": "Single-Arm ISO Chest Press (Stick)",
+  "originalName": null,
+  "primaryMuscles": [
+   "chest"
+  ],
+  "secondaryMuscles": [
+   "triceps",
+   "shoulders"
+  ],
+  "equipment": "other",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_box_squat_dumbbell",
+  "name": "Box Squat (Dumbbell)",
+  "originalName": null,
+  "primaryMuscles": [
+   "quadriceps"
+  ],
+  "secondaryMuscles": [
+   "glutes",
+   "hamstrings"
+  ],
+  "equipment": "dumbbell",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_warm_up",
+  "name": "Warm Up",
+  "originalName": null,
+  "primaryMuscles": [],
+  "secondaryMuscles": [],
+  "equipment": "body only",
+  "machine": null,
+  "level": "beginner",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ },
+ {
+  "id": "jf_clean_squat_press_kettlebell",
+  "name": "Clean, Squat and Press (Kettlebell)",
+  "originalName": null,
+  "primaryMuscles": [
+   "shoulders"
+  ],
+  "secondaryMuscles": [
+   "quadriceps",
+   "glutes",
+   "triceps"
+  ],
+  "equipment": "kettlebells",
+  "machine": null,
+  "level": "intermediate",
+  "instructions": [],
+  "images": [],
+  "popularRank": null
+ }
+]

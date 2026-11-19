@@ -1,0 +1,877 @@
+id,equipment,original_name,display_name
+3_4_Sit-Up,body only,3/4 Sit-Up,3/4 Sit-Up
+90_90_Hamstring,body only,90/90 Hamstring,90/90 Hamstring
+Ab_Roller,other,Ab Roller,Ab Roller
+Barbell_Ab_Rollout,barbell,Barbell Ab Rollout,Ab Rollout (Barbell)
+Barbell_Ab_Rollout_-_On_Knees,barbell,Barbell Ab Rollout - On Knees,"Ab Rollout (Barbell, On Knees)"
+Adductor,foam roll,Adductor,Adductor (Foam Roller)
+Adductor_Groin,none,Adductor/Groin,Adductor/Groin
+Advanced_Kettlebell_Windmill,kettlebells,Advanced Kettlebell Windmill,Advanced Windmill (Kettlebell)
+Air_Bike,body only,Air Bike,Air Bike
+All_Fours_Quad_Stretch,body only,All Fours Quad Stretch,All Fours Quad Stretch
+Dumbbell_Alternate_Bicep_Curl,dumbbell,Dumbbell Alternate Bicep Curl,Alternate Bicep Curl (Dumbbell)
+Alternate_Hammer_Curl,dumbbell,Alternate Hammer Curl,Alternate Hammer Curl (Dumbbell)
+Alternate_Heel_Touchers,body only,Alternate Heel Touchers,Alternate Heel Touchers
+Alternate_Incline_Dumbbell_Curl,dumbbell,Alternate Incline Dumbbell Curl,Alternate Incline Curl (Dumbbell)
+Alternate_Leg_Diagonal_Bound,none,Alternate Leg Diagonal Bound,Alternate Leg Diagonal Bound
+Alternating_Deltoid_Raise,dumbbell,Alternating Deltoid Raise,Alternating Deltoid Raise (Dumbbell)
+Alternating_Floor_Press,kettlebells,Alternating Floor Press,Alternating Floor Press (Kettlebell)
+Alternating_Hang_Clean,kettlebells,Alternating Hang Clean,Alternating Hang Clean (Kettlebell)
+Alternating_Kettlebell_Press,kettlebells,Alternating Kettlebell Press,Alternating Press (Kettlebell)
+Alternating_Renegade_Row,kettlebells,Alternating Renegade Row,Alternating Renegade Row (Kettlebell)
+Alternating_Kettlebell_Row,kettlebells,Alternating Kettlebell Row,Alternating Row (Kettlebell)
+Alternating_Cable_Shoulder_Press,cable,Alternating Cable Shoulder Press,Alternating Shoulder Press (Cable)
+Ankle_Circles,none,Ankle Circles,Ankle Circles
+Ankle_On_The_Knee,none,Ankle On The Knee,Ankle On The Knee
+Anterior_Tibialis-SMR,other,Anterior Tibialis-SMR,Anterior Tibialis-SMR
+Anti-Gravity_Press,barbell,Anti-Gravity Press,Anti-Gravity Press (Barbell)
+Arm_Circles,none,Arm Circles,Arm Circles
+Arnold_Dumbbell_Press,dumbbell,Arnold Dumbbell Press,Arnold Press (Dumbbell)
+Kettlebell_Arnold_Press,kettlebells,Kettlebell Arnold Press,Arnold Press (Kettlebell)
+Around_The_Worlds,dumbbell,Around The Worlds,Around The Worlds (Dumbbell)
+Atlas_Stone_Trainer,other,Atlas Stone Trainer,Atlas Stone Trainer
+Atlas_Stones,other,Atlas Stones,Atlas Stones
+Axle_Deadlift,other,Axle Deadlift,Axle Deadlift
+Hyperextensions_Back_Extensions,other,Hyperextensions (Back Extensions),Back Extension
+Back_Flyes_-_With_Bands,bands,Back Flyes - With Bands,Back Fly (Band)
+Backward_Drag,other,Backward Drag,Backward Drag
+Backward_Medicine_Ball_Throw,medicine ball,Backward Medicine Ball Throw,Backward Throw (Medicine Ball)
+Balance_Board,other,Balance Board,Balance Board
+Ball_Leg_Curl,exercise ball,Ball Leg Curl,Ball Leg Curl (Exercise Ball)
+Band_Assisted_Pull-Up,other,Band Assisted Pull-Up,Band Assisted Pull-Up
+Battling_Ropes,other,Battling Ropes,Battling Ropes
+Bear_Crawl_Sled_Drags,other,Bear Crawl Sled Drags,Bear Crawl Sled Drags
+Behind_Head_Chest_Stretch,other,Behind Head Chest Stretch,Behind Head Chest Stretch
+Smith_Machine_Behind_the_Back_Shrug,machine,Smith Machine Behind the Back Shrug,Behind the Back Shrug (Smith Machine)
+Bench_Dips,body only,Bench Dips,Bench Dip
+Bench_Jump,body only,Bench Jump,Bench Jump
+Bench_Press_-_With_Bands,bands,Bench Press - With Bands,Bench Press (Band)
+Barbell_Bench_Press_-_Medium_Grip,barbell,Barbell Bench Press - Medium Grip,Bench Press (Barbell)
+Close-Grip_Barbell_Bench_Press,barbell,Close-Grip Barbell Bench Press,"Bench Press (Barbell, Close Grip)"
+Bench_Press_-_Powerlifting,barbell,Bench Press - Powerlifting,"Bench Press (Barbell, Powerlifting)"
+Wide-Grip_Barbell_Bench_Press,barbell,Wide-Grip Barbell Bench Press,"Bench Press (Barbell, Wide Grip)"
+Dumbbell_Bench_Press,dumbbell,Dumbbell Bench Press,Bench Press (Dumbbell)
+Machine_Bench_Press,machine,Machine Bench Press,Bench Press (Machine)
+Smith_Machine_Bench_Press,machine,Smith Machine Bench Press,Bench Press (Smith Machine)
+Smith_Machine_Close-Grip_Bench_Press,machine,Smith Machine Close-Grip Bench Press,"Bench Press (Smith Machine, Close Grip)"
+Bench_Press_with_Chains,barbell,Bench Press with Chains,Bench Press with Chains (Barbell)
+Dumbbell_Bench_Press_with_Neutral_Grip,dumbbell,Dumbbell Bench Press with Neutral Grip,Bench Press with Neutral Grip (Dumbbell)
+Bench_Sprint,other,Bench Sprint,Bench Sprint
+Bent_Over_Low-Pulley_Side_Lateral,cable,Bent Over Low-Pulley Side Lateral,Bent Over Low-Pulley Side Lateral (Cable)
+Bent_Over_One-Arm_Long_Bar_Row,barbell,Bent Over One-Arm Long Bar Row,Bent Over One-Arm Long Bar Row (Barbell)
+Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench,dumbbell,Bent Over Dumbbell Rear Delt Raise With Head On Bench,Bent Over Rear Delt Raise With Head On Bench (Dumbbell)
+Bent_Over_Barbell_Row,barbell,Bent Over Barbell Row,Bent Over Row (Barbell)
+Bent_Over_Two-Dumbbell_Row,dumbbell,Bent Over Two-Dumbbell Row,Bent Over Row (Dumbbell)
+Smith_Machine_Bent_Over_Row,machine,Smith Machine Bent Over Row,Bent Over Row (Smith Machine)
+Bent_Over_Two-Dumbbell_Row_With_Palms_In,dumbbell,Bent Over Two-Dumbbell Row With Palms In,Bent Over Row With Palms In (Dumbbell)
+Bent_Over_Two-Arm_Long_Bar_Row,barbell,Bent Over Two-Arm Long Bar Row,Bent Over Two-Arm Long Bar Row (Barbell)
+Bent_Press,kettlebells,Bent Press,Bent Press (Kettlebell)
+Bent-Arm_Barbell_Pullover,barbell,Bent-Arm Barbell Pullover,Bent-Arm Pullover (Barbell)
+Bent-Arm_Dumbbell_Pullover,dumbbell,Bent-Arm Dumbbell Pullover,Bent-Arm Pullover (Dumbbell)
+Bent-Knee_Hip_Raise,body only,Bent-Knee Hip Raise,Bent-Knee Hip Raise
+Barbell_Curl,barbell,Barbell Curl,Bicep Curl (Barbell)
+Dumbbell_Bicep_Curl,dumbbell,Dumbbell Bicep Curl,Bicep Curl (Dumbbell)
+EZ-Bar_Curl,e-z curl bar,EZ-Bar Curl,Bicep Curl (EZ Bar)
+Machine_Bicep_Curl,machine,Machine Bicep Curl,Bicep Curl (Machine)
+Bicycling,other,Bicycling,Bicycling
+Board_Press,barbell,Board Press,Board Press (Barbell)
+Body_Tricep_Press,body only,Body Tricep Press,Body Tricep Press
+Body-Up,body only,Body-Up,Body-Up
+Bodyweight_Flyes,e-z curl bar,Bodyweight Flyes,Bodyweight Fly (EZ Bar)
+Bodyweight_Mid_Row,other,Bodyweight Mid Row,Bodyweight Mid Row
+Bosu_Ball_Cable_Crunch_With_Side_Bends,cable,Bosu Ball Cable Crunch With Side Bends,Bosu Ball Crunch With Side Bends (Cable)
+Bottoms_Up,body only,Bottoms Up,Bottoms Up
+Bottoms-Up_Clean_From_The_Hang_Position,kettlebells,Bottoms-Up Clean From The Hang Position,Bottoms-Up Clean From The Hang Position (Kettlebell)
+Box_Jump_Multiple_Response,other,Box Jump (Multiple Response),Box Jump (Multiple Response)
+Box_Skip,other,Box Skip,Box Skip
+Box_Squat,barbell,Box Squat,Box Squat (Barbell)
+Box_Squat_with_Bands,barbell,Box Squat with Bands,Box Squat with Bands (Barbell)
+Box_Squat_with_Chains,barbell,Box Squat with Chains,Box Squat with Chains (Barbell)
+Brachialis-SMR,foam roll,Brachialis-SMR,Brachialis-SMR (Foam Roller)
+Bradford_Rocky_Presses,barbell,Bradford/Rocky Presses,Bradford/Rocky Press (Barbell)
+Butt_Lift_Bridge,body only,Butt Lift (Bridge),Butt Lift (Bridge)
+Butt-Ups,body only,Butt-Ups,Butt-Ups
+Cable_Crossover,cable,Cable Crossover,Cable Crossover
+Calf_Press,machine,Calf Press,Calf Press (Machine)
+Calf_Press_On_The_Leg_Press_Machine,machine,Calf Press On The Leg Press Machine,Calf Press On The Leg Press (Machine)
+Calf_Raises_-_With_Bands,bands,Calf Raises - With Bands,Calf Raise (Band)
+Calf_Raise_On_A_Dumbbell,dumbbell,Calf Raise On A Dumbbell,Calf Raise (Dumbbell)
+Smith_Machine_Calf_Raise,machine,Smith Machine Calf Raise,Calf Raise (Smith Machine)
+Calf_Stretch_Elbows_Against_Wall,none,Calf Stretch Elbows Against Wall,Calf Stretch Elbows Against Wall
+Calf_Stretch_Hands_Against_Wall,none,Calf Stretch Hands Against Wall,Calf Stretch Hands Against Wall
+Calf-Machine_Shoulder_Shrug,machine,Calf-Machine Shoulder Shrug,Calf-Machine Shoulder Shrug (Machine)
+Calves-SMR,foam roll,Calves-SMR,Calves-SMR (Foam Roller)
+Car_Deadlift,other,Car Deadlift,Car Deadlift
+Car_Drivers,barbell,Car Drivers,Car Drivers (Barbell)
+Carioca_Quick_Step,none,Carioca Quick Step,Carioca Quick Step
+Cat_Stretch,none,Cat Stretch,Cat Stretch
+Catch_and_Overhead_Throw,medicine ball,Catch and Overhead Throw,Catch and Overhead Throw (Medicine Ball)
+Chain_Handle_Extension,other,Chain Handle Extension,Chain Handle Extension
+Chain_Press,other,Chain Press,Chain Press
+Chair_Leg_Extended_Stretch,other,Chair Leg Extended Stretch,Chair Leg Extended Stretch
+Chair_Lower_Back_Stretch,none,Chair Lower Back Stretch,Chair Lower Back Stretch
+Chair_Squat,machine,Chair Squat,Chair Squat (Machine)
+Chair_Upper_Body_Stretch,other,Chair Upper Body Stretch,Chair Upper Body Stretch
+Chest_And_Front_Of_Shoulder_Stretch,other,Chest And Front Of Shoulder Stretch,Chest And Front Of Shoulder Stretch
+Dips_-_Chest_Version,other,Dips - Chest Version,Chest Dip
+Dumbbell_Flyes,dumbbell,Dumbbell Flyes,Chest Fly (Dumbbell)
+Medicine_Ball_Chest_Pass,medicine ball,Medicine Ball Chest Pass,Chest Pass (Medicine Ball)
+Cable_Chest_Press,cable,Cable Chest Press,Chest Press (Cable)
+Leverage_Chest_Press,machine,Leverage Chest Press,Chest Press (Machine)
+Chest_Push_multiple_response,medicine ball,Chest Push (multiple response),"Chest Push (Medicine Ball, Multiple response)"
+Chest_Push_single_response,medicine ball,Chest Push (single response),"Chest Push (Medicine Ball, Single response)"
+Chest_Push_from_3_point_stance,medicine ball,Chest Push from 3 point stance,Chest Push from 3 point stance (Medicine Ball)
+Chest_Push_with_Run_Release,medicine ball,Chest Push with Run Release,Chest Push with Run Release (Medicine Ball)
+Chest_Stretch_on_Stability_Ball,exercise ball,Chest Stretch on Stability Ball,Chest Stretch on Stability Ball (Exercise Ball)
+Lying_T-Bar_Row,machine,Lying T-Bar Row,Chest-Supported T-Bar Row (Machine)
+Childs_Pose,none,Child's Pose,Child's Pose
+Chin_To_Chest_Stretch,none,Chin To Chest Stretch,Chin To Chest Stretch
+Chin-Up,body only,Chin-Up,Chin-Up
+Circus_Bell,other,Circus Bell,Circus Bell
+Clean,barbell,Clean,Clean (Barbell)
+Dumbbell_Clean,dumbbell,Dumbbell Clean,Clean (Dumbbell)
+Clean_and_Jerk,barbell,Clean and Jerk,Clean and Jerk (Barbell)
+Clean_and_Press,barbell,Clean and Press,Clean and Press (Barbell)
+Clean_Deadlift,barbell,Clean Deadlift,Clean Deadlift (Barbell)
+Clean_from_Blocks,barbell,Clean from Blocks,Clean from Blocks (Barbell)
+Clean_Pull,barbell,Clean Pull,Clean Pull (Barbell)
+Clean_Shrug,barbell,Clean Shrug,Clean Shrug (Barbell)
+Rope_Climb,other,Rope Climb,Climb (Rope)
+Clock_Push-Up,body only,Clock Push-Up,Clock Push-Up
+Cocoons,body only,Cocoons,Cocoons
+Conans_Wheel,other,Conan's Wheel,Conan's Wheel
+Concentration_Curls,dumbbell,Concentration Curls,Concentration Curl (Dumbbell)
+Cross_Body_Hammer_Curl,dumbbell,Cross Body Hammer Curl,Cross Body Hammer Curl (Dumbbell)
+Cross_Over_-_With_Bands,bands,Cross Over - With Bands,Cross Over (Band)
+Cross-Body_Crunch,body only,Cross-Body Crunch,Cross-Body Crunch
+Crossover_Reverse_Lunge,none,Crossover Reverse Lunge,Crossover Reverse Lunge
+Crucifix,other,Crucifix,Crucifix
+Crunches,body only,Crunches,Crunch
+Cable_Crunch,cable,Cable Crunch,Crunch (Cable)
+Crunch_-_Hands_Overhead,body only,Crunch - Hands Overhead,Crunch (Hands Overhead)
+Crunch_-_Legs_On_Exercise_Ball,body only,Crunch - Legs On Exercise Ball,Crunch (Legs On Exercise Ball)
+Ab_Crunch_Machine,machine,Ab Crunch Machine,Crunch (Machine)
+Rope_Crunch,cable,Rope Crunch,Crunch (Rope)
+Cuban_Press,dumbbell,Cuban Press,Cuban Press (Dumbbell)
+Barbell_Curls_Lying_Against_An_Incline,barbell,Barbell Curls Lying Against An Incline,Curl Lying Against An Incline (Barbell)
+Close-Grip_EZ-Bar_Curl_with_Band,e-z curl bar,Close-Grip EZ-Bar Curl with Band,"Curl with Band (EZ Bar, Close Grip)"
+Bicycling_Stationary,machine,"Bicycling, Stationary",Cycling (Stationary Bike)
+Dancers_Stretch,none,Dancer's Stretch,Dancer's Stretch
+Dead_Bug,body only,Dead Bug,Dead Bug
+Kettlebell_Dead_Clean,kettlebells,Kettlebell Dead Clean,Dead Clean (Kettlebell)
+Barbell_Deadlift,barbell,Barbell Deadlift,Deadlift (Barbell)
+Cable_Deadlifts,cable,Cable Deadlifts,Deadlift (Cable)
+Leverage_Deadlift,machine,Leverage Deadlift,Deadlift (Machine)
+Deadlift_with_Bands,barbell,Deadlift with Bands,Deadlift with Bands (Barbell)
+Deadlift_with_Chains,barbell,Deadlift with Chains,Deadlift with Chains (Barbell)
+Decline_Barbell_Bench_Press,barbell,Decline Barbell Bench Press,Decline Bench Press (Barbell)
+Wide-Grip_Decline_Barbell_Bench_Press,barbell,Wide-Grip Decline Barbell Bench Press,"Decline Bench Press (Barbell, Wide Grip)"
+Decline_Dumbbell_Bench_Press,dumbbell,Decline Dumbbell Bench Press,Decline Bench Press (Dumbbell)
+Decline_Close-Grip_Bench_To_Skull_Crusher,barbell,Decline Close-Grip Bench To Skull Crusher,"Decline Bench To Skull Crusher (Barbell, Close Grip)"
+Leverage_Decline_Chest_Press,machine,Leverage Decline Chest Press,Decline Chest Press (Machine)
+Decline_Crunch,body only,Decline Crunch,Decline Crunch
+Decline_EZ_Bar_Triceps_Extension,barbell,Decline EZ Bar Triceps Extension,Decline EZ Bar Triceps Extension (Barbell)
+Decline_Dumbbell_Flyes,dumbbell,Decline Dumbbell Flyes,Decline Fly (Dumbbell)
+Decline_Oblique_Crunch,body only,Decline Oblique Crunch,Decline Oblique Crunch
+Decline_Smith_Press,machine,Decline Smith Press,Decline Press (Smith Machine)
+Wide-Grip_Decline_Barbell_Pullover,barbell,Wide-Grip Decline Barbell Pullover,"Decline Pullover (Barbell, Wide Grip)"
+Decline_Push-Up,none,Decline Push-Up,Decline Push-Up
+Decline_Reverse_Crunch,body only,Decline Reverse Crunch,Decline Reverse Crunch
+Decline_Dumbbell_Triceps_Extension,dumbbell,Decline Dumbbell Triceps Extension,Decline Triceps Extension (Dumbbell)
+Deficit_Deadlift,barbell,Deficit Deadlift,Deficit Deadlift (Barbell)
+Depth_Jump_Leap,other,Depth Jump Leap,Depth Jump Leap
+Dip_Machine,machine,Dip Machine,Dip (Machine)
+Donkey_Calf_Raises,other,Donkey Calf Raises,Donkey Calf Raise
+Double_Kettlebell_Alternating_Hang_Clean,kettlebells,Double Kettlebell Alternating Hang Clean,Double Alternating Hang Clean (Kettlebell)
+Double_Kettlebell_Jerk,kettlebells,Double Kettlebell Jerk,Double Jerk (Kettlebell)
+Double_Leg_Butt_Kick,body only,Double Leg Butt Kick,Double Leg Butt Kick
+Double_Kettlebell_Push_Press,kettlebells,Double Kettlebell Push Press,Double Push Press (Kettlebell)
+Double_Kettlebell_Snatch,kettlebells,Double Kettlebell Snatch,Double Snatch (Kettlebell)
+Double_Kettlebell_Windmill,kettlebells,Double Kettlebell Windmill,Double Windmill (Kettlebell)
+Downward_Facing_Balance,exercise ball,Downward Facing Balance,Downward Facing Balance (Exercise Ball)
+Drag_Curl,barbell,Drag Curl,Drag Curl (Barbell)
+Drop_Push,other,Drop Push,Drop Push
+Dynamic_Back_Stretch,none,Dynamic Back Stretch,Dynamic Back Stretch
+Dynamic_Chest_Stretch,none,Dynamic Chest Stretch,Dynamic Chest Stretch
+Elbow_Circles,none,Elbow Circles,Elbow Circles
+Elbow_to_Knee,body only,Elbow to Knee,Elbow to Knee
+Elbows_Back,none,Elbows Back,Elbows Back
+Elevated_Back_Lunge,barbell,Elevated Back Lunge,Elevated Back Lunge (Barbell)
+Elevated_Cable_Rows,cable,Elevated Cable Rows,Elevated Row (Cable)
+Elliptical_Trainer,machine,Elliptical Trainer,Elliptical (Machine)
+Exercise_Ball_Crunch,exercise ball,Exercise Ball Crunch,Exercise Ball Crunch (Exercise Ball)
+Exercise_Ball_Pull-In,exercise ball,Exercise Ball Pull-In,Exercise Ball Pull-In (Exercise Ball)
+Extended_Range_One-Arm_Kettlebell_Floor_Press,kettlebells,Extended Range One-Arm Kettlebell Floor Press,Extended Range One-Arm Floor Press (Kettlebell)
+External_Rotation_with_Band,bands,External Rotation with Band,External Rotation (Band)
+External_Rotation_with_Cable,cable,External Rotation with Cable,External Rotation (Cable)
+External_Rotation,dumbbell,External Rotation,External Rotation (Dumbbell)
+Close-Grip_EZ_Bar_Curl,barbell,Close-Grip EZ Bar Curl,"EZ Bar Curl (Barbell, Close Grip)"
+Face_Pull,cable,Face Pull,Face Pull (Cable)
+Farmers_Walk,other,Farmer's Walk,Farmer's Walk
+Fast_Skipping,body only,Fast Skipping,Fast Skipping
+Kettlebell_Figure_8,kettlebells,Kettlebell Figure 8,Figure 8 (Kettlebell)
+Finger_Curls,barbell,Finger Curls,Finger Curl (Barbell)
+Flat_Bench_Cable_Flyes,cable,Flat Bench Cable Flyes,Flat Bench Fly (Cable)
+Flat_Bench_Leg_Pull-In,body only,Flat Bench Leg Pull-In,Flat Bench Leg Pull-In
+Flat_Bench_Lying_Leg_Raise,body only,Flat Bench Lying Leg Raise,Flat Bench Lying Leg Raise
+Flexor_Incline_Dumbbell_Curls,dumbbell,Flexor Incline Dumbbell Curls,Flexor Incline Curl (Dumbbell)
+Floor_Glute-Ham_Raise,none,Floor Glute-Ham Raise,Floor Glute-Ham Raise
+Floor_Press,barbell,Floor Press,Floor Press (Barbell)
+Dumbbell_Floor_Press,dumbbell,Dumbbell Floor Press,Floor Press (Dumbbell)
+Floor_Press_with_Chains,barbell,Floor Press with Chains,Floor Press with Chains (Barbell)
+Flutter_Kicks,body only,Flutter Kicks,Flutter Kicks
+Foot-SMR,other,Foot-SMR,Foot-SMR
+Forward_Drag_with_Press,other,Forward Drag with Press,Forward Drag with Press
+Frankenstein_Squat,barbell,Frankenstein Squat,Frankenstein Squat (Barbell)
+Freehand_Jump_Squat,body only,Freehand Jump Squat,Freehand Jump Squat
+Frog_Hops,none,Frog Hops,Frog Hops
+Frog_Sit-Ups,body only,Frog Sit-Ups,Frog Sit-Ups
+Front_Box_Jump,other,Front Box Jump,Front Box Jump
+Front_Cone_Hops_or_hurdle_hops,other,Front Cone Hops (or hurdle hops),Front Cone Hops (Or hurdle hops)
+Front_Incline_Dumbbell_Raise,dumbbell,Front Incline Dumbbell Raise,Front Incline Raise (Dumbbell)
+Front_Leg_Raises,body only,Front Leg Raises,Front Leg Raise
+Front_Plate_Raise,other,Front Plate Raise,Front Plate Raise
+Front_Cable_Raise,cable,Front Cable Raise,Front Raise (Cable)
+Front_Dumbbell_Raise,dumbbell,Front Dumbbell Raise,Front Raise (Dumbbell)
+Front_Raise_And_Pullover,barbell,Front Raise And Pullover,Front Raise And Pullover (Barbell)
+Front_Barbell_Squat,barbell,Front Barbell Squat,Front Squat (Barbell)
+Front_Squat_Clean_Grip,barbell,Front Squat (Clean Grip),"Front Squat (Barbell, Clean Grip)"
+Front_Squats_With_Two_Kettlebells,kettlebells,Front Squats With Two Kettlebells,Front Squat (Kettlebell)
+Front_Barbell_Squat_To_A_Bench,barbell,Front Barbell Squat To A Bench,Front Squat To A Bench (Barbell)
+Front_Two-Dumbbell_Raise,dumbbell,Front Two-Dumbbell Raise,Front Two-Dumbbell Raise
+Barbell_Full_Squat,barbell,Barbell Full Squat,Full Squat (Barbell)
+Medicine_Ball_Full_Twist,medicine ball,Medicine Ball Full Twist,Full Twist (Medicine Ball)
+Gironda_Sternum_Chins,other,Gironda Sternum Chins,Gironda Sternum Chins
+Barbell_Glute_Bridge,barbell,Barbell Glute Bridge,Glute Bridge (Barbell)
+Glute_Ham_Raise,machine,Glute Ham Raise,Glute Ham Raise (Machine)
+Glute_Kickback,body only,Glute Kickback,Glute Kickback
+Goblet_Squat,kettlebells,Goblet Squat,Goblet Squat (Kettlebell)
+Band_Good_Morning,bands,Band Good Morning,Good Morning (Band)
+Band_Good_Morning_Pull_Through,bands,Band Good Morning (Pull Through),"Good Morning (Band, Pull Through)"
+Good_Morning,barbell,Good Morning,Good Morning (Barbell)
+Good_Morning_off_Pins,barbell,Good Morning off Pins,Good Morning off Pins (Barbell)
+Gorilla_Chin_Crunch,body only,Gorilla Chin/Crunch,Gorilla Chin/Crunch
+Groin_and_Back_Stretch,none,Groin and Back Stretch,Groin and Back Stretch
+Groiners,body only,Groiners,Groiners
+Barbell_Guillotine_Bench_Press,barbell,Barbell Guillotine Bench Press,Guillotine Bench Press (Barbell)
+Barbell_Hack_Squat,barbell,Barbell Hack Squat,Hack Squat (Barbell)
+Hack_Squat,machine,Hack Squat,Hack Squat (Machine)
+Kettlebell_Halo,kettlebells,Kettlebell Halo,Halo (Kettlebell)
+Kettlebell_Halo_With_Overhead_Extension,kettlebells,Kettlebell Halo with Overhead Extension,Halo with Overhead Extension (Kettlebell)
+Cable_Hammer_Curls_-_Rope_Attachment,cable,Cable Hammer Curls - Rope Attachment,"Hammer Curl (Cable, Rope Attachment)"
+Hammer_Curls,dumbbell,Hammer Curls,Hammer Curl (Dumbbell)
+Hammer_Grip_Incline_DB_Bench_Press,dumbbell,Hammer Grip Incline DB Bench Press,Hammer Grip Incline Bench Press (Dumbbell)
+Hamstring_Stretch,none,Hamstring Stretch,Hamstring Stretch
+Hamstring-SMR,foam roll,Hamstring-SMR,Hamstring-SMR (Foam Roller)
+Handstand_Push-Ups,body only,Handstand Push-Ups,Handstand Push-Up
+Hang_Clean,barbell,Hang Clean,Hang Clean (Barbell)
+Hang_Clean_-_Below_the_Knees,barbell,Hang Clean - Below the Knees,"Hang Clean (Barbell, Below the Knees)"
+Kettlebell_Hang_Clean,kettlebells,Kettlebell Hang Clean,Hang Clean (Kettlebell)
+Smith_Machine_Hang_Power_Clean,machine,Smith Machine Hang Power Clean,Hang Power Clean (Smith Machine)
+Hang_Snatch,barbell,Hang Snatch,Hang Snatch (Barbell)
+Hang_Snatch_-_Below_Knees,barbell,Hang Snatch - Below Knees,"Hang Snatch (Barbell, Below Knees)"
+Hanging_Bar_Good_Morning,barbell,Hanging Bar Good Morning,Hanging Bar Good Morning (Barbell)
+Hanging_Leg_Raise,body only,Hanging Leg Raise,Hanging Leg Raise
+Hanging_Pike,body only,Hanging Pike,Hanging Pike
+Heaving_Snatch_Balance,barbell,Heaving Snatch Balance,Heaving Snatch Balance (Barbell)
+Heavy_Bag_Thrust,other,Heavy Bag Thrust,Heavy Bag Thrust
+High_Cable_Curls,cable,High Cable Curls,High Curl (Cable)
+Leverage_High_Row,machine,Leverage High Row,High Row (Machine)
+Thigh_Abductor,machine,Thigh Abductor,Hip Abduction (Machine)
+Cable_Hip_Adduction,cable,Cable Hip Adduction,Hip Adduction (Cable)
+Thigh_Adductor,machine,Thigh Adductor,Hip Adduction (Machine)
+Band_Hip_Adductions,bands,Band Hip Adductions,Hip Adductions (Band)
+Hip_Circles_prone,body only,Hip Circles (prone),Hip Circles (Prone)
+Hip_Extension_with_Bands,bands,Hip Extension with Bands,Hip Extension (Band)
+Hip_Flexion_with_Band,bands,Hip Flexion with Band,Hip Flexion (Band)
+Hip_Lift_with_Band,bands,Hip Lift with Band,Hip Lift (Band)
+Smith_Machine_Hip_Raise,machine,Smith Machine Hip Raise,Hip Raise (Smith Machine)
+Barbell_Hip_Thrust,barbell,Barbell Hip Thrust,Hip Thrust (Barbell)
+Hug_A_Ball,exercise ball,Hug A Ball,Hug A Ball (Exercise Ball)
+Hug_Knees_To_Chest,none,Hug Knees To Chest,Hug Knees To Chest
+Hurdle_Hops,other,Hurdle Hops,Hurdle Hops
+Hyperextensions_With_No_Hyperextension_Bench,body only,Hyperextensions With No Hyperextension Bench,Hyperextensions With No Hyperextension Bench
+Iliotibial_Tract-SMR,foam roll,Iliotibial Tract-SMR,Iliotibial Tract-SMR (Foam Roller)
+Inchworm,body only,Inchworm,Inchworm
+Barbell_Incline_Bench_Press_-_Medium_Grip,barbell,Barbell Incline Bench Press - Medium Grip,Incline Bench Press (Barbell)
+Incline_Dumbbell_Press,dumbbell,Incline Dumbbell Press,Incline Bench Press (Dumbbell)
+Smith_Machine_Incline_Bench_Press,machine,Smith Machine Incline Bench Press,Incline Bench Press (Smith Machine)
+Incline_Bench_Pull,barbell,Incline Bench Pull,Incline Bench Pull (Barbell)
+Incline_Dumbbell_Bench_With_Palms_Facing_In,dumbbell,Incline Dumbbell Bench With Palms Facing In,Incline Bench With Palms Facing In (Dumbbell)
+Incline_Dumbbell_Flyes,dumbbell,Incline Dumbbell Flyes,Incline Chest Fly (Dumbbell)
+Incline_Cable_Chest_Press,cable,Incline Cable Chest Press,Incline Chest Press (Cable)
+Leverage_Incline_Chest_Press,machine,Leverage Incline Chest Press,Incline Chest Press (Machine)
+Incline_Dumbbell_Curl,dumbbell,Incline Dumbbell Curl,Incline Curl (Dumbbell)
+Incline_Cable_Flye,cable,Incline Cable Flye,Incline Fly (Cable)
+Incline_Dumbbell_Flyes_-_With_A_Twist,dumbbell,Incline Dumbbell Flyes - With A Twist,"Incline Fly (Dumbbell, Twist)"
+Incline_Hammer_Curls,dumbbell,Incline Hammer Curls,Incline Hammer Curl (Dumbbell)
+Incline_Inner_Biceps_Curl,dumbbell,Incline Inner Biceps Curl,Incline Inner Biceps Curl (Dumbbell)
+Incline_Push-Up,body only,Incline Push-Up,Incline Push-Up
+Incline_Push-Up_Close-Grip,body only,Incline Push-Up Close-Grip,Incline Push-Up (Close Grip)
+Incline_Push-Up_Depth_Jump,other,Incline Push-Up Depth Jump,Incline Push-Up Depth Jump
+Incline_Push-Up_Medium,body only,Incline Push-Up Medium,Incline Push-Up Medium
+Incline_Push-Up_Reverse_Grip,body only,Incline Push-Up Reverse Grip,Incline Push-Up Reverse Grip
+Incline_Push-Up_Wide,body only,Incline Push-Up Wide,Incline Push-Up Wide
+Cable_Incline_Pushdown,cable,Cable Incline Pushdown,Incline Pushdown (Cable)
+Dumbbell_Incline_Row,dumbbell,Dumbbell Incline Row,Incline Row (Dumbbell)
+Barbell_Incline_Shoulder_Raise,barbell,Barbell Incline Shoulder Raise,Incline Shoulder Raise (Barbell)
+Dumbbell_Incline_Shoulder_Raise,dumbbell,Dumbbell Incline Shoulder Raise,Incline Shoulder Raise (Dumbbell)
+Smith_Incline_Shoulder_Raise,barbell,Smith Incline Shoulder Raise,Incline Shoulder Raise (Smith Machine)
+Incline_Barbell_Triceps_Extension,barbell,Incline Barbell Triceps Extension,Incline Triceps Extension (Barbell)
+Cable_Incline_Triceps_Extension,cable,Cable Incline Triceps Extension,Incline Triceps Extension (Cable)
+Intermediate_Groin_Stretch,other,Intermediate Groin Stretch,Intermediate Groin Stretch
+Intermediate_Hip_Flexor_and_Quad_Stretch,other,Intermediate Hip Flexor and Quad Stretch,Intermediate Hip Flexor and Quad Stretch
+Internal_Rotation_with_Band,bands,Internal Rotation with Band,Internal Rotation (Band)
+Cable_Internal_Rotation,cable,Cable Internal Rotation,Internal Rotation (Cable)
+Inverted_Row,none,Inverted Row,Inverted Row
+Inverted_Row_with_Straps,other,Inverted Row with Straps,Inverted Row with Straps
+Cable_Iron_Cross,cable,Cable Iron Cross,Iron Cross (Cable)
+Iron_Cross,dumbbell,Iron Cross,Iron Cross (Dumbbell)
+Iron_Crosses_stretch,none,Iron Crosses (stretch),Iron Crosses (Stretch)
+Leverage_Iso_Row,machine,Leverage Iso Row,Iso Row (Machine)
+Isometric_Chest_Squeezes,body only,Isometric Chest Squeezes,Isometric Chest Squeezes
+Isometric_Neck_Exercise_-_Front_And_Back,body only,Isometric Neck Exercise - Front And Back,Isometric Neck Exercise (Front And Back)
+Isometric_Neck_Exercise_-_Sides,body only,Isometric Neck Exercise - Sides,Isometric Neck Exercise (Sides)
+Isometric_Wipers,body only,Isometric Wipers,Isometric Wipers
+IT_Band_and_Glute_Stretch,other,IT Band and Glute Stretch,IT Band and Glute Stretch
+Jackknife_Sit-Up,body only,Jackknife Sit-Up,Jackknife Sit-Up
+Janda_Sit-Up,body only,Janda Sit-Up,Janda Sit-Up
+Jefferson_Squats,barbell,Jefferson Squats,Jefferson Squat (Barbell)
+Jerk_Balance,barbell,Jerk Balance,Jerk Balance (Barbell)
+Jerk_Dip_Squat,barbell,Jerk Dip Squat,Jerk Dip Squat (Barbell)
+JM_Press,barbell,JM Press,JM Press (Barbell)
+Jogging_Treadmill,machine,"Jogging, Treadmill",Jogging (Treadmill)
+Cable_Judo_Flip,cable,Cable Judo Flip,Judo Flip (Cable)
+Rope_Jumping,other,Rope Jumping,Jumping (Rope)
+Keg_Load,other,Keg Load,Keg Load
+Kipping_Muscle_Up,other,Kipping Muscle Up,Kipping Muscle Up
+Knee_Across_The_Body,none,Knee Across The Body,Knee Across The Body
+Knee_Circles,body only,Knee Circles,Knee Circles
+Knee_Tuck_Jump,body only,Knee Tuck Jump,Knee Tuck Jump
+Knee_Hip_Raise_On_Parallel_Bars,other,Knee/Hip Raise On Parallel Bars,Knee/Hip Raise On Parallel Bars
+Kneeling_Arm_Drill,none,Kneeling Arm Drill,Kneeling Arm Drill
+Kneeling_Cable_Crunch_With_Alternating_Oblique_Twists,cable,Kneeling Cable Crunch With Alternating Oblique Twists,Kneeling Crunch With Alternating Oblique Twist (Cable)
+Kneeling_Forearm_Stretch,none,Kneeling Forearm Stretch,Kneeling Forearm Stretch
+Kneeling_High_Pulley_Row,cable,Kneeling High Pulley Row,Kneeling High Pulley Row (Cable)
+Kneeling_Hip_Flexor,none,Kneeling Hip Flexor,Kneeling Hip Flexor
+Kneeling_Jump_Squat,barbell,Kneeling Jump Squat,Kneeling Jump Squat (Barbell)
+Kneeling_Single-Arm_High_Pulley_Row,cable,Kneeling Single-Arm High Pulley Row,Kneeling Single-Arm High Pulley Row (Cable)
+Kneeling_Squat,barbell,Kneeling Squat,Kneeling Squat (Barbell)
+Kneeling_Cable_Triceps_Extension,cable,Kneeling Cable Triceps Extension,Kneeling Triceps Extension (Cable)
+Landmine_180s,barbell,Landmine 180's,Landmine 180's (Barbell)
+Landmine_Linear_Jammer,barbell,Landmine Linear Jammer,Landmine Linear Jammer (Barbell)
+Wide-Grip_Pulldown_Behind_The_Neck,cable,Wide-Grip Pulldown Behind The Neck,Lat Pulldown (Behind the Neck)
+Close-Grip_Front_Lat_Pulldown,cable,Close-Grip Front Lat Pulldown,Lat Pulldown (Close Grip)
+Full_Range-Of-Motion_Lat_Pulldown,cable,Full Range-Of-Motion Lat Pulldown,Lat Pulldown (Full Range)
+One_Arm_Lat_Pulldown,cable,One Arm Lat Pulldown,Lat Pulldown (Single Arm)
+Underhand_Cable_Pulldowns,cable,Underhand Cable Pulldowns,Lat Pulldown (Underhand)
+V-Bar_Pulldown,cable,V-Bar Pulldown,Lat Pulldown (V-Bar)
+Wide-Grip_Lat_Pulldown,cable,Wide-Grip Lat Pulldown,Lat Pulldown (Wide Grip)
+Lateral_Bound,body only,Lateral Bound,Lateral Bound
+Lateral_Box_Jump,other,Lateral Box Jump,Lateral Box Jump
+Lateral_Cone_Hops,other,Lateral Cone Hops,Lateral Cone Hops
+Lateral_Raise_-_With_Bands,bands,Lateral Raise - With Bands,Lateral Raise (Band)
+Side_Lateral_Raise,dumbbell,Side Lateral Raise,Lateral Raise (Dumbbell)
+Latissimus_Dorsi-SMR,foam roll,Latissimus Dorsi-SMR,Latissimus Dorsi-SMR (Foam Roller)
+Leg_Extensions,machine,Leg Extensions,Leg Extension (Machine)
+Leg_Lift,body only,Leg Lift,Leg Lift
+Leg_Press,machine,Leg Press,Leg Press (Machine)
+Smith_Machine_Leg_Press,machine,Smith Machine Leg Press,Leg Press (Smith Machine)
+Leg_Pull-In,body only,Leg Pull-In,Leg Pull-In
+Leg-Over_Floor_Press,kettlebells,Leg-Over Floor Press,Leg-Over Floor Press (Kettlebell)
+Leg-Up_Hamstring_Stretch,none,Leg-Up Hamstring Stretch,Leg-Up Hamstring Stretch
+Linear_3-Part_Start_Technique,none,Linear 3-Part Start Technique,Linear 3-Part Start Technique
+Linear_Acceleration_Wall_Drill,none,Linear Acceleration Wall Drill,Linear Acceleration Wall Drill
+Linear_Depth_Jump,other,Linear Depth Jump,Linear Depth Jump
+Log_Lift,other,Log Lift,Log Lift
+London_Bridges,other,London Bridges,London Bridges
+Looking_At_Ceiling,none,Looking At Ceiling,Looking At Ceiling
+Low_Cable_Crossover,cable,Low Cable Crossover,Low Crossover (Cable)
+Low_Pulley_Row_To_Neck,cable,Low Pulley Row To Neck,Low Pulley Row To Neck (Cable)
+Low_Cable_Triceps_Extension,cable,Low Cable Triceps Extension,Low Triceps Extension (Cable)
+Lower_Back_Curl,body only,Lower Back Curl,Lower Back Curl
+Lower_Back-SMR,foam roll,Lower Back-SMR,Lower Back-SMR (Foam Roller)
+Barbell_Lunge,barbell,Barbell Lunge,Lunge (Barbell)
+Dumbbell_Lunges,dumbbell,Dumbbell Lunges,Lunge (Dumbbell)
+Lunge_Pass_Through,kettlebells,Lunge Pass Through,Lunge Pass Through (Kettlebell)
+Lunge_Sprint,machine,Lunge Sprint,Lunge Sprint (Machine)
+Lying_Close-Grip_Bar_Curl_On_High_Pulley,cable,Lying Close-Grip Bar Curl On High Pulley,Lying Bar Curl On High Pulley (Close Grip)
+Lying_Close-Grip_Barbell_Triceps_Press_To_Chin,e-z curl bar,Lying Close-Grip Barbell Triceps Press To Chin,"Lying Barbell Triceps Press To Chin (EZ Bar, Close Grip)"
+Lying_Bent_Leg_Groin,other,Lying Bent Leg Groin,Lying Bent Leg Groin
+Lying_Cambered_Barbell_Row,barbell,Lying Cambered Barbell Row,Lying Cambered Row (Barbell)
+Lying_Crossover,body only,Lying Crossover,Lying Crossover
+Lying_Cable_Curl,cable,Lying Cable Curl,Lying Curl (Cable)
+Lying_Face_Down_Plate_Neck_Resistance,other,Lying Face Down Plate Neck Resistance,Lying Face Down Plate Neck Resistance
+Lying_Face_Up_Plate_Neck_Resistance,other,Lying Face Up Plate Neck Resistance,Lying Face Up Plate Neck Resistance
+Lying_Glute,body only,Lying Glute,Lying Glute
+Lying_Hamstring,other,Lying Hamstring,Lying Hamstring
+Lying_High_Bench_Barbell_Curl,barbell,Lying High Bench Barbell Curl,Lying High Bench Curl (Barbell)
+Lying_Leg_Curls,machine,Lying Leg Curls,Lying Leg Curl (Machine)
+Lying_One-Arm_Lateral_Raise,dumbbell,Lying One-Arm Lateral Raise,Lying One-Arm Lateral Raise (Dumbbell)
+Dumbbell_Lying_One-Arm_Rear_Lateral_Raise,dumbbell,Dumbbell Lying One-Arm Rear Lateral Raise,Lying One-Arm Rear Lateral Raise (Dumbbell)
+Dumbbell_Lying_Pronation,dumbbell,Dumbbell Lying Pronation,Lying Pronation (Dumbbell)
+Lying_Prone_Quadriceps,body only,Lying Prone Quadriceps,Lying Prone Quadriceps
+Lying_Rear_Delt_Raise,dumbbell,Lying Rear Delt Raise,Lying Rear Delt Raise (Dumbbell)
+Dumbbell_Lying_Rear_Lateral_Raise,dumbbell,Dumbbell Lying Rear Lateral Raise,Lying Rear Lateral Raise (Dumbbell)
+Lying_Machine_Squat,machine,Lying Machine Squat,Lying Squat (Machine)
+Dumbbell_Lying_Supination,dumbbell,Dumbbell Lying Supination,Lying Supination (Dumbbell)
+Lying_Supine_Dumbbell_Curl,dumbbell,Lying Supine Dumbbell Curl,Lying Supine Curl (Dumbbell)
+Lying_Dumbbell_Tricep_Extension,dumbbell,Lying Dumbbell Tricep Extension,Lying Tricep Extension (Dumbbell)
+Cable_Lying_Triceps_Extension,cable,Cable Lying Triceps Extension,Lying Triceps Extension (Cable)
+Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head,barbell,Lying Close-Grip Barbell Triceps Extension Behind The Head,"Lying Triceps Extension Behind The Head (Barbell, Close Grip)"
+Lying_Triceps_Press,e-z curl bar,Lying Triceps Press,Lying Triceps Press (EZ Bar)
+Middle_Back_Shrug,dumbbell,Middle Back Shrug,Middle Back Shrug (Dumbbell)
+Middle_Back_Stretch,none,Middle Back Stretch,Middle Back Stretch
+Mixed_Grip_Chin,other,Mixed Grip Chin,Mixed Grip Chin
+Monster_Walk,bands,Monster Walk,Monster Walk (Band)
+Mountain_Climbers,none,Mountain Climbers,Mountain Climber
+Moving_Claw_Series,none,Moving Claw Series,Moving Claw Series
+Muscle_Snatch,barbell,Muscle Snatch,Muscle Snatch (Barbell)
+Muscle_Up,other,Muscle Up,Muscle Up
+Narrow_Stance_Hack_Squats,machine,Narrow Stance Hack Squats,Narrow Stance Hack Squat (Machine)
+Narrow_Stance_Leg_Press,machine,Narrow Stance Leg Press,Narrow Stance Leg Press (Machine)
+Narrow_Stance_Squats,barbell,Narrow Stance Squats,Narrow Stance Squat (Barbell)
+Natural_Glute_Ham_Raise,body only,Natural Glute Ham Raise,Natural Glute Ham Raise
+Neck_Press,barbell,Neck Press,Neck Press (Barbell)
+Neck-SMR,other,Neck-SMR,Neck-SMR
+Oblique_Crunches,body only,Oblique Crunches,Oblique Crunch
+Oblique_Crunches_-_On_The_Floor,body only,Oblique Crunches - On The Floor,Oblique Crunch (On The Floor)
+Olympic_Squat,barbell,Olympic Squat,Olympic Squat (Barbell)
+On_Your_Side_Quad_Stretch,none,On Your Side Quad Stretch,On Your Side Quad Stretch
+On-Your-Back_Quad_Stretch,other,On-Your-Back Quad Stretch,On-Your-Back Quad Stretch
+One_Arm_Against_Wall,none,One Arm Against Wall,One Arm Against Wall
+One_Arm_Dumbbell_Bench_Press,dumbbell,One Arm Dumbbell Bench Press,One Arm Bench Press (Dumbbell)
+One_Arm_Chin-Up,other,One Arm Chin-Up,One Arm Chin-Up
+One_Arm_Floor_Press,barbell,One Arm Floor Press,One Arm Floor Press (Barbell)
+One_Arm_Dumbbell_Preacher_Curl,dumbbell,One Arm Dumbbell Preacher Curl,One Arm Preacher Curl (Dumbbell)
+One_Arm_Pronated_Dumbbell_Triceps_Extension,dumbbell,One Arm Pronated Dumbbell Triceps Extension,One Arm Pronated Triceps Extension (Dumbbell)
+One_Arm_Supinated_Dumbbell_Triceps_Extension,dumbbell,One Arm Supinated Dumbbell Triceps Extension,One Arm Supinated Triceps Extension (Dumbbell)
+Cable_One_Arm_Tricep_Extension,cable,Cable One Arm Tricep Extension,One Arm Tricep Extension (Cable)
+One_Half_Locust,none,One Half Locust,One Half Locust
+One_Handed_Hang,other,One Handed Hang,One Handed Hang
+One_Knee_To_Chest,none,One Knee To Chest,One Knee To Chest
+One_Leg_Barbell_Squat,barbell,One Leg Barbell Squat,One Leg Squat (Barbell)
+One-Arm_Kettlebell_Clean,kettlebells,One-Arm Kettlebell Clean,One-Arm Clean (Kettlebell)
+One-Arm_Kettlebell_Clean_and_Jerk,kettlebells,One-Arm Kettlebell Clean and Jerk,One-Arm Clean and Jerk (Kettlebell)
+One-Arm_Flat_Bench_Dumbbell_Flye,dumbbell,One-Arm Flat Bench Dumbbell Flye,One-Arm Flat Bench Fly (Dumbbell)
+One-Arm_Kettlebell_Floor_Press,kettlebells,One-Arm Kettlebell Floor Press,One-Arm Floor Press (Kettlebell)
+One-Arm_High-Pulley_Cable_Side_Bends,cable,One-Arm High-Pulley Cable Side Bends,One-Arm High-Pulley Side Bends (Cable)
+One-Arm_Incline_Lateral_Raise,dumbbell,One-Arm Incline Lateral Raise,One-Arm Incline Lateral Raise (Dumbbell)
+One-Arm_Kettlebell_Jerk,kettlebells,One-Arm Kettlebell Jerk,One-Arm Jerk (Kettlebell)
+One-Arm_Long_Bar_Row,barbell,One-Arm Long Bar Row,One-Arm Long Bar Row (Barbell)
+One-Arm_Kettlebell_Military_Press_To_The_Side,kettlebells,One-Arm Kettlebell Military Press To The Side,One-Arm Military Press To The Side (Kettlebell)
+One-Arm_Open_Palm_Kettlebell_Clean,kettlebells,One-Arm Open Palm Kettlebell Clean,One-Arm Open Palm Clean (Kettlebell)
+One-Arm_Overhead_Kettlebell_Squats,kettlebells,One-Arm Overhead Kettlebell Squats,One-Arm Overhead Squat (Kettlebell)
+One-Arm_Kettlebell_Para_Press,kettlebells,One-Arm Kettlebell Para Press,One-Arm Para Press (Kettlebell)
+One-Arm_Kettlebell_Push_Press,kettlebells,One-Arm Kettlebell Push Press,One-Arm Push Press (Kettlebell)
+One-Arm_Kettlebell_Row,kettlebells,One-Arm Kettlebell Row,One-Arm Row (Kettlebell)
+Dumbbell_One-Arm_Shoulder_Press,dumbbell,Dumbbell One-Arm Shoulder Press,One-Arm Shoulder Press (Dumbbell)
+One-Arm_Side_Deadlift,barbell,One-Arm Side Deadlift,One-Arm Side Deadlift (Barbell)
+One-Arm_Side_Laterals,dumbbell,One-Arm Side Laterals,One-Arm Side Laterals (Dumbbell)
+One-Arm_Medicine_Ball_Slam,medicine ball,One-Arm Medicine Ball Slam,One-Arm Slam (Medicine Ball)
+One-Arm_Kettlebell_Snatch,kettlebells,One-Arm Kettlebell Snatch,One-Arm Snatch (Kettlebell)
+One-Arm_Kettlebell_Split_Jerk,kettlebells,One-Arm Kettlebell Split Jerk,One-Arm Split Jerk (Kettlebell)
+One-Arm_Kettlebell_Split_Snatch,kettlebells,One-Arm Kettlebell Split Snatch,One-Arm Split Snatch (Kettlebell)
+Dumbbell_One-Arm_Triceps_Extension,dumbbell,Dumbbell One-Arm Triceps Extension,One-Arm Triceps Extension (Dumbbell)
+Dumbbell_One-Arm_Upright_Row,dumbbell,Dumbbell One-Arm Upright Row,One-Arm Upright Row (Dumbbell)
+Smith_Machine_One-Arm_Upright_Row,machine,Smith Machine One-Arm Upright Row,One-Arm Upright Row (Smith Machine)
+Kettlebell_One-Legged_Deadlift,kettlebells,Kettlebell One-Legged Deadlift,One-Legged Deadlift (Kettlebell)
+One-Legged_Cable_Kickback,cable,One-Legged Cable Kickback,One-Legged Kickback (Cable)
+Open_Palm_Kettlebell_Clean,kettlebells,Open Palm Kettlebell Clean,Open Palm Clean (Kettlebell)
+Otis-Up,other,Otis-Up,Otis-Up
+Overhead_Cable_Curl,cable,Overhead Cable Curl,Overhead Curl (Cable)
+Overhead_Lat,other,Overhead Lat,Overhead Lat
+Standing_Military_Press,barbell,Standing Military Press,Overhead Press (Barbell)
+Smith_Machine_Overhead_Shoulder_Press,machine,Smith Machine Overhead Shoulder Press,Overhead Shoulder Press (Smith Machine)
+Overhead_Slam,medicine ball,Overhead Slam,Overhead Slam (Medicine Ball)
+Overhead_Squat,barbell,Overhead Squat,Overhead Squat (Barbell)
+Overhead_Stretch,none,Overhead Stretch,Overhead Stretch
+Overhead_Triceps,body only,Overhead Triceps,Overhead Triceps
+Standing_Dumbbell_Triceps_Extension,dumbbell,Standing Dumbbell Triceps Extension,Overhead Triceps Extension (Dumbbell)
+Kettlebell_Overhead_Triceps_Extension,kettlebells,Kettlebell Overhead Triceps Extension,Overhead Triceps Extension (Kettlebell)
+Cable_Rope_Overhead_Triceps_Extension,cable,Cable Rope Overhead Triceps Extension,Overhead Triceps Extension (Rope)
+Pallof_Press,cable,Pallof Press,Pallof Press (Cable)
+Pallof_Press_With_Rotation,cable,Pallof Press With Rotation,Pallof Press With Rotation (Cable)
+Palms-Down_Wrist_Curl_Over_A_Bench,barbell,Palms-Down Wrist Curl Over A Bench,Palms-Down Wrist Curl Over A Bench (Barbell)
+Palms-Down_Dumbbell_Wrist_Curl_Over_A_Bench,dumbbell,Palms-Down Dumbbell Wrist Curl Over A Bench,Palms-Down Wrist Curl Over A Bench (Dumbbell)
+Palms-Up_Barbell_Wrist_Curl_Over_A_Bench,barbell,Palms-Up Barbell Wrist Curl Over A Bench,Palms-Up Wrist Curl Over A Bench (Barbell)
+Palms-Up_Dumbbell_Wrist_Curl_Over_A_Bench,dumbbell,Palms-Up Dumbbell Wrist Curl Over A Bench,Palms-Up Wrist Curl Over A Bench (Dumbbell)
+Parallel_Bar_Dip,other,Parallel Bar Dip,Parallel Bar Dip
+Kettlebell_Pass_Between_The_Legs,kettlebells,Kettlebell Pass Between The Legs,Pass Between The Legs (Kettlebell)
+Butterfly,machine,Butterfly,Pec Deck (Machine)
+Pelvic_Tilt_Into_Bridge,none,Pelvic Tilt Into Bridge,Pelvic Tilt Into Bridge
+Peroneals_Stretch,other,Peroneals Stretch,Peroneals Stretch
+Peroneals-SMR,foam roll,Peroneals-SMR,Peroneals-SMR (Foam Roller)
+Physioball_Hip_Bridge,exercise ball,Physioball Hip Bridge,Physioball Hip Bridge (Exercise Ball)
+Pin_Presses,barbell,Pin Presses,Pin Press (Barbell)
+Kettlebell_Pirate_Ships,kettlebells,Kettlebell Pirate Ships,Pirate Ships (Kettlebell)
+Piriformis-SMR,foam roll,Piriformis-SMR,Piriformis-SMR (Foam Roller)
+Kettlebell_Pistol_Squat,kettlebells,Kettlebell Pistol Squat,Pistol Squat (Kettlebell)
+Smith_Machine_Pistol_Squat,machine,Smith Machine Pistol Squat,Pistol Squat (Smith Machine)
+Plank,body only,Plank,Plank
+Plate_Pinch,other,Plate Pinch,Plate Pinch
+Plate_Twist,other,Plate Twist,Plate Twist
+Platform_Hamstring_Slides,other,Platform Hamstring Slides,Platform Hamstring Slides
+Plie_Dumbbell_Squat,dumbbell,Plie Dumbbell Squat,Plie Squat (Dumbbell)
+Plyo_Push-up,body only,Plyo Push-up,Plyo Push-Up
+Plyo_Kettlebell_Pushups,kettlebells,Plyo Kettlebell Pushups,Plyo Push-Up (Kettlebell)
+Posterior_Tibialis_Stretch,other,Posterior Tibialis Stretch,Posterior Tibialis Stretch
+Power_Clean,barbell,Power Clean,Power Clean (Barbell)
+Power_Clean_from_Blocks,barbell,Power Clean from Blocks,Power Clean from Blocks (Barbell)
+Power_Jerk,barbell,Power Jerk,Power Jerk (Barbell)
+Power_Partials,dumbbell,Power Partials,Power Partials (Dumbbell)
+Power_Snatch,barbell,Power Snatch,Power Snatch (Barbell)
+Power_Snatch_from_Blocks,barbell,Power Snatch from Blocks,Power Snatch from Blocks (Barbell)
+Power_Stairs,other,Power Stairs,Power Stairs
+Preacher_Curl,barbell,Preacher Curl,Preacher Curl (Barbell)
+Cable_Preacher_Curl,cable,Cable Preacher Curl,Preacher Curl (Cable)
+Machine_Preacher_Curls,machine,Machine Preacher Curls,Preacher Curl (Machine)
+Preacher_Hammer_Dumbbell_Curl,dumbbell,Preacher Hammer Dumbbell Curl,Preacher Hammer Curl (Dumbbell)
+Close-Grip_Dumbbell_Press,dumbbell,Close-Grip Dumbbell Press,"Press (Dumbbell, Close Grip)"
+Close-Grip_EZ-Bar_Press,e-z curl bar,Close-Grip EZ-Bar Press,"Press (EZ Bar, Close Grip)"
+Press_Sit-Up,barbell,Press Sit-Up,Press Sit-Up (Barbell)
+Dumbbell_Prone_Incline_Curl,dumbbell,Dumbbell Prone Incline Curl,Prone Incline Curl (Dumbbell)
+Prone_Manual_Hamstring,none,Prone Manual Hamstring,Prone Manual Hamstring
+Prowler_Sprint,other,Prowler Sprint,Prowler Sprint
+Band_Pull_Apart,bands,Band Pull Apart,Pull Apart (Band)
+Pull_Through,cable,Pull Through,Pull Through (Cable)
+Pullups,body only,Pullups,Pull-Up
+V-Bar_Pullup,body only,V-Bar Pullup,Pull-Up (V-Bar)
+Push_Press,barbell,Push Press,Push Press (Barbell)
+Push_Press_-_Behind_the_Neck,barbell,Push Press - Behind the Neck,"Push Press (Barbell, Behind the Neck)"
+Push_Up_to_Side_Plank,body only,Push Up to Side Plank,Push Up to Side Plank
+Pushups,body only,Pushups,Push-Up
+Pushups_Close_and_Wide_Hand_Positions,body only,Pushups (Close and Wide Hand Positions),Push-Up (Close and Wide Hand Positions)
+Push-Ups_-_Close_Triceps_Position,body only,Push-Ups - Close Triceps Position,Push-Up (Close Triceps Position)
+Close-Grip_Push-Up_off_of_a_Dumbbell,body only,Close-Grip Push-Up off of a Dumbbell,Push-Up off of a Dumbbell (Close Grip)
+Push-Up_Wide,body only,Push-Up Wide,Push-Up Wide
+Push-Ups_With_Feet_Elevated,body only,Push-Ups With Feet Elevated,Push-Up With Feet Elevated
+Push-Ups_With_Feet_On_An_Exercise_Ball,exercise ball,Push-Ups With Feet On An Exercise Ball,Push-Up With Feet On An Exercise Ball (Exercise Ball)
+Pyramid,exercise ball,Pyramid,Pyramid (Exercise Ball)
+Quad_Stretch,other,Quad Stretch,Quad Stretch
+Quadriceps-SMR,foam roll,Quadriceps-SMR,Quadriceps-SMR (Foam Roller)
+Quick_Leap,other,Quick Leap,Quick Leap
+Rack_Delivery,barbell,Rack Delivery,Rack Delivery (Barbell)
+Rack_Pull_with_Bands,barbell,Rack Pull with Bands,Rack Pull with Bands (Barbell)
+Rack_Pulls,barbell,Rack Pulls,Rack Pulls (Barbell)
+Dumbbell_Raise,dumbbell,Dumbbell Raise,Raise (Dumbbell)
+Cable_Rear_Delt_Fly,cable,Cable Rear Delt Fly,Rear Delt Fly (Cable)
+Barbell_Rear_Delt_Row,barbell,Barbell Rear Delt Row,Rear Delt Row (Barbell)
+Rear_Leg_Raises,body only,Rear Leg Raises,Rear Leg Raise
+Dumbbell_Rear_Lunge,dumbbell,Dumbbell Rear Lunge,Rear Lunge (Dumbbell)
+Wide-Grip_Rear_Pull-Up,body only,Wide-Grip Rear Pull-Up,Rear Pull-Up (Wide Grip)
+Cable_Rope_Rear-Delt_Rows,cable,Cable Rope Rear-Delt Rows,Rear-Delt Row (Rope)
+Recumbent_Bike,machine,Recumbent Bike,Recumbent Bike (Machine)
+Return_Push_from_Stance,medicine ball,Return Push from Stance,Return Push from Stance (Medicine Ball)
+Reverse_Band_Bench_Press,barbell,Reverse Band Bench Press,Reverse Band Bench Press (Barbell)
+Reverse_Band_Box_Squat,barbell,Reverse Band Box Squat,Reverse Band Box Squat (Barbell)
+Reverse_Band_Deadlift,barbell,Reverse Band Deadlift,Reverse Band Deadlift (Barbell)
+Reverse_Band_Power_Squat,barbell,Reverse Band Power Squat,Reverse Band Power Squat (Barbell)
+Reverse_Band_Sumo_Deadlift,barbell,Reverse Band Sumo Deadlift,Reverse Band Sumo Deadlift (Barbell)
+Reverse_Barbell_Preacher_Curls,e-z curl bar,Reverse Barbell Preacher Curls,Reverse Barbell Preacher Curl (EZ Bar)
+Smith_Machine_Reverse_Calf_Raises,machine,Smith Machine Reverse Calf Raises,Reverse Calf Raise (Smith Machine)
+Reverse_Crunch,body only,Reverse Crunch,Reverse Crunch
+Cable_Reverse_Crunch,cable,Cable Reverse Crunch,Reverse Crunch (Cable)
+Reverse_Barbell_Curl,barbell,Reverse Barbell Curl,Reverse Curl (Barbell)
+Reverse_Cable_Curl,cable,Reverse Cable Curl,Reverse Curl (Cable)
+Reverse_Flyes,dumbbell,Reverse Flyes,Reverse Fly (Dumbbell)
+Reverse_Machine_Flyes,machine,Reverse Machine Flyes,Reverse Fly (Machine)
+Reverse_Flyes_With_External_Rotation,dumbbell,Reverse Flyes With External Rotation,Reverse Fly With External Rotation (Dumbbell)
+Reverse_Grip_Bent-Over_Rows,barbell,Reverse Grip Bent-Over Rows,Reverse Grip Bent-Over Row (Barbell)
+Reverse_Grip_Triceps_Pushdown,cable,Reverse Grip Triceps Pushdown,Reverse Grip Triceps Pushdown (Cable)
+Reverse_Hyperextension,machine,Reverse Hyperextension,Reverse Hyperextension (Machine)
+Reverse_Plate_Curls,other,Reverse Plate Curls,Reverse Plate Curl
+Reverse_Triceps_Bench_Press,barbell,Reverse Triceps Bench Press,Reverse Triceps Bench Press (Barbell)
+Rhomboids-SMR,foam roll,Rhomboids-SMR,Rhomboids-SMR (Foam Roller)
+Rickshaw_Carry,other,Rickshaw Carry,Rickshaw Carry
+Rickshaw_Deadlift,other,Rickshaw Deadlift,Rickshaw Deadlift
+Ring_Dips,other,Ring Dips,Ring Dip
+Rocket_Jump,body only,Rocket Jump,Rocket Jump
+Rocking_Standing_Calf_Raise,barbell,Rocking Standing Calf Raise,Rocking Standing Calf Raise (Barbell)
+Rocky_Pull-Ups_Pulldowns,other,Rocky Pull-Ups/Pulldowns,Rocky Pull-Up/Pulldown
+Barbell_Rollout_from_Bench,barbell,Barbell Rollout from Bench,Rollout from Bench (Barbell)
+Romanian_Deadlift,barbell,Romanian Deadlift,Romanian Deadlift (Barbell)
+Romanian_Deadlift_from_Deficit,barbell,Romanian Deadlift from Deficit,Romanian Deadlift from Deficit (Barbell)
+Round_The_World_Shoulder_Stretch,other,Round The World Shoulder Stretch,Round The World Shoulder Stretch
+Rowing_Stationary,machine,"Rowing, Stationary",Rowing (Machine)
+Runners_Stretch,none,Runner's Stretch,Runner's Stretch
+Running_Treadmill,machine,"Running, Treadmill",Running (Treadmill)
+Russian_Twist,body only,Russian Twist,Russian Twist
+Cable_Russian_Twists,cable,Cable Russian Twists,Russian Twist (Cable)
+Sandbag_Load,other,Sandbag Load,Sandbag Load
+Dumbbell_Scaption,dumbbell,Dumbbell Scaption,Scaption (Dumbbell)
+Scapular_Pull-Up,none,Scapular Pull-Up,Scapular Pull-Up
+Scissor_Kick,body only,Scissor Kick,Scissor Kick
+Scissors_Jump,body only,Scissors Jump,Scissors Jump
+Medicine_Ball_Scoop_Throw,medicine ball,Medicine Ball Scoop Throw,Scoop Throw (Medicine Ball)
+Seated_Band_Hamstring_Curl,other,Seated Band Hamstring Curl,Seated Band Hamstring Curl
+Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension,dumbbell,Seated Bent-Over One-Arm Dumbbell Triceps Extension,Seated Bent-Over One-Arm Triceps Extension (Dumbbell)
+Seated_Bent-Over_Rear_Delt_Raise,dumbbell,Seated Bent-Over Rear Delt Raise,Seated Bent-Over Rear Delt Raise (Dumbbell)
+Seated_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension,dumbbell,Seated Bent-Over Two-Arm Dumbbell Triceps Extension,Seated Bent-Over Two-Arm Triceps Extension (Dumbbell)
+Seated_Biceps,body only,Seated Biceps,Seated Biceps
+Dumbbell_Seated_Box_Jump,dumbbell,Dumbbell Seated Box Jump,Seated Box Jump (Dumbbell)
+Barbell_Seated_Calf_Raise,barbell,Barbell Seated Calf Raise,Seated Calf Raise (Barbell)
+Seated_Calf_Raise,machine,Seated Calf Raise,Seated Calf Raise (Machine)
+Seated_Calf_Stretch,none,Seated Calf Stretch,Seated Calf Stretch
+Seated_Close-Grip_Concentration_Barbell_Curl,barbell,Seated Close-Grip Concentration Barbell Curl,"Seated Concentration Curl (Barbell, Close Grip)"
+Cable_Seated_Crunch,cable,Cable Seated Crunch,Seated Crunch (Cable)
+Seated_Dumbbell_Curl,dumbbell,Seated Dumbbell Curl,Seated Curl (Dumbbell)
+Seated_Flat_Bench_Leg_Pull-In,body only,Seated Flat Bench Leg Pull-In,Seated Flat Bench Leg Pull-In
+Seated_Floor_Hamstring_Stretch,none,Seated Floor Hamstring Stretch,Seated Floor Hamstring Stretch
+Seated_Front_Deltoid,body only,Seated Front Deltoid,Seated Front Deltoid
+Seated_Glute,body only,Seated Glute,Seated Glute
+Seated_Good_Mornings,barbell,Seated Good Mornings,Seated Good Mornings (Barbell)
+Seated_Hamstring,none,Seated Hamstring,Seated Hamstring
+Seated_Hamstring_and_Calf_Stretch,other,Seated Hamstring and Calf Stretch,Seated Hamstring and Calf Stretch
+Seated_Head_Harness_Neck_Resistance,other,Seated Head Harness Neck Resistance,Seated Head Harness Neck Resistance
+Seated_Dumbbell_Inner_Biceps_Curl,dumbbell,Seated Dumbbell Inner Biceps Curl,Seated Inner Biceps Curl (Dumbbell)
+Cable_Seated_Lateral_Raise,cable,Cable Seated Lateral Raise,Seated Lateral Raise (Cable)
+Seated_Side_Lateral_Raise,dumbbell,Seated Side Lateral Raise,Seated Lateral Raise (Dumbbell)
+Seated_Leg_Curl,machine,Seated Leg Curl,Seated Leg Curl (Machine)
+Seated_Leg_Tucks,body only,Seated Leg Tucks,Seated Leg Tucks
+Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl,dumbbell,Seated One-Arm Dumbbell Palms-Down Wrist Curl,Seated One-Arm Palms-Down Wrist Curl (Dumbbell)
+Seated_One-Arm_Dumbbell_Palms-Up_Wrist_Curl,dumbbell,Seated One-Arm Dumbbell Palms-Up Wrist Curl,Seated One-Arm Palms-Up Wrist Curl (Dumbbell)
+Seated_One-arm_Cable_Pulley_Rows,cable,Seated One-arm Cable Pulley Rows,Seated One-arm Row (Cable)
+Dumbbell_Seated_One-Leg_Calf_Raise,dumbbell,Dumbbell Seated One-Leg Calf Raise,Seated One-Leg Calf Raise (Dumbbell)
+Seated_Barbell_Military_Press,barbell,Seated Barbell Military Press,Seated Overhead Press (Barbell)
+Seated_Overhead_Stretch,none,Seated Overhead Stretch,Seated Overhead Stretch
+Seated_Palm-Up_Barbell_Wrist_Curl,barbell,Seated Palm-Up Barbell Wrist Curl,Seated Palm-Up Wrist Curl (Barbell)
+Seated_Palms-Down_Barbell_Wrist_Curl,barbell,Seated Palms-Down Barbell Wrist Curl,Seated Palms-Down Wrist Curl (Barbell)
+Seated_Dumbbell_Palms-Down_Wrist_Curl,dumbbell,Seated Dumbbell Palms-Down Wrist Curl,Seated Palms-Down Wrist Curl (Dumbbell)
+Seated_Dumbbell_Palms-Up_Wrist_Curl,dumbbell,Seated Dumbbell Palms-Up Wrist Curl,Seated Palms-Up Wrist Curl (Dumbbell)
+Kettlebell_Seated_Press,kettlebells,Kettlebell Seated Press,Seated Press (Kettlebell)
+Seated_Cable_Rows,cable,Seated Cable Rows,Seated Row (Cable)
+Seated_Cable_Shoulder_Press,cable,Seated Cable Shoulder Press,Seated Shoulder Press (Cable)
+Seated_Dumbbell_Press,dumbbell,Seated Dumbbell Press,Seated Shoulder Press (Dumbbell)
+Seated_Triceps_Press,dumbbell,Seated Triceps Press,Seated Triceps Press (Dumbbell)
+Seated_Barbell_Twist,barbell,Seated Barbell Twist,Seated Twist (Barbell)
+Seated_Two-Arm_Palms-Up_Low-Pulley_Wrist_Curl,cable,Seated Two-Arm Palms-Up Low-Pulley Wrist Curl,Seated Two-Arm Palms-Up Low-Pulley Wrist Curl (Cable)
+See-Saw_Press_Alternating_Side_Press,dumbbell,See-Saw Press (Alternating Side Press),"See-Saw Press (Dumbbell, Alternating Side Press)"
+Kettlebell_Seesaw_Press,kettlebells,Kettlebell Seesaw Press,Seesaw Press (Kettlebell)
+Shotgun_Row,cable,Shotgun Row,Shotgun Row (Cable)
+Shoulder_Circles,none,Shoulder Circles,Shoulder Circles
+Shoulder_Press_-_With_Bands,bands,Shoulder Press - With Bands,Shoulder Press (Band)
+Barbell_Shoulder_Press,barbell,Barbell Shoulder Press,Shoulder Press (Barbell)
+Cable_Shoulder_Press,cable,Cable Shoulder Press,Shoulder Press (Cable)
+Dumbbell_Shoulder_Press,dumbbell,Dumbbell Shoulder Press,Shoulder Press (Dumbbell)
+Machine_Shoulder_Military_Press,machine,Machine Shoulder (Military) Press,Shoulder Press (Machine)
+Leverage_Shoulder_Press,machine,Leverage Shoulder Press,Shoulder Press (Plate-Loaded Machine)
+Shoulder_Raise,none,Shoulder Raise,Shoulder Raise
+Shoulder_Stretch,none,Shoulder Stretch,Shoulder Stretch
+Barbell_Shrug,barbell,Barbell Shrug,Shrug (Barbell)
+Cable_Shrugs,cable,Cable Shrugs,Shrug (Cable)
+Dumbbell_Shrug,dumbbell,Dumbbell Shrug,Shrug (Dumbbell)
+Leverage_Shrug,machine,Leverage Shrug,Shrug (Machine)
+Barbell_Shrug_Behind_The_Back,barbell,Barbell Shrug Behind The Back,Shrug Behind The Back (Barbell)
+Barbell_Side_Bend,barbell,Barbell Side Bend,Side Bend (Barbell)
+Dumbbell_Side_Bend,dumbbell,Dumbbell Side Bend,Side Bend (Dumbbell)
+Side_Bridge,body only,Side Bridge,Side Bridge
+Side_Hop-Sprint,other,Side Hop-Sprint,Side Hop-Sprint
+Side_Jackknife,body only,Side Jackknife,Side Jackknife
+Side_Laterals_to_Front_Raise,dumbbell,Side Laterals to Front Raise,Side Laterals to Front Raise (Dumbbell)
+Side_Leg_Raises,body only,Side Leg Raises,Side Leg Raise
+Side_Lying_Groin_Stretch,none,Side Lying Groin Stretch,Side Lying Groin Stretch
+Side_Neck_Stretch,none,Side Neck Stretch,Side Neck Stretch
+Barbell_Side_Split_Squat,barbell,Barbell Side Split Squat,Side Split Squat (Barbell)
+Side_Standing_Long_Jump,none,Side Standing Long Jump,Side Standing Long Jump
+Side_to_Side_Box_Shuffle,other,Side to Side Box Shuffle,Side to Side Box Shuffle
+Side_To_Side_Chins,other,Side To Side Chins,Side To Side Chins
+Side_Wrist_Pull,none,Side Wrist Pull,Side Wrist Pull
+Side-Lying_Floor_Stretch,none,Side-Lying Floor Stretch,Side-Lying Floor Stretch
+Single_Leg_Butt_Kick,body only,Single Leg Butt Kick,Single Leg Butt Kick
+Single_Leg_Glute_Bridge,body only,Single Leg Glute Bridge,Single Leg Glute Bridge
+Single_Leg_Push-off,other,Single Leg Push-off,Single Leg Push-off
+Single_Dumbbell_Raise,dumbbell,Single Dumbbell Raise,Single Raise (Dumbbell)
+Single-Arm_Cable_Crossover,cable,Single-Arm Cable Crossover,Single-Arm Crossover (Cable)
+Single-Arm_Linear_Jammer,barbell,Single-Arm Linear Jammer,Single-Arm Linear Jammer (Barbell)
+Single-Arm_Push-Up,body only,Single-Arm Push-Up,Single-Arm Push-Up
+One-Arm_Dumbbell_Row,dumbbell,One-Arm Dumbbell Row,Single-Arm Row (Dumbbell)
+One-Arm_Kettlebell_Swings,kettlebells,One-Arm Kettlebell Swings,Single-Arm Swing (Kettlebell)
+Single-Cone_Sprint_Drill,other,Single-Cone Sprint Drill,Single-Cone Sprint Drill
+Single-Leg_High_Box_Squat,other,Single-Leg High Box Squat,Single-Leg High Box Squat
+Single-Leg_Hop_Progression,other,Single-Leg Hop Progression,Single-Leg Hop Progression
+Single-Leg_Lateral_Hop,other,Single-Leg Lateral Hop,Single-Leg Lateral Hop
+Single-Leg_Leg_Extension,machine,Single-Leg Leg Extension,Single-Leg Leg Extension (Machine)
+Smith_Single-Leg_Split_Squat,machine,Smith Single-Leg Split Squat,Single-Leg Split Squat (Smith Machine)
+Single-Leg_Stride_Jump,other,Single-Leg Stride Jump,Single-Leg Stride Jump
+Sit_Squats,none,Sit Squats,Sit Squat
+Sit-Up,body only,Sit-Up,Sit-Up
+Skating,other,Skating,Skating
+Band_Skull_Crusher,bands,Band Skull Crusher,Skull Crusher (Band)
+EZ-Bar_Skullcrusher,e-z curl bar,EZ-Bar Skullcrusher,Skull Crusher (EZ Bar)
+Sled_Drag_-_Harness,other,Sled Drag - Harness,Sled Drag (Harness)
+Sled_Overhead_Backward_Walk,other,Sled Overhead Backward Walk,Sled Overhead Backward Walk
+Sled_Overhead_Triceps_Extension,other,Sled Overhead Triceps Extension,Sled Overhead Triceps Extension
+Sled_Push,other,Sled Push,Sled Push
+Sled_Reverse_Flye,other,Sled Reverse Flye,Sled Reverse Fly
+Sled_Row,other,Sled Row,Sled Row
+Sledgehammer_Swings,other,Sledgehammer Swings,Sledgehammer Swing
+Smith_Machine_Decline_Press,machine,Smith Machine Decline Press,Smith Machine Decline Press
+Snatch,barbell,Snatch,Snatch (Barbell)
+Snatch_Balance,barbell,Snatch Balance,Snatch Balance (Barbell)
+Snatch_Deadlift,barbell,Snatch Deadlift,Snatch Deadlift (Barbell)
+Snatch_from_Blocks,barbell,Snatch from Blocks,Snatch from Blocks (Barbell)
+Snatch_Pull,barbell,Snatch Pull,Snatch Pull (Barbell)
+Snatch_Shrug,barbell,Snatch Shrug,Snatch Shrug (Barbell)
+Speed_Box_Squat,barbell,Speed Box Squat,Speed Box Squat (Barbell)
+Speed_Band_Overhead_Triceps,bands,Speed Band Overhead Triceps,Speed Overhead Triceps (Band)
+Speed_Squats,barbell,Speed Squats,Speed Squat (Barbell)
+Spell_Caster,dumbbell,Spell Caster,Spell Caster (Dumbbell)
+Spider_Crawl,body only,Spider Crawl,Spider Crawl
+Spider_Curl,e-z curl bar,Spider Curl,Spider Curl (EZ Bar)
+Spinal_Stretch,none,Spinal Stretch,Spinal Stretch
+Split_Clean,barbell,Split Clean,Split Clean (Barbell)
+Split_Jerk,barbell,Split Jerk,Split Jerk (Barbell)
+Split_Jump,body only,Split Jump,Split Jump
+Split_Snatch,barbell,Split Snatch,Split Snatch (Barbell)
+Split_Squats,none,Split Squats,Split Squat
+Split_Squat_with_Dumbbells,dumbbell,Split Squat with Dumbbells,Split Squat (Dumbbell)
+Squats_-_With_Bands,bands,Squats - With Bands,Squat (Band)
+Barbell_Squat,barbell,Barbell Squat,Squat (Barbell)
+Bodyweight_Squat,body only,Bodyweight Squat,Squat (Bodyweight)
+Dumbbell_Squat,dumbbell,Dumbbell Squat,Squat (Dumbbell)
+Smith_Machine_Squat,machine,Smith Machine Squat,Squat (Smith Machine)
+Squat_Jerk,barbell,Squat Jerk,Squat Jerk (Barbell)
+Barbell_Squat_To_A_Bench,barbell,Barbell Squat To A Bench,Squat To A Bench (Barbell)
+Dumbbell_Squat_To_A_Bench,dumbbell,Dumbbell Squat To A Bench,Squat To A Bench (Dumbbell)
+Squat_with_Bands,barbell,Squat with Bands,Squat with Bands (Barbell)
+Squat_with_Chains,barbell,Squat with Chains,Squat with Chains (Barbell)
+Squat_with_Plate_Movers,barbell,Squat with Plate Movers,Squat with Plate Movers (Barbell)
+Stairmaster,machine,Stairmaster,Stairmaster (Machine)
+Standing_Alternating_Dumbbell_Press,dumbbell,Standing Alternating Dumbbell Press,Standing Alternating Press (Dumbbell)
+Standing_Bent-Over_One-Arm_Dumbbell_Triceps_Extension,dumbbell,Standing Bent-Over One-Arm Dumbbell Triceps Extension,Standing Bent-Over One-Arm Triceps Extension (Dumbbell)
+Standing_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension,dumbbell,Standing Bent-Over Two-Arm Dumbbell Triceps Extension,Standing Bent-Over Two-Arm Triceps Extension (Dumbbell)
+Standing_Biceps_Cable_Curl,cable,Standing Biceps Cable Curl,Standing Biceps Curl (Cable)
+Standing_Biceps_Stretch,other,Standing Biceps Stretch,Standing Biceps Stretch
+Standing_Bradford_Press,barbell,Standing Bradford Press,Standing Bradford Press (Barbell)
+Standing_Barbell_Calf_Raise,barbell,Standing Barbell Calf Raise,Standing Calf Raise (Barbell)
+Standing_Dumbbell_Calf_Raise,dumbbell,Standing Dumbbell Calf Raise,Standing Calf Raise (Dumbbell)
+Standing_Calf_Raises,machine,Standing Calf Raises,Standing Calf Raise (Machine)
+Standing_Cable_Chest_Press,cable,Standing Cable Chest Press,Standing Chest Press (Cable)
+Standing_Concentration_Curl,dumbbell,Standing Concentration Curl,Standing Concentration Curl (Dumbbell)
+Standing_Rope_Crunch,cable,Standing Rope Crunch,Standing Crunch (Rope)
+Close-Grip_Standing_Barbell_Curl,barbell,Close-Grip Standing Barbell Curl,"Standing Curl (Barbell, Close Grip)"
+Wide-Grip_Standing_Barbell_Curl,barbell,Wide-Grip Standing Barbell Curl,"Standing Curl (Barbell, Wide Grip)"
+Standing_Elevated_Quad_Stretch,other,Standing Elevated Quad Stretch,Standing Elevated Quad Stretch
+Standing_Front_Barbell_Raise_Over_Head,barbell,Standing Front Barbell Raise Over Head,Standing Front Raise Over Head (Barbell)
+Standing_Gastrocnemius_Calf_Stretch,none,Standing Gastrocnemius Calf Stretch,Standing Gastrocnemius Calf Stretch
+Standing_Hamstring_and_Calf_Stretch,other,Standing Hamstring and Calf Stretch,Standing Hamstring and Calf Stretch
+Standing_Hip_Circles,body only,Standing Hip Circles,Standing Hip Circles
+Standing_Hip_Flexors,none,Standing Hip Flexors,Standing Hip Flexors
+Standing_Inner-Biceps_Curl,dumbbell,Standing Inner-Biceps Curl,Standing Inner-Biceps Curl (Dumbbell)
+Standing_Lateral_Stretch,none,Standing Lateral Stretch,Standing Lateral Stretch
+Standing_Leg_Curl,machine,Standing Leg Curl,Standing Leg Curl (Machine)
+Standing_Cable_Lift,cable,Standing Cable Lift,Standing Lift (Cable)
+Standing_Long_Jump,body only,Standing Long Jump,Standing Long Jump
+Standing_Low-Pulley_Deltoid_Raise,cable,Standing Low-Pulley Deltoid Raise,Standing Low-Pulley Deltoid Raise (Cable)
+Standing_Low-Pulley_One-Arm_Triceps_Extension,cable,Standing Low-Pulley One-Arm Triceps Extension,Standing Low-Pulley One-Arm Triceps Extension (Cable)
+Standing_Olympic_Plate_Hand_Squeeze,other,Standing Olympic Plate Hand Squeeze,Standing Olympic Plate Hand Squeeze
+Standing_One-Arm_Cable_Curl,cable,Standing One-Arm Cable Curl,Standing One-Arm Curl (Cable)
+Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench,dumbbell,Standing One-Arm Dumbbell Curl Over Incline Bench,Standing One-Arm Curl Over Incline Bench (Dumbbell)
+Standing_One-Arm_Dumbbell_Triceps_Extension,dumbbell,Standing One-Arm Dumbbell Triceps Extension,Standing One-Arm Triceps Extension (Dumbbell)
+Standing_Overhead_Barbell_Triceps_Extension,barbell,Standing Overhead Barbell Triceps Extension,Standing Overhead Triceps Extension (Barbell)
+Standing_Palm-In_One-Arm_Dumbbell_Press,dumbbell,Standing Palm-In One-Arm Dumbbell Press,Standing Palm-In One-Arm Press (Dumbbell)
+Standing_Palms-In_Dumbbell_Press,dumbbell,Standing Palms-In Dumbbell Press,Standing Palms-In Press (Dumbbell)
+Standing_Palms-Up_Barbell_Behind_The_Back_Wrist_Curl,barbell,Standing Palms-Up Barbell Behind The Back Wrist Curl,Standing Palms-Up Behind The Back Wrist Curl (Barbell)
+Standing_Pelvic_Tilt,none,Standing Pelvic Tilt,Standing Pelvic Tilt
+Standing_Dumbbell_Press,dumbbell,Standing Dumbbell Press,Standing Press (Dumbbell)
+Standing_Barbell_Press_Behind_Neck,barbell,Standing Barbell Press Behind Neck,Standing Press Behind Neck (Barbell)
+Standing_Dumbbell_Reverse_Curl,dumbbell,Standing Dumbbell Reverse Curl,Standing Reverse Curl (Dumbbell)
+Standing_Soleus_And_Achilles_Stretch,none,Standing Soleus And Achilles Stretch,Standing Soleus And Achilles Stretch
+Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head,dumbbell,Standing Dumbbell Straight-Arm Front Delt Raise Above Head,Standing Straight-Arm Front Delt Raise Above Head (Dumbbell)
+Standing_Toe_Touches,none,Standing Toe Touches,Standing Toe Touches
+Standing_Towel_Triceps_Extension,body only,Standing Towel Triceps Extension,Standing Towel Triceps Extension
+Standing_Two-Arm_Overhead_Throw,medicine ball,Standing Two-Arm Overhead Throw,Standing Two-Arm Overhead Throw (Medicine Ball)
+Standing_Dumbbell_Upright_Row,dumbbell,Standing Dumbbell Upright Row,Standing Upright Row (Dumbbell)
+Standing_Cable_Wood_Chop,cable,Standing Cable Wood Chop,Standing Wood Chop (Cable)
+Star_Jump,body only,Star Jump,Star Jump
+Step_Mill,machine,Step Mill,Step Mill (Machine)
+Barbell_Step_Ups,barbell,Barbell Step Ups,Step-Up (Barbell)
+Dumbbell_Step_Ups,dumbbell,Dumbbell Step Ups,Step-Up (Dumbbell)
+Step-up_with_Knee_Raise,body only,Step-up with Knee Raise,Step-up with Knee Raise
+Stiff_Leg_Barbell_Good_Morning,barbell,Stiff Leg Barbell Good Morning,Stiff Leg Good Morning (Barbell)
+Stiff-Legged_Barbell_Deadlift,barbell,Stiff-Legged Barbell Deadlift,Stiff-Leg Deadlift (Barbell)
+Stiff-Legged_Dumbbell_Deadlift,dumbbell,Stiff-Legged Dumbbell Deadlift,Stiff-Leg Deadlift (Dumbbell)
+Smith_Machine_Stiff-Legged_Deadlift,machine,Smith Machine Stiff-Legged Deadlift,Stiff-Legged Deadlift (Smith Machine)
+Stomach_Vacuum,body only,Stomach Vacuum,Stomach Vacuum
+Straight_Bar_Bench_Mid_Rows,barbell,Straight Bar Bench Mid Rows,Straight Bar Bench Mid Row (Barbell)
+Straight_Raises_on_Incline_Bench,barbell,Straight Raises on Incline Bench,Straight Raise on Incline Bench (Barbell)
+Straight-Arm_Pulldown,cable,Straight-Arm Pulldown,Straight-Arm Pulldown (Cable)
+Rope_Straight-Arm_Pulldown,cable,Rope Straight-Arm Pulldown,Straight-Arm Pulldown (Rope)
+Straight-Arm_Dumbbell_Pullover,dumbbell,Straight-Arm Dumbbell Pullover,Straight-Arm Pullover (Dumbbell)
+Stride_Jump_Crossover,other,Stride Jump Crossover,Stride Jump Crossover
+Sumo_Deadlift,barbell,Sumo Deadlift,Sumo Deadlift (Barbell)
+Sumo_Deadlift_with_Bands,barbell,Sumo Deadlift with Bands,Sumo Deadlift with Bands (Barbell)
+Sumo_Deadlift_with_Chains,barbell,Sumo Deadlift with Chains,Sumo Deadlift with Chains (Barbell)
+Kettlebell_Sumo_High_Pull,kettlebells,Kettlebell Sumo High Pull,Sumo High Pull (Kettlebell)
+Superman,body only,Superman,Superman
+Supine_Chest_Throw,medicine ball,Supine Chest Throw,Supine Chest Throw (Medicine Ball)
+Supine_One-Arm_Overhead_Throw,medicine ball,Supine One-Arm Overhead Throw,Supine One-Arm Overhead Throw (Medicine Ball)
+Supine_Two-Arm_Overhead_Throw,medicine ball,Supine Two-Arm Overhead Throw,Supine Two-Arm Overhead Throw (Medicine Ball)
+Suspended_Fallout,other,Suspended Fallout,Suspended Fallout
+Suspended_Push-Up,other,Suspended Push-Up,Suspended Push-Up
+Suspended_Reverse_Crunch,other,Suspended Reverse Crunch,Suspended Reverse Crunch
+Suspended_Row,other,Suspended Row,Suspended Row
+Suspended_Split_Squat,other,Suspended Split Squat,Suspended Split Squat
+Svend_Press,other,Svend Press,Svend Press
+T-Bar_Row_with_Handle,barbell,T-Bar Row with Handle,T-Bar Row (Barbell)
+Tate_Press,dumbbell,Tate Press,Tate Press (Dumbbell)
+The_Straddle,none,The Straddle,The Straddle
+Kettlebell_Thruster,kettlebells,Kettlebell Thruster,Thruster (Kettlebell)
+Tire_Flip,other,Tire Flip,Tire Flip
+Toe_Touchers,body only,Toe Touchers,Toe Touchers
+Torso_Rotation,exercise ball,Torso Rotation,Torso Rotation (Exercise Ball)
+Trail_Running_Walking,none,Trail Running/Walking,Trail Running/Walking
+Trap_Bar_Deadlift,other,Trap Bar Deadlift,Trap Bar Deadlift
+Dumbbell_Tricep_Extension_-Pronated_Grip,dumbbell,Dumbbell Tricep Extension -Pronated Grip,Tricep Extension -Pronated Grip (Dumbbell)
+Tricep_Dumbbell_Kickback,dumbbell,Tricep Dumbbell Kickback,Tricep Kickback (Dumbbell)
+Tricep_Side_Stretch,none,Tricep Side Stretch,Tricep Side Stretch
+Dips_-_Triceps_Version,body only,Dips - Triceps Version,Triceps Dip
+Machine_Triceps_Extension,machine,Machine Triceps Extension,Triceps Extension (Machine)
+Triceps_Overhead_Extension_with_Rope,cable,Triceps Overhead Extension with Rope,Triceps Overhead Extension (Rope)
+Triceps_Pushdown,cable,Triceps Pushdown,Triceps Pushdown (Cable)
+Triceps_Pushdown_-_Rope_Attachment,cable,Triceps Pushdown - Rope Attachment,Triceps Pushdown (Rope)
+Triceps_Pushdown_-_V-Bar_Attachment,cable,Triceps Pushdown - V-Bar Attachment,Triceps Pushdown (V-Bar)
+Triceps_Stretch,none,Triceps Stretch,Triceps Stretch
+Tuck_Crunch,body only,Tuck Crunch,Tuck Crunch
+Kettlebell_Turkish_Get-Up_Lunge_style,kettlebells,Kettlebell Turkish Get-Up (Lunge style),"Turkish Get-Up (Kettlebell, Lunge style)"
+Kettlebell_Turkish_Get-Up_Squat_style,kettlebells,Kettlebell Turkish Get-Up (Squat style),"Turkish Get-Up (Kettlebell, Squat style)"
+Two-Arm_Kettlebell_Clean,kettlebells,Two-Arm Kettlebell Clean,Two-Arm Clean (Kettlebell)
+Two-Arm_Kettlebell_Jerk,kettlebells,Two-Arm Kettlebell Jerk,Two-Arm Jerk (Kettlebell)
+Two-Arm_Kettlebell_Military_Press,kettlebells,Two-Arm Kettlebell Military Press,Two-Arm Military Press (Kettlebell)
+Two-Arm_Dumbbell_Preacher_Curl,dumbbell,Two-Arm Dumbbell Preacher Curl,Two-Arm Preacher Curl (Dumbbell)
+Two-Arm_Kettlebell_Row,kettlebells,Two-Arm Kettlebell Row,Two-Arm Row (Kettlebell)
+Upper_Back_Stretch,none,Upper Back Stretch,Upper Back Stretch
+Upper_Back-Leg_Grab,none,Upper Back-Leg Grab,Upper Back-Leg Grab
+Upright_Row_-_With_Bands,bands,Upright Row - With Bands,Upright Row (Band)
+Upright_Barbell_Row,barbell,Upright Barbell Row,Upright Row (Barbell)
+Upright_Cable_Row,cable,Upright Cable Row,Upright Row (Cable)
+Smith_Machine_Upright_Row,machine,Smith Machine Upright Row,Upright Row (Smith Machine)
+Upward_Stretch,none,Upward Stretch,Upward Stretch
+Vertical_Swing,dumbbell,Vertical Swing,Vertical Swing (Dumbbell)
+Walking_Treadmill,machine,"Walking, Treadmill",Walking (Treadmill)
+Barbell_Walking_Lunge,barbell,Barbell Walking Lunge,Walking Lunge (Barbell)
+Bodyweight_Walking_Lunge,none,Bodyweight Walking Lunge,Walking Lunge (Bodyweight)
+Weighted_Ball_Hyperextension,exercise ball,Weighted Ball Hyperextension,Weighted Ball Hyperextension (Exercise Ball)
+Weighted_Ball_Side_Bend,exercise ball,Weighted Ball Side Bend,Weighted Ball Side Bend (Exercise Ball)
+Weighted_Bench_Dip,other,Weighted Bench Dip,Weighted Bench Dip
+Weighted_Crunches,medicine ball,Weighted Crunches,Weighted Crunch (Medicine Ball)
+Weighted_Jump_Squat,barbell,Weighted Jump Squat,Weighted Jump Squat (Barbell)
+Weighted_Pull_Ups,other,Weighted Pull Ups,Weighted Pull Ups
+Weighted_Sissy_Squat,barbell,Weighted Sissy Squat,Weighted Sissy Squat (Barbell)
+Weighted_Sit-Ups_-_With_Bands,other,Weighted Sit-Ups - With Bands,Weighted Sit-Ups
+Weighted_Squat,other,Weighted Squat,Weighted Squat
+Wide_Stance_Barbell_Squat,barbell,Wide Stance Barbell Squat,Wide Stance Squat (Barbell)
+Wide_Stance_Stiff_Legs,barbell,Wide Stance Stiff Legs,Wide Stance Stiff Legs (Barbell)
+Wind_Sprints,body only,Wind Sprints,Wind Sprints
+Kettlebell_Windmill,kettlebells,Kettlebell Windmill,Windmill (Kettlebell)
+Windmills,none,Windmills,Windmills
+Worlds_Greatest_Stretch,none,World's Greatest Stretch,World's Greatest Stretch
+Wrist_Circles,body only,Wrist Circles,Wrist Circles
+Cable_Wrist_Curl,cable,Cable Wrist Curl,Wrist Curl (Cable)
+Wrist_Roller,other,Wrist Roller,Wrist Roller
+Wrist_Rotations_with_Straight_Bar,barbell,Wrist Rotations with Straight Bar,Wrist Rotations with Straight Bar (Barbell)
+Yoke_Walk,other,Yoke Walk,Yoke Walk
+Zercher_Squats,barbell,Zercher Squats,Zercher Squat (Barbell)
+Zottman_Curl,dumbbell,Zottman Curl,Zottman Curl (Dumbbell)
+Zottman_Preacher_Curl,dumbbell,Zottman Preacher Curl,Zottman Preacher Curl (Dumbbell)
